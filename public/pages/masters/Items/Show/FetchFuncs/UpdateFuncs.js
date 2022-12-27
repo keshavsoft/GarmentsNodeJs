@@ -1,29 +1,35 @@
-let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
+import { ReturnRowPK } from "../urlSearchParams.js";
+import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
+
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
+        let jVarLocalRowPK = ReturnRowPK().RowPK;
 
         let inFetchPostData = {
             FileNameOnly: inFileName,
             FolderName: inFolderName,
             ItemName: inItemName,
-            JsonPk: inRowPK,
+            JsonPk: jVarLocalRowPK,
             Screenname: "Create"
         };
+
+        inFetchPostData.DataToUpdate = PreparePostDataStartFunc();
 
         let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
 
         let jVarLocalFetchHeaders = {
-            method: "post",
+            method: "PATCH",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(inFetchPostData)
         };
-
+        1
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-
+        console.log("uuuuuuuuuuu : ", data);
         if (data.KTF === false) {
             LocalReturnObject.KReason = data.KReason;
             return await LocalReturnObject;
@@ -40,4 +46,4 @@ let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProject
 
 };
 
-export { FromNode };
+export { StartFunc };

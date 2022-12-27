@@ -4,5 +4,7 @@ let router = express.Router();
 let CommonConrollers = require("../../../../../../../controllers/Api/Data/FromFolder/FromFile/Items/FromDataFolder/RowData.controller");
 
 router.post('/', CommonConrollers.PostFunc);
+router.delete('/', CommonConrollers.DeleteFunc);
+router.patch('/', CommonConrollers.PatchFunc);
 
 module.exports = router;
