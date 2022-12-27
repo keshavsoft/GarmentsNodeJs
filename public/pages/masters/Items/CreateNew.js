@@ -3,6 +3,7 @@ import { StartFunc as AddListenersStartFunc } from "./CreateNew/AddListeners.js"
 
 let jVarCommonKToken = "KToken";
 let jVarLocalStorageKeyName = "kUserName";
+
 let jVarCommonKeys = {
     inFolderName: "Masters",
     inFileName: "Items",

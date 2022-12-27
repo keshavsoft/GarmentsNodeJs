@@ -1,17 +1,21 @@
-let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK }) => {
+let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
     console.log(" inRowPK : ", inRowPK);
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
         let inFetchPostData = {
-            FileNameWithExtension: `${inFileName}.json`,
+            FileNameOnly: inFileName,
             FolderName: inFolderName,
             ItemName: inItemName,
             JsonPk: inRowPK,
             Screenname: "Create"
         };
 
-        let jVarLocalFetchUrl = "/JSONApi/API/Data/FromFolder/FromFile/ScreensFromDisplayJson/Tabular/Row/Show/FromParams";
+        //let jVarLocalFetchUrl = "/JSONApi/API/Data/FromFolder/FromFile/ScreensFromDisplayJson/Tabular/Row/Show/FromParams";
+
+        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
+
+
         let jVarLocalFetchHeaders = {
             method: "post",
             headers: {
@@ -24,13 +28,12 @@ let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK }) => {
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
 
-        console.log("data : ", data);
-
         if (data.KTF === false) {
             LocalReturnObject.KReason = data.KReason;
             return await LocalReturnObject;
         };
-        LocalReturnObject.JsonData = data.DataFromServer;
+
+        LocalReturnObject.JsonData = data.JsonData;
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;

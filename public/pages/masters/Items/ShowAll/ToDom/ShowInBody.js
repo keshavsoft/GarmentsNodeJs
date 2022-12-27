@@ -1,10 +1,11 @@
 import { FromNode } from "../PullData/FetchFuncs.js";
 
-let StartFunc = async (Date) => {
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalData = await FromNode({
-        inFolderName: "Masters",
-        inFileName: "Items",
-        inItemName: "ItemName"
+        inFolderName,
+        inFileName,
+        inItemName,
+        inProjectName
     });
 
     if (jVarLocalData.KTF) {

@@ -1,16 +1,15 @@
 import { FromNode } from "../PullData/FetchFuncs.js";
 import { ReturnRowPK } from "../urlSearchParams.js";
 
-let StartFunc = async () => {
-
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalRowPk = ReturnRowPK();
-    console.log(" jVarLocalRowPk : ", jVarLocalRowPk);
 
     let jVarLocalData = await FromNode({
-        inFolderName: "Transactions",
-        inFileName: "JOURNALS",
-        inItemName: "JOURNAL",
-        inRowPK: ReturnRowPK().RowPK
+        inFolderName,
+        inFileName,
+        inItemName,
+        inRowPK: jVarLocalRowPk.RowPK,
+        inProjectName
     });
 
     if (jVarLocalData.KTF) {
@@ -22,14 +21,14 @@ let ShowOnDom = ({ inData }) => {
     let jVarLocalTableBodyId = document.getElementById("TableBodyId");
     let jVarLocalTemplate = document.getElementById("TemplateForRow");
 
-    var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
+    // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
 
-    inData.forEach(element => {
+    // inData.forEach(element => {
 
-        let jVarLocalToShowHtml = template(element);
+    //     let jVarLocalToShowHtml = template(element);
 
-        jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    });
+    //     jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
+    // });
 
 };
 
