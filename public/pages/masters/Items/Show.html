@@ -699,15 +699,9 @@ background-size: cover;">
 
 
   <template id="TemplateForRow">
-    {{log this}}
     <tr>
       <td>{{BillNumber}}</td>
       <td>{{Date}}</td>
-      <td class="text-sm">
-        <a href="./Show.html?RowPK={{pk}}" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
-          <i class="fas fa-eye text-secondary" aria-hidden="true"></i>
-        </a>
-      </td>
     </tr>
   </template>
 
@@ -827,7 +821,7 @@ background-size: cover;">
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
   <!-- <script src="/assets/js/Maguvaa/pages/masters/suppliers/ShowAll.js" type="module"></script> -->
-  <script src="./ShowAll.js" type="module"></script>
+  <script src="./Show.js" type="module"></script>
 
 </body>
 
