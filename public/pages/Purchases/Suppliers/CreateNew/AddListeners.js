@@ -4,9 +4,9 @@ let jFStartFunc = () => {
     let jVarLocalCreateNewButtonId = document.getElementById("CreateNewButtonId");
     jVarLocalCreateNewButtonId.addEventListener("click", () => {
         PushDataStartFunc({
-            inFolderName: "Masters",
-            inFileName: "Items",
-            inItemName: "ItemName"
+            inFolderName: "Purchases",
+            inFileName: "Suppliers",
+            inItemName: "SuppliersName"
         });
     });
 };

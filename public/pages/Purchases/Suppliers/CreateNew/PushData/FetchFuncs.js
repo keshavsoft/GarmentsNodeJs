@@ -25,7 +25,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
             },
             body: JSON.stringify(inFetchPostData)
         };
-
+console.log("jVarLocalFetchHeaders",jVarLocalFetchHeaders);
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
         console.log("data : ", data);

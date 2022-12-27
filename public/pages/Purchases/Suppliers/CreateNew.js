@@ -10,7 +10,7 @@ let StartFunc = async ({ inUserKey }) => {
         inKTokenKey: jVarCommonKToken
     });
 
-    CreateNewjFStartFunc({ inUserKey });
+   CreateNewjFStartFunc({ inUserKey });
 };
 
 StartFunc({ inUserKey: jVarLocalStorageKeyName }).then();
