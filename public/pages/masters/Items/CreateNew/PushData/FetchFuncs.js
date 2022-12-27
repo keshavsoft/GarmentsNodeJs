@@ -1,22 +1,22 @@
 import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
         let inFetchPostData = {
-            inJsonConfig: {
-                inFolderName,
-                inJsonFileName: `${inFileName}.json`
-            }, inItemConfig: {
-                inItemName
-            }
+            inFolderName,
+            inFileNameOnly: inFileName,
+            inItemName,
+            inScreenName: "Create"
         };
 
         inFetchPostData.inPostData = PreparePostDataStartFunc();
 
         //let jVarLocalFetchUrl = `/JSONApi/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
-        let jVarLocalFetchUrl = "/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/Insert";
+        //        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/Insert`;
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/Insert`;
+
         let jVarLocalFetchHeaders = {
             method: "post",
             headers: {
@@ -29,6 +29,17 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
         console.log("data : ", data);
+
+        if (data.KTF) {
+            argon.showSwal('success-message');
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+            })
+        };
         // if (data.KTF === false) {
         //     LocalReturnObject.KReason = data.KReason;
         //     return await LocalReturnObject;
@@ -42,14 +53,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
         console.log("error:", error);
     }
 
-};
-
-let PreparePostData = () => {
-    let jVarLocalItemNameId = document.getElementById("ItemNameId");
-
-    return {
-        ItemName: jVarLocalItemNameId.value
-    };
 };
 
 export { StartFunc };

@@ -1,14 +1,16 @@
 import { StartFunc as PushDataStartFunc } from "./PushData/FetchFuncs.js";
 
-let jFStartFunc = () => {
+let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalCreateNewButtonId = document.getElementById("CreateNewButtonId");
+
     jVarLocalCreateNewButtonId.addEventListener("click", () => {
         PushDataStartFunc({
-            inFolderName: "Masters",
-            inFileName: "Items",
-            inItemName: "ItemName"
+            inFolderName,
+            inFileName,
+            inItemName,
+            inProjectName
         });
     });
 };
 
-export { jFStartFunc };
+export { StartFunc };
