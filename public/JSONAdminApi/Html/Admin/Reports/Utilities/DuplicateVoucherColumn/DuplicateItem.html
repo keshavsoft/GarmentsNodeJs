@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <!-- Custom styles for this template -->
+    <link href="../../../../../css/headers.css" rel="stylesheet">
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+    </svg>
+
+    <header class="mb-3">
+    <div id="NavBarId" class="px-2 py-2 bg-danger text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                <h5 class="me-lg-auto">VoucherConsider</h5>
+
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li>
+                        <a href="../../../Dashboard.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+                            </svg>
+                            Admin Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Delete.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M7.364 3.5a.5.5 0 0 1 .5-.5H14.5A1.5 1.5 0 0 1 16 4.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 14.5V7.864a.5.5 0 1 1 1 0V14.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H7.864a.5.5 0 0 1-.5-.5z"></path>
+                                <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 0 1H1.707l8.147 8.146a.5.5 0 0 1-.708.708L1 1.707V5.5a.5.5 0 0 1-1 0v-5z"></path>
+                            </svg>
+                            Parent
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../DuplicateVoucherColumn/DuplicateItem.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 .989c.127 0 .253.049.35.145l6.516 6.516a.495.495 0 0 1 0 .7L8.35 14.866a.493.493 0 0 1-.35.145V.989z"></path>
+                            </svg>
+                            DuplicateItem
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./DuplicatePk.html" class="nav-link text-info">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 .989c.127 0 .253.049.35.145l6.516 6.516a.495.495 0 0 1 0 .7L8.35 14.866a.493.493 0 0 1-.35.145V.989z"></path>
+                            </svg>
+                            DuplicatePk  
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./DuplicateColumn.html" class="nav-link text-info">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 .989c.127 0 .253.049.35.145l6.516 6.516a.495.495 0 0 1 0 .7L8.35 14.866a.493.493 0 0 1-.35.145V.989z"></path>
+                            </svg>
+                            DuplicateColumn               
+                        </a>
+                    </li>
+
+                    <li id="HeaderLoginButtonId">
+                        <a href="#" id="dropdown09" class="nav-link text-white" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"></path>
+                            </svg>
+                            Login
+                        </a>
+                    </li>
+                    <li id="HeaderUserIdLi" class="visually-hidden">
+                        <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-white dropdown-toggle">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                            </svg>
+                            UserName
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="HeaderUserIdDropDown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                                    Sign out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container">
+            <nav class="mt-2" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../Dashboard.html">Admin</a></li>
+                    <li class="breadcrumb-item"><a href="../../../Reports/TableColumns.html">Reports</a></li>
+                    <li class="breadcrumb-item"><a href="../../../Reports/Utilities/Delete.html">Utilities</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Duplicate Item</li>
+                </ol>
+            </nav>
+        </div>
+    </main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="mb-3 row">
+                                <label class="col-sm-3 col-form-label">Item</label>
+                                <div class="col-sm-3">
+                                    <input class="form-control" list="ReportsList" id="ItemSelected">
+                                    <datalist id="ReportsList"> </datalist>
+                                    <div class="invalid-feedback">
+                                        Please choose an Item name.
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class="form-control" id="ItemDuplicate">
+
+                                    <div class="invalid-feedback">
+                                        Please choose an Item name.
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-success col-sm-3" onclick="jFItems()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-diamond-half" viewBox="0 0 16 16">
+                                        <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 .989c.127 0 .253.049.35.145l6.516 6.516a.495.495 0 0 1 0 .7L8.35 14.866a.493.493 0 0 1-.35.145V.989z"></path>
+                                    </svg> Duplicate
+                                </button>
+                            </div>
+                            <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="ShowMsgId">
+                                <strong>Success!</strong> Duplicated selected report.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+        <div class="container">
+            <div class="bg-light d-flex justify-content-between">
+                <div>KeshavSoft</div>
+                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let jFItems = async () => {
+            let LocalFromName = document.getElementById("ItemSelected").value;
+            let LocalToName = document.getElementById("ItemDuplicate").value;
+            let jVarLocalRoute = jVarGlobalClientObject.Config.RouteStart.Start;
+            let jVarLocalAdminSubRoute = jVarGlobalClientObject.Config.RouteStart.AdminSubRoute;
+            fetch(`/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Reports/Duplicate/Items?inFolderName=Reports&inJsonFileName=LedgerAuto.json&inFromName=${LocalFromName}&inToName=${LocalToName}`)
+                .then(response => {
+                    if (!response.ok) { throw new Error(response.statusText) };
+
+                    return response.json();
+                }).then((FetchData) => {
+                    console.log("FetchData : ", FetchData);
+                    if (FetchData.KTF) {
+                        document.getElementById("ShowMsgId").classList.remove("d-none");
+                        jVarGlobalClientObject.AdminApi.Reports.Items.ForDataList();
+                    }
+                }).catch(error => { });
+        };
+    </script>
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                    <div class="mb-3 form-floating is-valid">
+                        <input type="text" class="form-control" id="KUserNameInput" required="">
+                        <label for="KUserNameInput">User Name</label>
+                        <div class="invalid-feedback">
+                            User Name cannot be empty.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" class="form-control" id="KPasswordInput" required="">
+                        <label for="KPasswordInput">Password</label>
+                        <div class="invalid-feedback">
+                            Password cannot be empty.
+                        </div>
+                    </div>
+                    <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
+                    <!-- <button type="button" class="btn btn-primary"
+                        onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
+                         -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/KeshavSoft/Login.js"></script>
+<script src="/ClassesStatic/CommonClass.js"></script>
+<script src="/js/Admin/HeadFocus.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+        
+    <script>
+        let jVarGlobalPresentViewData;
+        let jVarGlobalHBSData = {};
+
+        jVarGlobalLoginFuncs.Login.ClientSideCookieFuncs.CheckToken();
+
+      //  jVarGlobalApiFuncs.ApiFuncs.PreLoad.Masters.FillDataFromServer();
+
+        let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
+        jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function (event) {
+            let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
+            jVarLocalSubmitButton.focus();
+        });
+    </script>
+
+
+    <script>    
+        let jVarGlobalProject = "JSONProject";
+        let jVarGlobalSubRoute = "Api";
+
+        let jFShowReportsAsMenu = () => {
+            let jVarLocalRoute = jVarGlobalProject;
+            let jVarLocalSubRoute = jVarGlobalSubRoute;
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Reports/Menu/WithOutFilters/AsArray`;
+
+            fetch(jVarLocalFetchUrl)
+                .then(response => {
+                    if (response.status === 403) {
+                        let jVarLocalModalId = this.Config.Ht.HtmlIds.Modals.LoginModalId;
+                        let jVarLocalLoginFormPopUpId = document.getElementById(jVarLocalModalId);
+
+                        if (jVarLocalLoginFormPopUpId !== null) {
+                            var myModal = new bootstrap.Modal(jVarLocalLoginFormPopUpId, { keyboard: false, focus: true });
+                            myModal.show();
+                        };
+                        return null;
+                    };
+
+                    return response.json();
+                })
+                .then(dataFromApi => {
+                    if (dataFromApi !== null) {
+                        if (dataFromApi.KTF) {
+                            let str = '';
+                            let htmlstring = dataFromApi.JsonData.forEach((name) => {
+                                str += '<option value="' + name + '" />';
+                            });
+
+                            document.getElementById("ReportsList").innerHTML = str;
+                        };
+                    };
+                });
+        };
+
+        jVarGlobalClientObject.Login.ClientSideCookieFuncs.CheckToken();
+        jVarGlobalClientObject.Login.ShowLoginDetailsOnDOM.InHeader();
+        // jVarGlobalClientObject.AdminApi.Items.PullData();
+        //  jVarGlobalClientObject.DataApi.Folders.PullData();
+        //jVarGlobalClientObject.AdminApi.Reports.Items.ForDataList();
+
+        jFShowReportsAsMenu();
+    </script>
+</body>
+
+</html>

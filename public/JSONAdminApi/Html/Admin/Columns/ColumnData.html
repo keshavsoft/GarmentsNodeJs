@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>ColumnsData</title>
+    <!-- Custom styles for this template -->
+    <link href="/JSONAdminApi/css/headers.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+    </svg>
+  
+    <header>
+    <div id="NavBarId" class="px-2 py-2 bg-danger text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <h6 class="me-lg-auto">Columns Data</h6>
+
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li>
+                        <a href="../Dashboard.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+                            </svg>
+                            Admin Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Tabular/CreateNew/CreateNew.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                <path d="M6 5a1 1 0 0 1 1-1h1.188a2.75 2.75 0 0 1 0 5.5H7v2a.5.5 0 0 1-1 0V5zm1 3.5h1.188a1.75 1.75 0 1 0 0-3.5H7v3.5z"></path>
+                            </svg>
+                            Tabular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="jFMenuClick.ItemClick(event)" class="nav-link text-info">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V2zm8.5 0v8H15V2H8.5zm0 9v3H15v-3H8.5zm-1-9H1v3h6.5V2zM1 14h6.5V6H1v8z"></path>
+                            </svg>
+
+                            ColumnData
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="jFMenuClick.KDataset()" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M7.646 15.854a.5.5 0 0 0 .708 0L10.207 14H14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3.793l1.853 1.854zM1 9V6h14v3H1zm14 1v2a1 1 0 0 1-1 1h-3.793a1 1 0 0 0-.707.293l-1.5 1.5-1.5-1.5A1 1 0 0 0 5.793 13H2a1 1 0 0 1-1-1v-2h14zm0-5H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2zM2 11.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 0-1h-8a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1h-6a.5.5 0 0 0-.5.5z"></path>
+                            </svg>
+                            KDataset
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Parent.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"></path>
+                                <path d="M6 5a1 1 0 0 1 1-1h1.188a2.75 2.75 0 0 1 0 5.5H7v2a.5.5 0 0 1-1 0V5zm1 3.5h1.188a1.75 1.75 0 1 0 0-3.5H7v3.5z"></path>
+                            </svg>
+                            Parent
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Width.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M4.879 4.515a.5.5 0 0 1 .606.364l1.036 4.144.997-3.655a.5.5 0 0 1 .964 0l.997 3.655 1.036-4.144a.5.5 0 0 1 .97.242l-1.5 6a.5.5 0 0 1-.967.01L8 7.402l-1.018 3.73a.5.5 0 0 1-.967-.01l-1.5-6a.5.5 0 0 1 .364-.606z"></path>
+                                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"></path>
+                            </svg>
+                            Width
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./Htmlattributes.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"></path>
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"></path>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"></path>
+                            </svg>
+                            Htmlattributes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./KDatasetStuff.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z"></path>
+                            </svg>
+                            KDatasetStuff
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./KDataattributes.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.5 5A1.5 1.5 0 0 0 5 6.5v3A1.5 1.5 0 0 0 6.5 11h3A1.5 1.5 0 0 0 11 9.5v-3A1.5 1.5 0 0 0 9.5 5h-3z"></path>
+                            </svg>
+                            KDataattributes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./DisplayType.html" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm11.5 1a.5.5 0 0 0-.5.5v3.793L9.854 8.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L12 9.293V5.5a.5.5 0 0 0-.5-.5zM3.56 7.01h.056l1.428 3.239h.774l1.42-3.24h.056V11h1.073V5.001h-1.2l-1.71 3.894h-.039l-1.71-3.894H2.5V11h1.06V7.01z"></path>
+                            </svg>
+                            DisplayType
+                        </a>
+                    </li>
+                    <li id="HeaderLoginButtonId">
+                        <ahref="#" id="dropdown09" class="nav-link text-white" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"></path>
+
+                            </svg>
+                            Login
+                            
+                    </ahref="#"></li>
+                    <li id="HeaderUserIdLi" class="visually-hidden">
+                        <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-white dropdown-toggle">
+                            <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                            </svg>
+                            UserName
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="HeaderUserIdDropDown">
+                            <li><a class="dropdown-item" href="#" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                                    <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
+                                    logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+
+            <nav class="mb-1 mt-2" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../../UserData/Dashboard.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="../Dashboard.html">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Columns</li>
+        <li class="breadcrumb-item active" aria-current="page">ColumnData</li>
+
+    </ol>
+</nav>
+
+            <!-- Breadcrumb end -->
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded  mb-3" aria-label="Twelfth navbar example">
+    <div class="container-fluid">
+        <button class="navbar-toggler mb-2 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>Filters
+        </button>
+        <div id="navbarsExample10" class="collapse navbar-collapse justify-content-md-center">
+            <div id="KDataListNavBar">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="FolderList" name="FolderName" id="FolderSelected" placeholder="Select Folder" autocomplete="off">
+                            <datalist id="FolderList"> </datalist>
+
+                            <button class="btn btn-outline-secondary" type="button" onclick="jVarGlobalClientObject.DataApi.Files.PullData()" id="button-addon2">Go</button>
+                        </div>
+                    </li>
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="FileList" name="FileName" id="FileSelected" placeholder="Select File" autocomplete="off">
+                            <datalist id="FileList"> </datalist>
+                            <button class="btn btn-outline-secondary" type="button" onclick="jVarGlobalClientObject.DataApi.Items.ForDataList(event)" id="button-addon2">Go</button>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="ItemList" name="ItemName" id="ItemSelected" placeholder="Select Item" autocomplete="off">
+                            <datalist id="ItemList"> </datalist>
+                            <button class="btn btn-outline-secondary" type="button" onclick="jVarGlobalClientObject.DataApi.Screens.ForDataList()" id="button-addon2">Go</button>
+                        </div>
+                    </li>
+
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="ScreenList" name="ScreenName" id="ScreenSelected" placeholder="Select Screen" autocomplete="off">
+                            <datalist id="ScreenList">
+
+                            </datalist>
+                            <button class="btn btn-outline-secondary" type="button" onclick="jVarGlobalClientObject.DataApi.Columns.ForDataList()" id="button-addon2">Go</button>
+                        </div>
+                    </li>
+
+                    <li class="nav-item me-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="ColumnsList" name="ColumnName" id="ColumnSelected" placeholder="Select Column" autocomplete="off">
+                            <datalist id="ColumnsList">
+                            </datalist>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+        </div>
+        <!--new accordoin-->
+        <div class="container">
+            <div class="col-auto">
+                <div class="card border-success" data-EndPoint="ColumnData" data-KQueryObject="{{inItemName.{{inScreenName.TableColumns[DataAttribute:inColumnName">
+                    <div class="card-body">
+                        <div class="mb-2 row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">DisplayName</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="DisplayName" id="DisplayName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">DataAttribute</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="DataAttribute" id="DataAttribute">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="IsSelect" id="IsSelect">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">IsSelect</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="CreateNew" id="CreateNew">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">CreateNew</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="Insert" id="Insert">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Insert</label>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="ShowInTable" id="ShowInTable">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">ShowInTable</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="ShowTotal" id="ShowTotal">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">ShowTotal</label>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="SaveOnEnter" id="SaveOnEnter">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">SaveOnEnter</label>
+                                </div>
+                            </div>
+
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="EnterToServer" id="EnterToServer">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">EnterToServer</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-2 row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">DefaultValue</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input class="form-control" name="DefaultValue" id="ColumnDataDefaultValue" autocomplete="off" list="ColumnDataDefaultValueDataList">
+                                            <datalist id="ColumnDataDefaultValueDataList">
+                                                <option value=""></option>
+                                                <option value="Object"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">TextAlign</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group md-3">
+                                            <input class="form-control" name="TextAlign" id="ColumnDataTextAlign" autocomplete="off" list="ColumnDataTextAlignList">
+                                            <datalist id="ColumnDataTextAlignList">
+                                                <option value="Right"></option>
+                                                <option value="Left"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mb-2 row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">Name</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <input class="form-control" name="Name" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <label class="col col-form-label">TransformType</label>
+                                    <div class="col-md-8">
+                                        <div class="form-group md-3">
+                                            <input class="form-control" name="TransformType" autocomplete="off" list="TransformTypeList">
+                                            <datalist id="TransformTypeList">
+                                                <option value="ObjectToArrayGroupBy"></option>
+                                                <option value="ObjectCount"></option>
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row justify-content-center">
+                            <div class="col-3">
+                                <div class="form-check  form-switch">
+                                    <input class="form-check-input" type="checkbox" name="TransformTF">
+                                    <label class="form-check-label">TransformTF</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn  btn-outline-primary me-5" onclick="jFshow(event)">
+                            <i class="bi bi-caret-right-square-fill" style="font-size: 1rem;"></i>
+                        </button>
+
+                        <button id="ColumnDataUpdateId" disabled="" class="btn btn-success " style="float:right;" type="button" onclick="jFupdate(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"></path>
+                            </svg></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+    <div class="container">
+        <div class="bg-light d-flex justify-content-between">
+            <div>KeshavSoft</div>
+
+            <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- LOGIN  STARTED -->
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                        <div class="mb-3 form-floating is-valid">
+                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                            <label for="KUserNameInput">User Name</label>
+                            <div class="invalid-feedback">
+                                User Name cannot be empty.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                            <label for="KPasswordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password cannot be empty.
+                            </div>
+                        </div>
+                        <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
+                        <!-- <button type="button" class="btn btn-primary"
+                        onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
+                         -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN FINISHED -->
+
+    <!-- <script src="/ClassesStatic/CommonClass.js"></script> -->
+    <script src="/ClassesStatic/CommonClass.js"></script>
+<script src="/js/Admin/HeadFocus.js"></script>
+
+<script>
+    let SingleValue = ({ inDataList, inSearchValue }) => {
+        let i = 0;
+
+        for (i = 0; i < inDataList.options.length; i++) {
+            if (inDataList.options[i].value === inSearchValue) {
+                return true;
+            };
+        };
+
+        return false;
+    };
+
+    let jFPrepareObject = () => {
+        let jVarReturnObject = {
+            FolderName: document.getElementById("FolderSelected").value,
+            FileName: document.getElementById("FileSelected").value,
+            ItemName: document.getElementById("ItemSelected").value,
+            ScreenName: document.getElementById("ScreenSelected").value,
+            ColumnName: document.getElementById("ColumnSelected").value
+        };
+
+        return jVarReturnObject;
+    };
+
+    let jFPrepareQueryString = ({ inMenuObject }) => {
+        let jVarLocalQueryStringToReturn = "";
+
+        Object.entries(inMenuObject).forEach(
+            ([key, value]) => {
+                if (jVarLocalQueryStringToReturn.length === 0) {
+                    jVarLocalQueryStringToReturn = `${key}=${value}`
+                } else {
+                    jVarLocalQueryStringToReturn += `&${key}=${value}`
+                };
+            }
+        );
+
+        return jVarLocalQueryStringToReturn;
+    };
+
+    let CheckBeforeFetch = () => {
+        let jVarReturnObject = {
+            KTF: false,
+            FolderName: document.getElementById("FolderSelected").value,
+            FileName: document.getElementById("FileSelected").value,
+            ItemName: document.getElementById("ItemSelected").value,
+            ScreenName: document.getElementById("ScreenSelected").value,
+            ColumnName: document.getElementById("ColumnSelected").value
+        };
+
+        if (SingleValue({ inDataList: document.getElementById("ItemSelected").list, inSearchValue: jVarReturnObject.ItemName })) {
+            if (SingleValue({ inDataList: document.getElementById("ScreenSelected").list, inSearchValue: jVarReturnObject.ScreenName })) {
+                if (SingleValue({ inDataList: document.getElementById("ColumnSelected").list, inSearchValue: jVarReturnObject.ColumnName })) {
+                    jVarReturnObject.KTF = true;
+                } else {
+                    document.getElementById("ColumnSelected").focus();
+                    document.getElementById("ColumnSelected").classList.add("is-invalid");
+                };
+            } else {
+                document.getElementById("ScreenSelected").focus();
+                document.getElementById("ScreenSelected").classList.add("is-invalid");
+            };
+        } else {
+            document.getElementById("ItemSelected").focus();
+            document.getElementById("ItemSelected").classList.add("is-invalid");
+        };
+
+        return jVarReturnObject;
+    };
+    let jFMenuClick = {
+        KDataset: () => {
+            let jVarLocalNavObject = jFPrepareObject();
+            let jVarLocalQueryString = jFPrepareQueryString({ inMenuObject: jVarLocalNavObject });
+
+            window.location.href = `KDataset.html?${jVarLocalQueryString}`;
+        },
+        ItemClick: (inEvent) => {
+            let jVarLocalCurrentTarget = inEvent.currentTarget;
+            let jVarLocalHtmlName = jVarLocalCurrentTarget.innerText;
+            let jVarLocalNavObject = jFPrepareObject();
+            let jVarLocalQueryString = jFPrepareQueryString({ inMenuObject: jVarLocalNavObject });
+
+            window.location.href = `${jVarLocalHtmlName}.html?${jVarLocalQueryString}`;
+
+            console.log(" jVarLocalCurrentTarget : ", jVarLocalCurrentTarget.innerText);
+            // let jVarLocalNavObject = jFPrepareObject();
+            // let jVarLocalQueryString = jFPrepareQueryString({ inMenuObject: jVarLocalNavObject });
+
+            // window.location.href = `KDataset.html?${jVarLocalQueryString}`;
+
+        }
+    };
+
+    jVarGlobalClientObject.Login.ClientSideCookieFuncs.CheckToken();
+
+    jVarGlobalClientObject.DataApi.Folders.PullData();
+    let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
+    jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function (event) {
+        let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
+        jVarLocalSubmitButton.focus();
+
+    });
+</script>
+
+<script>
+    let jFShowPullUrl = ({ inUrlObject }) => {
+        let jVarLocalFolderName = inUrlObject.FolderName;
+        let jVarLocalFileName = inUrlObject.FileName;
+        let jVarLocalItemName = inUrlObject.ItemName;
+        let jVarLocalScreenName = inUrlObject.ScreenName;
+        let jVarLocalColumnName = inUrlObject.ColumnName;
+
+        let jVarLocalRoute = this.Config.RouteStart.Start;
+        let jVarLocalAdminSubRoute = this.Config.RouteStart.AdminSubRoute;
+        let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Config/TableColumns/ShowData?inFolderName=${jVarLocalFolderName}&inJsonFileName=${jVarLocalFileName}&inItemName=${jVarLocalItemName}&inScreenName=${jVarLocalScreenName}&inColumnName=${jVarLocalColumnName}`;
+
+        return jVarLocalFetchUrl;
+    };
+    let jFShowPushUrl = ({ inUrlObject }) => {
+        let jVarLocalFolderName = inUrlObject.FolderName;
+        let jVarLocalFileName = inUrlObject.FileName;
+        let jVarLocalItemName = inUrlObject.ItemName;
+        let jVarLocalScreenName = inUrlObject.ScreenName;
+        let jVarLocalColumnName = inUrlObject.ColumnName;
+
+        let jVarLocalRoute = this.Config.RouteStart.Start;
+        let jVarLocalAdminSubRoute = this.Config.RouteStart.AdminSubRoute;
+        let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Config/TableColumns/Update?inFolderName=${jVarLocalFolderName}&inJsonFileName=${jVarLocalFileName}&inItemName=${jVarLocalItemName}&inScreenName=${jVarLocalScreenName}&inColumnName=${jVarLocalColumnName}`;
+
+        return jVarLocalFetchUrl;
+    };
+
+    let ForShowData = ({ inUrlObject }) => {
+        let jVarLocalFolderName = inUrlObject.FolderName;
+        let jVarLocalFileName = inUrlObject.FileName;
+        let jVarLocalItemName = inUrlObject.ItemName;
+        let jVarLocalScreenName = inUrlObject.ScreenName;
+        let jVarLocalColumnName = inUrlObject.ColumnName;
+
+        //let jVarLocalRoute = this.Config.RouteStart.Start;
+
+        let jVarLocalRoute = window.location.pathname.split("/")[1];
+
+        //let jVarLocalAdminSubRoute = this.Config.RouteStart.AdminSubRoute;
+        let jVarLocalAdminSubRoute = "AdminApi";
+
+        console.log("jVarLocalRoute : ", jVarLocalRoute);
+        let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Config/TableColumns/ShowData?inFolderName=${jVarLocalFolderName}&inJsonFileName=${jVarLocalFileName}&inItemName=${jVarLocalItemName}&inScreenName=${jVarLocalScreenName}&inColumnName=${jVarLocalColumnName}`;
+
+        return jVarLocalFetchUrl;
+    };
+
+    let jFshow = (injVarThis) => {
+        let jVarLocalHtmlCard = injVarThis.currentTarget.closest(".card");
+        let jVarLocalHtmlFormControl = jVarLocalHtmlCard.querySelector(".card-body");
+        let jVarLocalEndPoint = jVarLocalHtmlCard.dataset.kqueryobject;
+
+        //let jVarLocalUrlObject = CheckBeforeFetch({ inHtmlParentControl: document.getElementById("KDataListNavBar") });
+        let jVarLocalUrlObject = jFPrepareObject();
+
+        // if (jVarLocalUrlObject.KTF) {
+
+        // };
+
+        let jVarLocalFetchUrl = ForShowData({ inUrlObject: jVarLocalUrlObject });
+
+        fetch(`${jVarLocalFetchUrl}&inKQueryObject=${jVarLocalEndPoint}`)
+            .then(response => response.json())
+            .then(dataFromApi => {
+                //this.AdminApi.Config.TableColumns.ShowData.CommonFuncs.ShowOnScreen({ injVarData: dataFromApi, inJVarHtmlControl: jVarLocalHtmlFormControl });
+                //this.AdminApi.Config.TableColumns.ShowData.CommonFuncs.ChangeClasses({ inJVarHtmlCard: jVarLocalHtmlCard });
+                //         this.AdminApi.Config.TableColumns.ShowData.CommonFuncs.DefaultFocus({ inJVarHtmlControl: jVarLocalHtmlFormControl });
+
+                jVarGlobalClientObject.AdminApi.CommonFuncs.ShowOnScreenFuncs.ShowOnScreen({ injVarData: dataFromApi, inJVarHtmlControl: jVarLocalHtmlFormControl });
+                jVarGlobalClientObject.AdminApi.CommonFuncs.ChangeClassesFuncs.ShowData({ inJVarHtmlCard: jVarLocalHtmlCard });
+                jVarGlobalClientObject.AdminApi.CommonFuncs.DefaultFocus({ inJVarHtmlControl: jVarLocalHtmlFormControl });
+            });
+
+    };
+
+    let jFupdate = (injVarThis) => {
+        let jVarLocalHtmlCard = injVarThis.currentTarget.closest(".card");
+        let jVarLocalHtmlFormControl = jVarLocalHtmlCard.querySelector(".card-body");
+        let jVarLocalEndPoint = jVarLocalHtmlCard.dataset.kqueryobject;
+
+        let jVarLocalUrlObject = jVarGlobalClientObject.AdminApi.Config.TableColumns.Update.CommonFuncs.CheckBeforeFetch();
+        let jVarLocalFetchUrl = jVarGlobalClientObject.AdminApi.Config.TableColumns.Update.CommonFuncs.PrepareUrl.ForUpdate({ inUrlObject: jVarLocalUrlObject });;
+        let jVarLocalFetchBodydata = jVarGlobalClientObject.AdminApi.Config.CommonFuncs.PreparePostData.ForUpdateTakeInput({ inJVarHtmlControl: jVarLocalHtmlFormControl });
+
+        fetch(`${jVarLocalFetchUrl}&inKQueryObject=${jVarLocalEndPoint}`, {
+            method: "post",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jVarLocalFetchBodydata)
+        })
+            .then(response => response.text())
+            .then(dataFromApi => {
+                let jVarLocalData = JSON.parse(dataFromApi);
+
+                if (jVarLocalData.KTF) {
+                    //this.AdminApi.Config.TableColumns.Update.CommonFuncs.ChangeClasses({ inJVarLocalHtmlCard: jVarLocalHtmlCard });
+                    jVarGlobalClientObject.AdminApi.CommonFuncs.ChangeClassesFuncs.Update({ inJVarLocalHtmlCard: jVarLocalHtmlCard });
+
+                    jVarGlobalClientObject.ModalPopUp.StartFunc({ inType: "AdminPostUpdate" });
+                }
+            });
+    }
+
+    let jFFillNavMenuWithValues = () => {
+        let jVarCommonUrlSearch = decodeURI(document.location.search).split("?");
+        let jVarCommonUrlSearchArray = jVarCommonUrlSearch[1].split("&");
+        let jVarLocalHtmlParentControl = document.getElementById("KDataListNavBar");
+        let jVarLocalHtmlInputs = jVarLocalHtmlParentControl.querySelectorAll("input[list]");
+        let jVarCommonSearchToObject = {};
+        let jVarLoopSplit;
+
+        jVarCommonUrlSearchArray.forEach(element => {
+            jVarLoopSplit = element.split("=");
+            jVarCommonSearchToObject[jVarLoopSplit[0]] = jVarLoopSplit[1];
+        });
+
+        jVarLocalHtmlInputs.forEach((LoopItem) => {
+            if (LoopItem.name in jVarCommonSearchToObject) {
+                LoopItem.value = jVarCommonSearchToObject[LoopItem.name];
+            };
+        });
+    };
+
+    jFFillNavMenuWithValues();
+</script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+</body>
+
+</html>

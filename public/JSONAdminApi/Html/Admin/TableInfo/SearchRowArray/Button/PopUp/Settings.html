@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Search</title>
+    <!-- Custom styles for this template -->
+    <!-- <link href="../../../../../../css/headers.css" rel="stylesheet"> -->
+
+    <link href="/JSONProject/css/headers.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+
+
+    </svg>
+
+    <nav id="NavBarId" class="navbar navbar-expand-md navbar-dark bg-dark d-print-none" aria-label="KeshavSoft">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">KeshavSoft</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuNavItems" aria-controls="MenuNavItems" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="MenuNavItems">
+            <ul class="navbar-nav me-auto" id="MenuNavContainerId">
+                <li>
+                    <a href="../../../../../Admin/Dashboard.html" class="nav-link DashboardAClass text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-speedometer d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"></path>
+                            <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"></path>
+                        </svg>
+                        Admin Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="../Menu.html" class="nav-link DashboardAClass text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-up-left d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M7.364 3.5a.5.5 0 0 1 .5-.5H14.5A1.5 1.5 0 0 1 16 4.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 14.5V7.864a.5.5 0 1 1 1 0V14.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H7.864a.5.5 0 0 1-.5-.5z"></path>
+                            <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 0 1H1.707l8.147 8.146a.5.5 0 0 1-.708.708L1 1.707V5.5a.5.5 0 0 1-1 0v-5z"></path>
+                        </svg>
+                        Button
+                    </a>
+                </li>
+                <li>
+                    <a id="Enable" href="./Enable.html" class="nav-link DashboardAClass text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-toggle-on mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"></path>
+                          </svg>
+                        Enable
+                    </a>
+                </li>
+                <li>
+                    <a id="Settings" href="./Settings.html" class="nav-link DashboardAClass text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-gear mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"></path>
+                            <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"></path>
+                          </svg>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li id="HeaderLoginButtonId">
+                    <a href="#" class="nav-link text-white" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-x d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                            <path fill-rule="evenodd" d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"></path>
+                          </svg>
+                        Login
+                    </a>
+                </li>
+                <li id="HeaderUserIdLi" class="visually-hidden nav-item dropdown">
+                    <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-white dropdown-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-person d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"></path>
+                            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                          </svg>
+                        UserName
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="HeaderUserIdDropDown">
+                        <li><a class="dropdown-item" href="#" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                                <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
+                                logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container">
+        <nav class="mb-1 mt-2" aria-label="breadcrumb">
+            <ol class="breadcrumb" id="KBreadcrumb">
+                <li class="breadcrumb-item"><a href="../../../../UserData/Dashboard.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../../../Dashboard.html">Admin</a></li>
+<li class="breadcrumb-item"><a href="../../TableRowOptions.html">TableInfo</a></li>
+<li class="breadcrumb-item"><a href="../Menu.html">SerchRowArray</a></li>
+<li class="breadcrumb-item"><a href="../Menu.html">Button</a></li>
+
+<li class="breadcrumb-item active" aria-current="page">PopUp</li>
+                <li class="breadcrumb-item active" aria-current="page">Settings</li>
+            </ol>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-3" aria-label="Twelfth navbar example">
+    <div class="container-fluid">
+        <button class="navbar-toggler mb-2 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>Filters
+        </button>
+        <div id="navbarsExample10" class="collapse navbar-collapse justify-content-md-center">
+            <div id="KDataListNavBar">
+                <ul class="navbar-nav">
+                    <li class="nav-item d-none">
+                        <label class="nav-link active">Folder</label>
+                    </li>
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="FolderList" name="FolderName" id="FolderSelected" placeholder="Select Folder" autocomplete="off">
+                            <datalist id="FolderList"> </datalist>
+
+                            <button class="btn btn-outline-secondary" type="button" onclick="GlobalSelectionsObject.jFPullFilesAsArray(event.currentTarget)" id="button-addon2">Go</button>
+                        </div>
+                    </li>
+                    <li class="nav-item d-none">
+                        <label class="nav-link active">File</label>
+                    </li>
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="FileList" name="FileName" id="FileSelected" placeholder="Select File" autocomplete="off">
+                            <datalist id="FileList"> </datalist>
+                            <button class="btn btn-outline-secondary" type="button" onclick="GlobalSelectionsObject.jFPullItemsAsArray(event.currentTarget)" id="button-addon2">Go</button>
+
+                        </div>
+                    </li>
+                    <li class="nav-item d-none">
+                        <label class="nav-link active">Item</label>
+                    </li>
+                    <li class="nav-item me-2 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="ItemList" name="ItemName" id="ItemSelected" placeholder="Select Item" autocomplete="off">
+                            <datalist id="ItemList"> </datalist>
+                            <button class="btn btn-outline-secondary" type="button" onclick="GlobalSelectionsObject.jFPullScreensAsArray(event.currentTarget)" id="button-addon2">Go</button>
+                        </div>
+                    </li>
+                    <li class="nav-item d-none">
+                        <label class="nav-link active">Screen</label>
+                    </li>
+                    <li class="nav-item me-3 ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" list="ScreenList" name="ScreenName" id="ScreenSelected" placeholder="Select Screen" autocomplete="off">
+                            <datalist id="ScreenList">
+
+                            </datalist>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+        <div class="row justify-content-center">
+            <div class="col col-sm-7">
+
+                <div class="card border-success mb-3">
+                    <div id="DefaultBodyId" class="card-body">
+                        <div class="col">
+                            <div class="form-check  form-switch">
+                                <input class="form-check-input" type="checkbox" name="SvgPlus" id="SvgPlus" checked="">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">SvgPlus</label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-check  form-switch">
+                                <input class="form-check-input" type="checkbox" name="SvgPlusLarge" id="SvgPlusLarge" checked="">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">SvgPlusLarge</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check  form-switch">
+                                <input class="form-check-input" type="checkbox" name="Table" id="Table" checked="">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Table</label>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col col-form-label">ColClass</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="ColClass" id="ColClass" list="ColClassDataList">
+                                <datalist id="ColClassDataList">
+                                    <option>md-1 col-sm-4 col-12</option>
+                                    <option>md-1 col-sm-6 col-12</option>
+                                    <option>md-1 col-sm-12 col-12</option>
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center ">
+                        <button class="btn btn-outline-primary" style="float:left;" onclick="jFShowData(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z">
+                                </path>
+                                <path d="M5.795 12.456A.5.5 0 0 1 5.5 12V4a.5.5 0 0 1 .832-.374l4.5 4a.5.5 0 0 1 0 .748l-4.5 4a.5.5 0 0 1-.537.082z">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <button class="btn btn-outline-success" style="float:right;" onclick="jFUpdateData(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+        <div class="container">
+            <div class="bg-light d-flex justify-content-between">
+                <div>KeshavSoft</div>
+                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                        <div class="mb-3 form-floating is-valid">
+                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                            <label for="KUserNameInput">User Name</label>
+                            <div class="invalid-feedback">
+                                User Name cannot be empty.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                            <label for="KPasswordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password cannot be empty.
+                            </div>
+                        </div>
+                        <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
+                        <!-- <button type="button" class="btn btn-primary"
+                    onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
+                     -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <include src="./src/components/Templates/Admin/TableInfo/SearchRowArray/Button/Footer/Scripts.html"></include>
+    -->
+    <script src="/ClassesStatic/CommonClass.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+<div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="LoginFormPopUpId22" class="" onsubmit="return false" novalidate="">
+                    <div class="mb-3 form-floating is-valid">
+                        <input type="text" class="form-control" id="KUserNameInput" required="">
+                        <label for="KUserNameInput">User Name</label>
+                        <div class="invalid-feedback">
+                            User Name cannot be empty.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" class="form-control" id="KPasswordInput" required="">
+                        <label for="KPasswordInput">Password</label>
+                        <div class="invalid-feedback">
+                            Password cannot be empty.
+                        </div>
+                    </div>
+                    <input type="submit" class=" btn btn-primary" onclick="GlobalFuncsForLogin.Login.LoginCheck()">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    class GlobalClassForLogin {
+        constructor({ inProjectName }) {
+            this.Config = {
+                RouteStart: {
+                    Start: "JSONProject",
+                    SubRoute: "API",
+                    HtmlPath: "",
+                    UserCheckRoute: "JSONUser",
+                    AdminSubRoute: "AdminApi",
+                },
+                Modal: {
+                    Id: "LoginModalId"
+                },
+                Public: {
+                    ProjectName: ""
+                },
+                Customize: {
+                    ModalPopUp: {
+                        Show: true,
+                        Type: "SweetAlert"
+                    }
+                },
+                ClientSide: {
+                    UrlForIp_Old: "https://api.ipify.org/",
+                    UrlForIp: "http://httpbin.org/ip",
+                }
+            };
+
+            if (inProjectName === undefined) {
+                this.Config.Public.ProjectName = this.Config.RouteStart.Start
+            } else {
+                this.Config.RouteStart.Start = inProjectName;
+                this.Config.Public.ProjectName = inProjectName;
+            };
+        };
+
+        Login = {
+            LocalStorage: {
+                FirmDetails: ({ inUserName, inFirmDetails }) => {
+                    localStorage.setItem("kUserName", inUserName);
+                    localStorage.setItem("FirmDetails", JSON.stringify(inFirmDetails));
+                }
+            },
+            LoginCheck: async () => {
+                let jVarLocalObject = {};
+                let jVarReturnData;
+
+                jVarLocalObject.UserName = document.getElementById("KUserNameInput").value;
+                jVarLocalObject.Password = document.getElementById("KPasswordInput").value;
+
+                if (jVarLocalObject.UserName !== "" && jVarLocalObject.Password !== "") {
+                    jVarReturnData = await this.Login.CheckUserNamePassword({ inUserName: jVarLocalObject.UserName, inPassword: jVarLocalObject.Password });
+
+                    if (jVarReturnData.KTF) {
+                        //  jVarGlobalClientObject.DataApi.Folders.PullData();
+                    };
+                };
+            },
+            CheckUserNamePassword: async ({ inUserName, inPassword }) => {
+                let jVarLocalUserCheckRoute = this.Config.RouteStart.UserCheckRoute;
+                //              let jVarLocalFetchUrl = `/${jVarLocalUserCheckRoute}/LoginCheck/${inUserName}/${inPassword}`;
+                let jVarLocalFetchUrl = `/${jVarLocalUserCheckRoute}/Validate/Users/InUserDataJson/ForUserNameAndPassword/TokenToCookie`;
+
+                //                let jVarLocalLoginUrl = "/JSONUser/Validate/Users/InUserDataJson/ForUserNameAndPassword/TokenToCookie";
+
+                let response = await fetch(jVarLocalFetchUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ inUserName, inPassWord: inPassword })
+                });
+                let FetchDataJson = await response.json();
+
+                if (FetchDataJson !== null) {
+                    if (FetchDataJson.KTF) {
+                        var myModalEl = document.getElementById('LoginModalId');
+
+                        var modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
+
+                        modal.hide();
+
+                        this.Login.LocalStorage.FirmDetails({ inUserName, inFirmDetails: FetchDataJson });
+                        this.Login.ClientSideCookieFuncs.CheckToken();
+                        return await FetchDataJson;
+                    } else {
+                        document.getElementById("KUserNameInput").classList.add("is-invalid");
+                    };
+                };
+            },
+            StatusCodeFuncs: {
+                Html: {
+                    Code404: ({ inResponse }) => {
+                        if (inResponse.status === 404) {
+                            jVarGlobalAdmin.HTMLPrepare.jFBS4Alerts.AppendtoKCont1.dangerClosable({ inJVarDataToDisplay: `Html File not Found ${inResponse.url}` });
+                            return null;
+
+                        };
+
+
+                        return inResponse.text();
+                    }
+                },
+                Code403: ({ inResponse }) => {
+                    if (inResponse.status === 403) {
+                        let jVarLocalLoginFormPopUpId = document.getElementById("LoginFormPopUpId");
+
+                        if (jVarLocalLoginFormPopUpId !== null) {
+                            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), { keyboard: false, focus: true });
+                            myModal.show();
+                        };
+                        return null;
+                    };
+
+                    return inResponse.json();
+                }
+            },
+            ShowLoginDetailsOnDOM: {
+                InHeader: () => {
+                    let LocalUserName = localStorage.getItem("kUserName");
+                    let jVarLocalHeaderLoginButtonId = document.getElementById("HeaderLoginButtonId");
+
+                    if (jVarLocalHeaderLoginButtonId !== null) {
+                        jVarLocalHeaderLoginButtonId.classList.add("visually-hidden");
+                        document.getElementById("HeaderUserIdLi").classList.remove("visually-hidden");
+
+                        if (LocalUserName !== null) {
+                            document.getElementById("HeaderUserIdDropDown").innerHTML =
+                                document.getElementById("HeaderUserIdDropDown").innerHTML.replace("UserName", LocalUserName);
+
+                            document.getElementById('NavBarId').classList.remove("bg-danger");
+                            document.getElementById('NavBarId').classList.add("bg-dark");
+                        };
+                    };
+                }
+            },
+            ClientSideCookieFuncs: {
+                getCookie: (name) => {
+                    var nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                    }
+                    return null;
+                },
+                CheckToken: () => {
+                    let jVarLocalCookieValue;
+                    jVarLocalCookieValue = this.Login.ClientSideCookieFuncs.getCookie("KToken");
+                    if (jVarLocalCookieValue === null) {
+                        this.UI.ModalFuncs.Show();
+                    } else {
+                        this.Login.ShowLoginDetailsOnDOM.InHeader();
+                    };
+                },
+                DeleteCookie: () => {
+                    document.cookie = "KToken=; expires=Thu, 01 Jan 1947 00:00:00 UTC; path=/;";
+                }
+            }
+        };
+    };
+
+    GlobalFuncsForLogin = new GlobalClassForLogin({});
+
+    let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
+    jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function (event) {
+        let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
+        jVarLocalSubmitButton.focus();
+    });
+
+</script>
+
+<script>
+    let GlobalSelectionsObject = {
+        jFPullFoldersAsArray: async () => {
+            let jVarLocalRoute = "JSONProject";
+            let jVarLocalSubRoute = "Api";
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Data/FromFolder/GetDirs/AsArray`;
+            let jVarLocalFolderList = document.getElementById("FolderList");
+
+            let ReponseData = await fetch(jVarLocalFetchUrl, {
+                method: "GET",
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            let PromiseData = await ReponseData.json();
+
+            if (jVarLocalFolderList !== null) {
+                let jVarLocaldatalistOption;
+
+                if (Array.isArray(PromiseData)) {
+                    PromiseData.forEach((item, index) => {
+                        jVarLocaldatalistOption = document.createElement("option");
+                        jVarLocaldatalistOption.setAttribute("value", item);
+                        jVarLocalFolderList.appendChild(jVarLocaldatalistOption);
+                    });
+                };
+            };
+        },
+        jFPullFilesAsArray: async (inCurrentTarget) => {
+            let jVarClosestInputGroup = inCurrentTarget.closest(".input-group");
+            let jVarLocalHtmlFolder = jVarClosestInputGroup.querySelector("input[name='FolderName']");
+
+            let jVarLocalFolderName = jVarLocalHtmlFolder.value;
+            let jVarLocalRoute = "JSONProject";
+            let jVarLocalSubRoute = "Api";
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Data/FromFolder/FromFile/GetFiles/AsArray`;
+            let jVarLocalFolderList = document.getElementById("FileList");
+
+            let ReponseData = await fetch(jVarLocalFetchUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ inFolderName: jVarLocalFolderName })
+
+            });
+            let PromiseData = await ReponseData.json();
+
+            if (jVarLocalFolderList !== null) {
+                let jVarLocaldatalistOption;
+
+                jVarLocalFolderList.innerHTML = "";
+
+                if (Array.isArray(PromiseData)) {
+                    PromiseData.forEach((item, index) => {
+                        jVarLocaldatalistOption = document.createElement("option");
+                        jVarLocaldatalistOption.setAttribute("value", item);
+                        jVarLocalFolderList.appendChild(jVarLocaldatalistOption);
+                    });
+                };
+            };
+        },
+        jFPullItemsAsArray: async (inCurrentTarget) => {
+            let jVarClosestInputGroup = inCurrentTarget.closest(".navbar-nav");
+            let jVarLocalHtmlFolder = jVarClosestInputGroup.querySelector("input[name='FolderName']");
+            let jVarLocalHtmlFileName = jVarClosestInputGroup.querySelector("input[name='FileName']");
+
+            let jVarLocalFolderName = jVarLocalHtmlFolder.value;
+            let jVarLocalFileName = jVarLocalHtmlFileName.value;
+
+            let jVarLocalRoute = "JSONProject";
+            let jVarLocalSubRoute = "Api";
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Data/FromFolder/FromFile/Items/FromDataFolder/GetData/AsArray`;
+            let jVarLocalFolderList = document.getElementById("ItemList");
+
+            //http://localhost:4116/JsonProject/Api/Data/FromFolder/FromFile/Items/FromDataFolder/GetData/AsArray
+
+            let ReponseData = await fetch(jVarLocalFetchUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    inFolderName: jVarLocalFolderName,
+                    inFileNameWithExtension: jVarLocalFileName
+                })
+
+            });
+            let PromiseData = await ReponseData.json();
+
+            if (PromiseData.KTF) {
+                if (jVarLocalFolderList !== null) {
+                    let jVarLocaldatalistOption;
+
+                    if (Array.isArray(PromiseData.DataFromServer)) {
+                        PromiseData.DataFromServer.forEach((item, index) => {
+                            jVarLocaldatalistOption = document.createElement("option");
+                            jVarLocaldatalistOption.setAttribute("value", item);
+                            jVarLocalFolderList.appendChild(jVarLocaldatalistOption);
+                        });
+                    };
+                };
+            };
+        },
+        jFPullScreensAsArray: async (inCurrentTarget) => {
+            let jVarClosestInputGroup = inCurrentTarget.closest(".navbar-nav");
+            let jVarLocalHtmlFolder = jVarClosestInputGroup.querySelector("input[name='FolderName']");
+            let jVarLocalHtmlFileName = jVarClosestInputGroup.querySelector("input[name='FileName']");
+            let jVarLocalHtmlItemName = jVarClosestInputGroup.querySelector("input[name='ItemName']");
+
+            let jVarLocalFolderName = jVarLocalHtmlFolder.value;
+            let jVarLocalFileName = jVarLocalHtmlFileName.value;
+            let jVarLocalItemName = jVarLocalHtmlItemName.value;
+
+            let jVarLocalRoute = "JSONProject";
+            let jVarLocalSubRoute = "Api";
+
+            //let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Data/FromFolder/FromFile/Items/FromDataFolder/GetData/AsArray`;
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Data/FromFolder/FromFile/ScreensFromDisplayJson/Items/Screens/GetData/AsArray`;
+
+
+            let jVarLocalScreenList = document.getElementById("ScreenList");
+
+            //http://localhost:4116/JsonProject/Api/Data/FromFolder/FromFile/Items/FromDataFolder/GetData/AsArray
+
+            let ReponseData = await fetch(jVarLocalFetchUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    inFolderName: jVarLocalFolderName,
+                    inFileNameWithExtension: jVarLocalFileName,
+                    inItemName: jVarLocalItemName
+                })
+
+            });
+            let PromiseData = await ReponseData.json();
+
+            if (PromiseData.KTF) {
+                if (jVarLocalScreenList !== null) {
+                    let jVarLocaldatalistOption;
+
+                    if (Array.isArray(PromiseData.DataFromServer)) {
+                        PromiseData.DataFromServer.forEach((item, index) => {
+                            jVarLocaldatalistOption = document.createElement("option");
+                            jVarLocaldatalistOption.setAttribute("value", item);
+                            jVarLocalScreenList.appendChild(jVarLocaldatalistOption);
+                        });
+                    };
+                };
+            };
+        }
+    };
+
+    class GlobalAdminFuncsClass {
+        static jFChangeHeaderActiveClass = () => {
+            let jVarLocalPathArray = window.location.pathname.split("/");
+            let jVarLocalHTMLName = jVarLocalPathArray[jVarLocalPathArray.length - 1];
+            this.jFChangeNavAnchorClass({ inClassName: jVarLocalHTMLName.split(".")[0] });
+        }
+
+        static jFChangeNavAnchorClass = ({ inClassName }) => {
+            let jVarLocalNavBarId = document.getElementById("NavBarId");
+            let jVarLocalAnchorNeeded = jVarLocalNavBarId.querySelector(`#${inClassName}`);
+
+            jVarLocalNavBarId.querySelectorAll("main a").forEach(el => {
+                if (el.classList.contains("text-info")) {
+                    el.classList.remove("text-info");
+                };
+                el.classList.add("text-white");
+
+            });
+
+            if (jVarLocalAnchorNeeded !== null) {
+
+                if (jVarLocalAnchorNeeded.classList.contains("text-white")) {
+                    jVarLocalAnchorNeeded.classList.remove("text-white");
+                };
+
+                jVarLocalAnchorNeeded.classList.add("text-info");
+            };
+        };
+
+        static ForBreadCrumb = {
+            AddCurrentHtml: () => {
+                let jVarLocalBreadCrumb=document.getElementById("KBreadcrumb");
+
+                let jVarLocalPathArray = window.location.pathname.split("/");
+                let jVarLocalHTMLName = jVarLocalPathArray[jVarLocalPathArray.length - 1];
+
+                jVarLocalBreadCrumb.insertAdjacentHTML('beforeend', `<li class="breadcrumb-item active" aria-current="page">${jVarLocalHTMLName}</li>`);
+            }
+        }
+
+    };
+
+    class GlobalTableInfoClass {
+        constructor({ inProjectName, inAdminSubRoute }) {
+            this.Config = {
+                RouteStart: {
+                    Start: "JSONProject",
+                    SubRoute: "API",
+                    HtmlPath: "",
+                    UserCheckRoute: "JSONUser",
+                    AdminSubRoute: "AdminApi",
+                },
+                Modal: {
+                    Id: "LoginModalId"
+                },
+                Public: {
+                    ProjectName: ""
+                },
+                Customize: {
+                    ModalPopUp: {
+                        Show: true,
+                        Type: "SweetAlert"
+                    }
+                },
+                ClientSide: {
+                    UrlForIp_Old: "https://api.ipify.org/",
+                    UrlForIp: "http://httpbin.org/ip",
+                }
+            };
+
+            if (inProjectName === undefined) {
+                this.Config.Public.ProjectName = this.Config.RouteStart.Start
+            } else {
+                this.Config.RouteStart.Start = inProjectName;
+                this.Config.Public.ProjectName = inProjectName;
+            };
+
+            if (inAdminSubRoute !== undefined) {
+                this.Config.RouteStart.AdminSubRoute = inAdminSubRoute;
+            };
+
+        };
+
+        FuncsForFetchUpdate = {
+            PrepareObjectFromRow: ({ inJVarLocalRowElements }) => {
+                let jVarLocalFetchBodydata = {};
+                inJVarLocalRowElements.forEach((LoopElement) => {
+                    if (LoopElement.type === "checkbox") {
+                        jVarLocalFetchBodydata[LoopElement.name] = false;
+
+                        if (LoopElement.checked) {
+                            jVarLocalFetchBodydata[LoopElement.name] = true;
+                        };
+                    } else {
+                        jVarLocalFetchBodydata[LoopElement.name] = LoopElement.value;
+                    };
+                });
+
+                return jVarLocalFetchBodydata;
+            }
+        };
+
+        DataListFuncs = {
+            Fill: {
+                Items: {
+                    SingleColumn: ({ inURL }) => {
+                        fetch(inURL)
+                            .then(response => {
+                                if (response.status === 403) {
+                                    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), { keyboard: false });
+                                    myModal.show();
+
+                                    return null;
+                                };
+
+                                return response.json();
+                            })
+                            .then(dataFromApi => {
+                                if (dataFromApi !== null) {
+                                    this.DataListFuncs.SingleValue({ inDataList: document.getElementById("ItemsList"), inData: dataFromApi });
+                                    document.getElementById("ItemSelected").focus();
+                                };
+                            });
+                    },
+                    ValueAndText: ({ inURL }) => {
+                        fetch(inURL)
+                            .then(response => {
+                                if (response.status === 403) {
+                                    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), { keyboard: false });
+                                    myModal.show();
+
+                                    return null;
+                                };
+
+                                return response.json();
+                            })
+                            .then(dataFromApi => {
+                                if (dataFromApi !== null) {
+                                    this.DataListFuncs.SingleValue({ inDataList: document.getElementById("ItemsList"), inData: dataFromApi });
+                                    document.getElementById("ItemSelected").focus();
+                                };
+                            });
+                    }
+                }
+            },
+            SingleValue: ({ inDataList, inData }) => {
+                if (inDataList !== null) {
+                    let jVarLocaldatalistOption;
+
+                    if (Array.isArray(inData)) {
+                        inData.forEach((item, index) => {
+                            jVarLocaldatalistOption = document.createElement("option");
+                            jVarLocaldatalistOption.setAttribute("value", item);
+                            inDataList.appendChild(jVarLocaldatalistOption);
+                        });
+
+                    } else {
+                        // console.log("input is not an Array");
+                    };
+                };
+            },
+            SingleValueEmptyBefore: ({ inDataList, inData }) => {
+                let jVarLocaldatalistOption;
+                inDataList.innerText = "";
+                inData.forEach((item, index) => {
+                    jVarLocaldatalistOption = document.createElement("option");
+                    jVarLocaldatalistOption.setAttribute("value", item);
+                    inDataList.appendChild(jVarLocaldatalistOption);
+                });
+
+            },
+            ValueAndText: ({ inDataList, inData }) => {
+                let jVarLocaldatalistOption;
+                if (Array.isArray(inData)) {
+                    inData.forEach((item, index) => {
+                        jVarLocaldatalistOption = document.createElement("option");
+                        jVarLocaldatalistOption.setAttribute("value", item[0]);
+                        jVarLocaldatalistOption.innerText = item[1];
+                        inDataList.appendChild(jVarLocaldatalistOption);
+                    });
+
+                } else {
+                    // console.log("input is not an Array");
+                };
+            },
+            ValueAndTextEmptyBefore: ({ inDataList, inData }) => {
+                inDataList.innerText = "";
+                this.DataListFuncs.ValueAndText({ inDataList, inData });
+            },
+            SearchFuncs: {
+                SingleValue: ({ inDataList, inSearchValue }) => {
+                    let i = 0;
+
+                    for (i = 0; i < inDataList.options.length; i++) {
+                        if (inDataList.options[i].value === inSearchValue) {
+                            return true;
+                        };
+                    };
+
+                    return false;
+                },
+                CheckInDataList: ({ inHtmlControl }) => {
+                    let jVarLocalHtmlControl = inHtmlControl;
+                    let jVarRetTf = false;
+
+                    if (jVarLocalHtmlControl.value === "") {
+                        jVarLocalHtmlControl.classList.add("is-invalid");
+                        jVarLocalHtmlControl.focus();
+                    } else {
+                        if (this.DataListFuncs.SearchFuncs.SingleValue({ inDataList: jVarLocalHtmlControl.list, inSearchValue: jVarLocalHtmlControl.value })) {
+                            jVarLocalHtmlControl.classList.remove("is-invalid");
+                            jVarLocalHtmlControl.classList.add("is-valid");
+                            jVarRetTf = true;
+                        } else {
+                            jVarLocalHtmlControl.classList.add("is-invalid");
+                            jVarLocalHtmlControl.focus();
+                        }
+                    };
+
+                    return jVarRetTf;
+                }
+            }
+        };
+
+        AdminApi = {
+            CommonFuncs: {
+                CheckBeforeFetch: ({ inHtmlParentControl }) => {
+                    let jVarLocalHtmlInputs = inHtmlParentControl.querySelectorAll("input[list]");
+                    let jVarReturnObject = { KTF: true };
+
+                    jVarLocalHtmlInputs.forEach((LoopItem) => {
+                        if (this.DataListFuncs.SearchFuncs.CheckInDataList({ inHtmlControl: LoopItem })) {
+                            jVarReturnObject[LoopItem.name] = LoopItem.value;
+                        } else {
+                            jVarReturnObject.KTF = false;
+                        }
+                    });
+
+                    return jVarReturnObject;
+                },
+
+                CheckBeforeUpdate: () => {
+                    let jVarReturnObject = { KTF: false, FolderName: "", FileName: "", ItemName: "", ScreenName: "", ColumnName: "" };
+
+                    jVarReturnObject.FolderName = document.getElementById("FolderSelected").value;
+                    jVarReturnObject.FileName = document.getElementById("FileSelected").value;
+                    jVarReturnObject.ItemName = document.getElementById("ItemSelected").value;
+                    jVarReturnObject.ScreenName = document.getElementById("ScreenSelected").value;
+
+                    if (this.DataListFuncs.SearchFuncs.SingleValue({ inDataList: document.getElementById("FolderSelected").list, inSearchValue: jVarReturnObject.FolderName })) {
+                        if (this.DataListFuncs.SearchFuncs.SingleValue({ inDataList: document.getElementById("FileSelected").list, inSearchValue: jVarReturnObject.FileName })) {
+                            if (this.DataListFuncs.SearchFuncs.SingleValue({ inDataList: document.getElementById("ItemSelected").list, inSearchValue: jVarReturnObject.ItemName })) {
+                                if (this.DataListFuncs.SearchFuncs.SingleValue({ inDataList: document.getElementById("ScreenSelected").list, inSearchValue: jVarReturnObject.ScreenName })) {
+                                    jVarReturnObject.KTF = true;
+                                } else {
+                                    document.getElementById("ScreenSelected").focus();
+                                    document.getElementById("ScreenSelected").classList.add("is-invalid");
+                                };
+                            } else {
+                                document.getElementById("ItemSelected").focus();
+                                document.getElementById("ItemSelected").classList.add("is-invalid");
+                            };
+                        } else {
+                            document.getElementById("FileSelected").focus();
+                            document.getElementById("FileSelected").classList.add("is-invalid");
+                        };
+                    } else {
+                        document.getElementById("FolderSelected").focus();
+                        document.getElementById("FolderSelected").classList.add("is-invalid");
+                    };
+
+                    return jVarReturnObject;
+                }
+
+            }
+
+
+        }
+    };
+
+    GlobalAdminFuncsClass.jFChangeHeaderActiveClass();
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+
+    <script>
+        let jVarGlobalPresentViewData;
+        let jVarGlobalHBSData = {};
+
+        let jFShowData = (injVarThis) => {
+            let jVarLocalHtmlCard = injVarThis.currentTarget.closest(".card");
+            let jVarLocalHtmlFormControl = jVarLocalHtmlCard.querySelector(".card-body");
+            let jVarLocalEndPoint = jVarLocalHtmlCard.dataset.kqueryobject;
+
+            let jVarLocalUrlObject = GlobalTableInfoFuncs.AdminApi.CommonFuncs.CheckBeforeFetch({
+                inHtmlParentControl: document.getElementById("KDataListNavBar")
+            });
+            let jVarLocalRoute = GlobalTableInfoFuncs.Config.RouteStart.Start;
+            let jVarLocalAdminSubRoute = GlobalTableInfoFuncs.Config.RouteStart.AdminSubRoute;
+
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Config/TableInfo/SearchRowArray/Button/NewWindow/PullData`;
+
+            let jvarLocalFetchHeaders = {
+                method: "post",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jVarLocalUrlObject)
+            };
+
+            fetch(jVarLocalFetchUrl, jvarLocalFetchHeaders)
+                .then(response => response.json())
+                .then(dataFromApi => {
+                    if (dataFromApi.KTF) {
+                        jFShowOnScreen({
+                            injVarData: dataFromApi.DataFromServer,
+                            inJVarHtmlControl: jVarLocalHtmlFormControl
+                        });
+                    } else {
+
+                    };
+                });
+        };
+
+        let jFShowOnScreen = ({
+            injVarData,
+            inJVarHtmlControl
+        }) => {
+            let jVarLocalKTF = document.getElementById("KTF");
+            let jVarLocalColClass = document.getElementById("ColClass");
+            let jVarLocalSvgPlus = document.getElementById("SvgPlus");
+            let jVarlocalSvgPlusLarge = document.getElementById("SvgPlusLarge");
+            let jVarlocalTable = document.getElementById("Table")
+
+            if (injVarData.KTF) {
+                jVarLocalKTF.checked = true;
+            } else {
+                jVarLocalKTF.checked = false;
+            };
+
+            jVarLocalColClass.value = injVarData.DisplayObject.ColClass;
+
+            if (injVarData.DisplayObject.SvgPlus) {
+                jVarLocalSvgPlus.checked = true;
+            } else {
+                jVarLocalSvgPlus.checked = false;
+            };
+
+            if (injVarData.DisplayObject.SvgPlusLarge) {
+                jVarlocalSvgPlusLarge.checked = true;
+            } else {
+                jVarlocalSvgPlusLarge.checked = false;
+            };
+
+            if (injVarData.DisplayObject.NewWindow) {
+                jVarlocalTable.checked = true;
+            } else {
+                jVarlocalTable.checked = false;
+            };
+        };
+
+        let jFUpdateData = (injVarThis) => {
+            let jVarLocalCurrentTarget = injVarThis.currentTarget;
+
+            let jVarLocalHtmlCard = jVarLocalCurrentTarget.closest(".card");
+            let jVarLocalHtmlFormControl = jVarLocalHtmlCard.querySelector(".card-body");
+            let jVarLocalRowElements = jVarLocalHtmlFormControl.querySelectorAll("input");
+            let jVarLocalRoute = GlobalTableInfoFuncs.Config.RouteStart.Start;
+            let jVarLocalAdminSubRoute = GlobalTableInfoFuncs.Config.RouteStart.AdminSubRoute;
+
+            let jVarLocalUrlObject = GlobalTableInfoFuncs.AdminApi.CommonFuncs.CheckBeforeUpdate();
+            let jVarLocalFetchBodydata = GlobalTableInfoFuncs.FuncsForFetchUpdate.PrepareObjectFromRow({
+                inJVarLocalRowElements: jVarLocalRowElements
+            });
+            let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalAdminSubRoute}/Config/TableInfo/SearchRowArray/Button/Footer/UpdateData`;
+
+            let jvarLocalFetchHeaders = {
+                method: "post",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({...jVarLocalUrlObject,
+                    inDataToUpdate: jVarLocalFetchBodydata
+                })
+            };
+
+            fetch(jVarLocalFetchUrl, jvarLocalFetchHeaders).then(response => response.json())
+                .then(dataFromApi => {
+                    let jVarLocalData = dataFromApi;
+                    if (jVarLocalData.KTF) {}
+                });
+        };
+
+        let GlobalTableInfoFuncs = new GlobalTableInfoClass({});
+        jVarGlobalClientObject.Login.ClientSideCookieFuncs.CheckToken();
+
+        let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
+        jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function(event) {
+            let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
+            jVarLocalSubmitButton.focus();
+
+        });
+        GlobalSelectionsObject.jFPullFoldersAsArray();
+    </script>
+
+</body>
+
+</html>

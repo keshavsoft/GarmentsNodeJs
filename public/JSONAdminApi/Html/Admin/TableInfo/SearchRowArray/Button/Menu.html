@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Search</title>
+    <!-- Custom styles for this template -->
+    
+    <link href="/JSONProject/css/headers.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+
+
+    </svg>
+
+    <header>
+    <div id="NavBarId" class="px-2 py-2 bg-danger text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <h6 class="me-lg-auto">Button</h6>
+                <main>
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="../../../../Dashboard.html" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto " width="20" height="20" viewBox="0 0 16 16">
+                                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+
+                                </svg> Admin
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Label.html" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M7.364 3.5a.5.5 0 0 1 .5-.5H14.5A1.5 1.5 0 0 1 16 4.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 3 14.5V7.864a.5.5 0 1 1 1 0V14.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H7.864a.5.5 0 0 1-.5-.5z"></path>
+                                    <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 0 1H1.707l8.147 8.146a.5.5 0 0 1-.708.708L1 1.707V5.5a.5.5 0 0 1-1 0v-5z"></path>
+                                </svg> Parent
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./Scrollable/Enable.html" class="nav-link text-white">
+                                <svg class="bi d-block mx-auto  " width="20" height="20" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M14.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5zm-13 0a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 1 0v-13a.5.5 0 0 0-.5-.5z"></path>
+                                    <path d="M6 13a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v10z"></path>
+
+                                </svg> Scrollable
+                            </a>
+                        </li>
+                        <li>
+                            <a id="NewWindow" href="./NewWindow/Enable.html" class="nav-link text-white">
+                                <svg class=" bi d-block mx-auto" width="20" height="20" viewBox="0 0 16 16">
+                                    <path d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"></path>
+                                    <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z"></path>
+
+                                </svg> NewWindow
+                            </a>
+                        </li>
+                        <li>
+                            <a id="Footer" href="./Footer/Enable.html" class="nav-link text-info">
+                                <svg class=" bi d-block mx-auto" width="20" height="20" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"></path>
+
+                                </svg> Footer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./PopUp/Enable.html" class="nav-link text-info">
+                                <svg class=" bi d-block mx-auto" width="20" height="20" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"></path>
+
+                                </svg> PopUp
+                            </a>
+                        </li>
+                        <li id="HeaderLoginButtonId">
+                            <a href="#" id="dropdown09" class="nav-link text-white" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"></path>
+
+                                </svg> Login
+                            </a>
+                        </li>
+
+                        <li id="HeaderUserIdLi" class="visually-hidden">
+                            <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-white dropdown-toggle">
+                                <svg class="bi d-block mx-auto mb-1" width="20" height="20" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+
+                                </svg> UserName
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="HeaderUserIdDropDown">
+                                <li><a class="dropdown-item" href="#" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()"> Sign
+                                        out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            </main></div>
+        </div>
+    </div>
+
+</header>
+
+    <div class="container">
+        <nav class="mb-1 mt-2" aria-label="breadcrumb">
+            <ol class="breadcrumb" id="KBreadcrumb">
+                <li class="breadcrumb-item"><a href="../../../../UserData/Dashboard.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../../../Dashboard.html">Admin</a></li>
+<li class="breadcrumb-item"><a href="../../TableRowOptions.html">TableInfo</a></li>
+<li class="breadcrumb-item"><a href="../Menu.html">SerchRowArray</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Button</li>
+            </ol>
+        </nav>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+        <div class="container">
+            <div class="bg-light d-flex justify-content-between">
+                <div>KeshavSoft</div>
+                <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                        <div class="mb-3 form-floating is-valid">
+                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                            <label for="KUserNameInput">User Name</label>
+                            <div class="invalid-feedback">
+                                User Name cannot be empty.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                            <label for="KPasswordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password cannot be empty.
+                            </div>
+                        </div>
+                        <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
+                        <!-- <button type="button" class="btn btn-primary"
+                    onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
+                     -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <include src="./src/components/Templates/Admin/TableInfo/SearchRowArray/Button/Footer/Scripts.html"></include>
+    -->
+    <script src="/ClassesStatic/CommonClass.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="LoginFormPopUpId22" class="" onsubmit="return false" novalidate="">
+                    <div class="mb-3 form-floating is-valid">
+                        <input type="text" class="form-control" id="KUserNameInput" required="">
+                        <label for="KUserNameInput">User Name</label>
+                        <div class="invalid-feedback">
+                            User Name cannot be empty.
+                        </div>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" class="form-control" id="KPasswordInput" required="">
+                        <label for="KPasswordInput">Password</label>
+                        <div class="invalid-feedback">
+                            Password cannot be empty.
+                        </div>
+                    </div>
+                    <input type="submit" class=" btn btn-primary" onclick="GlobalFuncsForLogin.Login.LoginCheck()">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    class GlobalClassForLogin {
+        constructor({ inProjectName }) {
+            this.Config = {
+                RouteStart: {
+                    Start: "JSONProject",
+                    SubRoute: "API",
+                    HtmlPath: "",
+                    UserCheckRoute: "JSONUser",
+                    AdminSubRoute: "AdminApi",
+                },
+                Modal: {
+                    Id: "LoginModalId"
+                },
+                Public: {
+                    ProjectName: ""
+                },
+                Customize: {
+                    ModalPopUp: {
+                        Show: true,
+                        Type: "SweetAlert"
+                    }
+                },
+                ClientSide: {
+                    UrlForIp_Old: "https://api.ipify.org/",
+                    UrlForIp: "http://httpbin.org/ip",
+                }
+            };
+
+            if (inProjectName === undefined) {
+                this.Config.Public.ProjectName = this.Config.RouteStart.Start
+            } else {
+                this.Config.RouteStart.Start = inProjectName;
+                this.Config.Public.ProjectName = inProjectName;
+            };
+        };
+
+        Login = {
+            LocalStorage: {
+                FirmDetails: ({ inUserName, inFirmDetails }) => {
+                    localStorage.setItem("kUserName", inUserName);
+                    localStorage.setItem("FirmDetails", JSON.stringify(inFirmDetails));
+                }
+            },
+            LoginCheck: async () => {
+                let jVarLocalObject = {};
+                let jVarReturnData;
+
+                jVarLocalObject.UserName = document.getElementById("KUserNameInput").value;
+                jVarLocalObject.Password = document.getElementById("KPasswordInput").value;
+
+                if (jVarLocalObject.UserName !== "" && jVarLocalObject.Password !== "") {
+                    jVarReturnData = await this.Login.CheckUserNamePassword({ inUserName: jVarLocalObject.UserName, inPassword: jVarLocalObject.Password });
+
+                    if (jVarReturnData.KTF) {
+                        //  jVarGlobalClientObject.DataApi.Folders.PullData();
+                    };
+                };
+            },
+            CheckUserNamePassword: async ({ inUserName, inPassword }) => {
+                let jVarLocalUserCheckRoute = this.Config.RouteStart.UserCheckRoute;
+                //              let jVarLocalFetchUrl = `/${jVarLocalUserCheckRoute}/LoginCheck/${inUserName}/${inPassword}`;
+                let jVarLocalFetchUrl = `/${jVarLocalUserCheckRoute}/Validate/Users/InUserDataJson/ForUserNameAndPassword/TokenToCookie`;
+
+                //                let jVarLocalLoginUrl = "/JSONUser/Validate/Users/InUserDataJson/ForUserNameAndPassword/TokenToCookie";
+
+                let response = await fetch(jVarLocalFetchUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ inUserName, inPassWord: inPassword })
+                });
+                let FetchDataJson = await response.json();
+
+                if (FetchDataJson !== null) {
+                    if (FetchDataJson.KTF) {
+                        var myModalEl = document.getElementById('LoginModalId');
+
+                        var modal = bootstrap.Modal.getInstance(myModalEl) // Returns a Bootstrap modal instance
+
+                        modal.hide();
+
+                        this.Login.LocalStorage.FirmDetails({ inUserName, inFirmDetails: FetchDataJson });
+                        this.Login.ClientSideCookieFuncs.CheckToken();
+                        return await FetchDataJson;
+                    } else {
+                        document.getElementById("KUserNameInput").classList.add("is-invalid");
+                    };
+                };
+            },
+            StatusCodeFuncs: {
+                Html: {
+                    Code404: ({ inResponse }) => {
+                        if (inResponse.status === 404) {
+                            jVarGlobalAdmin.HTMLPrepare.jFBS4Alerts.AppendtoKCont1.dangerClosable({ inJVarDataToDisplay: `Html File not Found ${inResponse.url}` });
+                            return null;
+
+                        };
+
+
+                        return inResponse.text();
+                    }
+                },
+                Code403: ({ inResponse }) => {
+                    if (inResponse.status === 403) {
+                        let jVarLocalLoginFormPopUpId = document.getElementById("LoginFormPopUpId");
+
+                        if (jVarLocalLoginFormPopUpId !== null) {
+                            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), { keyboard: false, focus: true });
+                            myModal.show();
+                        };
+                        return null;
+                    };
+
+                    return inResponse.json();
+                }
+            },
+            ShowLoginDetailsOnDOM: {
+                InHeader: () => {
+                    let LocalUserName = localStorage.getItem("kUserName");
+                    let jVarLocalHeaderLoginButtonId = document.getElementById("HeaderLoginButtonId");
+
+                    if (jVarLocalHeaderLoginButtonId !== null) {
+                        jVarLocalHeaderLoginButtonId.classList.add("visually-hidden");
+                        document.getElementById("HeaderUserIdLi").classList.remove("visually-hidden");
+
+                        if (LocalUserName !== null) {
+                            document.getElementById("HeaderUserIdDropDown").innerHTML =
+                                document.getElementById("HeaderUserIdDropDown").innerHTML.replace("UserName", LocalUserName);
+
+                            document.getElementById('NavBarId').classList.remove("bg-danger");
+                            document.getElementById('NavBarId').classList.add("bg-dark");
+                        };
+                    };
+                }
+            },
+            ClientSideCookieFuncs: {
+                getCookie: (name) => {
+                    var nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                    }
+                    return null;
+                },
+                CheckToken: () => {
+                    let jVarLocalCookieValue;
+                    jVarLocalCookieValue = this.Login.ClientSideCookieFuncs.getCookie("KToken");
+                    if (jVarLocalCookieValue === null) {
+                        this.UI.ModalFuncs.Show();
+                    } else {
+                        this.Login.ShowLoginDetailsOnDOM.InHeader();
+                    };
+                },
+                DeleteCookie: () => {
+                    document.cookie = "KToken=; expires=Thu, 01 Jan 1947 00:00:00 UTC; path=/;";
+                }
+            }
+        };
+    };
+
+    GlobalFuncsForLogin = new GlobalClassForLogin({});
+
+    let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
+    jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function (event) {
+        let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
+        jVarLocalSubmitButton.focus();
+    });
+
+</script>
+
+    <script>
+        let jVarGlobalPresentViewData;
+        let jVarGlobalHBSData = {};
+
+        jVarGlobalClientObject.Login.ClientSideCookieFuncs.CheckToken();
+
+    </script>
+
+</body>
+
+</html>
