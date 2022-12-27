@@ -1,3 +1,5 @@
+import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
+
 let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
@@ -11,7 +13,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
             }
         };
 
-        inFetchPostData.inPostData = PreparePostData();
+        inFetchPostData.inPostData = PreparePostDataStartFunc();
 
         //let jVarLocalFetchUrl = `/JSONApi/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
         let jVarLocalFetchUrl = "/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/Insert";

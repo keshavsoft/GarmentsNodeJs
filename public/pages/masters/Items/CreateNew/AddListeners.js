@@ -6,7 +6,7 @@ let jFStartFunc = () => {
         PushDataStartFunc({
             inFolderName: "Masters",
             inFileName: "Items",
-            inItemName: "ItemDetails"
+            inItemName: "ItemName"
         });
     });
 };
