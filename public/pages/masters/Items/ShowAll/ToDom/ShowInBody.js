@@ -61,4 +61,5 @@ let ShowOnDomTableHeader = async () => {
         jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
     };
 };
+
 export { StartFunc };
