@@ -4,10 +4,8 @@ let StartFunc = () => {
 
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
-    jVarLocalReturnData.GST = jVarLocalGSTId.value;
-
-
-    console.log("jVarLocalReturnData : ", jVarLocalReturnData);
+    //jVarLocalReturnData.GST = jVarLocalGSTId.value;
+    
     return jVarLocalReturnData;
 };
 

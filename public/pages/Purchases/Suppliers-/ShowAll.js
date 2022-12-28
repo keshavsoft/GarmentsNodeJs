@@ -1,13 +1,13 @@
 import { jFStartFunc as CheckUserFuncsjFStartFunc } from "../../../CommonFuncs/LoginFuncs/CheckUserFuncs.js";
-import { StartFunc as AddListenersStartFunc } from "./CreateNew/AddListeners.js";
+import { StartFunc as ShowAllStartFunc } from "./ShowAll/ToDom/ShowInBody.js";
 
 let jVarCommonKToken = "KToken";
 let jVarLocalStorageKeyName = "kUserName";
 
 let jVarCommonKeys = {
-    inFolderName: "Masters",
-    inFileName: "Items",
-    inItemName: "ItemName"
+    inFolderName: "Purchases",
+    inFileName: "Suppliers",
+    inItemName: "SuppliersName"
 };
 let jVarCommonProjectName = "JSONApi";
 
@@ -17,7 +17,7 @@ let StartFunc = async () => {
         inKTokenKey: jVarCommonKToken
     });
 
-    AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
+    await ShowAllStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 };
 
 StartFunc().then();

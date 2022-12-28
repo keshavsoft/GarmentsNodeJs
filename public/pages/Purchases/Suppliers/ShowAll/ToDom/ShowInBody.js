@@ -1,4 +1,6 @@
 import { FromNode } from "../PullData/FetchFuncs.js";
+import { StartFunc as TableRowStartFunc } from "../FetchFuncs/HtmlPull/TableRow.js";
+import { StartFunc as TableHeadStartFunc } from "../FetchFuncs/HtmlPull/TableHead.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalData = await FromNode({
@@ -9,23 +11,54 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
     });
 
     if (jVarLocalData.KTF) {
-        ShowOnDom({ inData: jVarLocalData.JsonData });
+        await ShowOnDom({ inData: jVarLocalData.JsonData });
     };
 };
 
-let ShowOnDom = ({ inData }) => {
-    let jVarLocalTableBodyId = document.getElementById("TableBodyId");
-    let jVarLocalTemplate = document.getElementById("TemplateForRow");
+let ShowOnDom = async ({ inData }) => {
+    await ShowOnDomTableHeader();
+    await ShowOnDomTableBody({ inData });
+    // let jVarLocalTableBodyId = document.getElementById("TableBodyId");
 
-    var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
-    console.log("inData : ", inData);
-    inData.forEach(element => {
+    // let jVarLocalTemplate = await TableRowStartFunc();
 
-        let jVarLocalToShowHtml = template(element);
+    // if (jVarLocalTemplate.KTF) {
+    //     var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
 
-        jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    });
+    //     inData.forEach(element => {
 
+    //         let jVarLocalToShowHtml = template(element);
+
+    //         jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
+    //     });
+
+    // };
 };
 
+let ShowOnDomTableBody = async ({ inData }) => {
+    let jVarLocalTableBodyId = document.getElementById("TableBodyId");
+    let jVarLocalTemplate = await TableRowStartFunc();
+
+    if (jVarLocalTemplate.KTF) {
+        var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
+
+        inData.forEach(element => {
+
+            let jVarLocalToShowHtml = template(element);
+
+            jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
+        });
+
+    };
+};
+
+let ShowOnDomTableHeader = async () => {
+    let jVarLocalTableHeadId = document.getElementById("TableHeadId");
+
+    let jVarLocalHeadHtml = await TableHeadStartFunc();
+
+    if (jVarLocalHeadHtml.KTF) {
+        jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
+    };
+};
 export { StartFunc };

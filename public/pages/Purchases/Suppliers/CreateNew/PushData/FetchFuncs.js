@@ -1,22 +1,20 @@
 import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
 
-let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
         let inFetchPostData = {
-            inJsonConfig: {
-                inFolderName,
-                inJsonFileName: `${inFileName}.json`
-            }, inItemConfig: {
-                inItemName
-            }
+            inFolderName,
+            inFileNameOnly: inFileName,
+            inItemName,
+            inScreenName: "Create"
         };
 
         inFetchPostData.inPostData = PreparePostDataStartFunc();
 
-        //let jVarLocalFetchUrl = `/JSONApi/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
-        let jVarLocalFetchUrl = "/JSONApi/Api/Data/FromFolder/FromFile/Items/FromDataFolder/Insert";
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/Insert`;
+
         let jVarLocalFetchHeaders = {
             method: "post",
             headers: {
@@ -25,15 +23,11 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName }) => {
             },
             body: JSON.stringify(inFetchPostData)
         };
-console.log("jVarLocalFetchHeaders",jVarLocalFetchHeaders);
+
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-        console.log("data : ", data);
-        // if (data.KTF === false) {
-        //     LocalReturnObject.KReason = data.KReason;
-        //     return await LocalReturnObject;
-        // };
-        // LocalReturnObject.JsonData = data.DataFromServer;
+
+        LocalAfterSaveFunc({ inFetchPostData: data });
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
@@ -44,12 +38,21 @@ console.log("jVarLocalFetchHeaders",jVarLocalFetchHeaders);
 
 };
 
-let PreparePostData = () => {
-    let jVarLocalItemNameId = document.getElementById("ItemNameId");
-
-    return {
-        ItemName: jVarLocalItemNameId.value
+let LocalAfterSaveFunc = ({ inFetchPostData }) => {
+    if (inFetchPostData.KTF) {
+        //argon.showSwal('success-message');
+        window.location = "../ShowAll/ShowAll.html?FromSave=true";
+    } else {
+        if ("KReason" in inFetchPostData) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: inFetchPostData.KReason,
+                footer: '<a href="">Why do I have this issue?</a>'
+            });
+        };
     };
+
 };
 
 export { StartFunc };
