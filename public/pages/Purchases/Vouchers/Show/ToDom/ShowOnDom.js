@@ -1,5 +1,6 @@
 import { FromNode } from "../PullData/FetchFuncs.js";
 import { ReturnRowPK } from "../urlSearchParams.js";
+import { StartFunc as InvGridStartFunc } from "./InvGrid.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalRowPk = ReturnRowPK();
@@ -13,21 +14,23 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
     });
 
     if (jVarLocalData.KTF) {
-        ShowOnDom({ inData: jVarLocalData.JsonData });
+        await ShowOnDom({ inData: jVarLocalData.JsonData });
     };
 };
 
-let ShowOnDom = ({ inData }) => {
-    let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
+let ShowOnDom = async ({ inData }) => {
+    let jVarLocalBillNumberId = document.getElementById("BillNumberId");
     let jVarLocalGSTId = document.getElementById("GSTId");
 
-    if (jVarLocalItemNameId !== null) {
-        jVarLocalItemNameId.innerHTML = inData.ItemName;
+    if (jVarLocalBillNumberId !== null) {
+        jVarLocalBillNumberId.innerHTML = inData.BillNumber;
     };
 
     if (jVarLocalGSTId !== null) {
         jVarLocalGSTId.value = inData.GST;
     };
+
+    await InvGridStartFunc({ inData });
 
     console.log("sssssss : ", inData);
     // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
