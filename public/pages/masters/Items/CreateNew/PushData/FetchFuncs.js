@@ -13,10 +13,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
         inFetchPostData.inPostData = PreparePostDataStartFunc();
 
-        //let jVarLocalFetchUrl = `/JSONApi/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
-        //        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/Insert`;
         let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/Insert`;
-//        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
 
         let jVarLocalFetchHeaders = {
             method: "post",
@@ -31,24 +28,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const data = await response.json();
 
         LocalAfterSaveFunc({ inFetchPostData: data });
-        // if (data.KTF) {
-        //     //argon.showSwal('success-message');
-        //     window.location = "ShowAll.html";
-        // } else {
-        //     if
-        //     console.log("sssss  ", data);
-        //     Swal.fire({
-        //         icon: 'error',
-        //         title: 'Oops...',
-        //         text: 'Something went wrong!',
-        //         footer: '<a href="">Why do I have this issue?</a>'
-        //     })
-        // };
-        // if (data.KTF === false) {
-        //     LocalReturnObject.KReason = data.KReason;
-        //     return await LocalReturnObject;
-        // };
-        // LocalReturnObject.JsonData = data.DataFromServer;
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
@@ -62,7 +41,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 let LocalAfterSaveFunc = ({ inFetchPostData }) => {
     if (inFetchPostData.KTF) {
         //argon.showSwal('success-message');
-        window.location = "ShowAll.html";
+        window.location = "../ShowAll/ShowAll.html?FromSave=true";
     } else {
         if ("KReason" in inFetchPostData) {
             Swal.fire({

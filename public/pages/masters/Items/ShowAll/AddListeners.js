@@ -5,8 +5,8 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalDeleteButtons = document.getElementsByClassName("DeleteButtonClass");
 
     for (var i = 0; i < jVarLocalDeleteButtons.length; i++) {
-        jVarLocalDeleteButtons[i].addEventListener("click", (event) => {
-            DeleteFuncsStartFunc({
+        jVarLocalDeleteButtons[i].addEventListener("click", async (event) => {
+            await DeleteFuncsStartFunc({
                 inFolderName, inFileName, inItemName, inProjectName,
                 inEvent: event
             })

@@ -64,7 +64,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjec
         1
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-        console.log("dddddddddd : ", data);
+        
         if (data.KTF === false) {
             LocalReturnObject.KReason = data.KReason;
             return await LocalReturnObject;
