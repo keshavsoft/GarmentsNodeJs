@@ -18,16 +18,13 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 };
 
 let ShowOnDom = ({ inData }) => {
-    let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
+    let jVarLocalTableBodyId = document.getElementById("TableBodyId");
+    let jVarLocalTemplate = document.getElementById("TemplateForRow");
+    let jVarLocalItemNameId = document.getElementById("ItemNameId");
     let jVarLocalGSTId = document.getElementById("GSTId");
 
-    if (jVarLocalItemNameId !== null) {
-        jVarLocalItemNameId.innerHTML = inData.ItemName;
-    };
-
-    if (jVarLocalGSTId !== null) {
-        jVarLocalGSTId.value = inData.GST;
-    };
+    jVarLocalItemNameId.value = inData.ItemName;
+    jVarLocalGSTId.value = inData.GST;
 
     console.log("sssssss : ", inData);
     // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);

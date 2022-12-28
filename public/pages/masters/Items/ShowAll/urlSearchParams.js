@@ -23,4 +23,13 @@ let ReturnFromDelete = () => {
     return { FromDelete, RowPK };
 };
 
-export { ReturnRowPK, ReturnFromSave, ReturnFromDelete }
+let ReturnFromEdit = () => {
+    let jVarLocalSearch = document.location.search;
+    const params = new URLSearchParams(jVarLocalSearch);
+    const FromEdit = params.get("FromEdit");
+    const RowPK = params.get("RowPK");
+
+    return { FromEdit, RowPK };
+};
+
+export { ReturnRowPK, ReturnFromSave, ReturnFromDelete, ReturnFromEdit }
