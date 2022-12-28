@@ -485,12 +485,8 @@
             <div class="card-body px-0 pb-0">
               <div class="table-responsive">
                 <table class="table table-flush" id="products-list">
-                  <thead class="thead-light">
-                    <tr>
-                      <th style="width: 50%;">ItemName</th>
-                      <th style="width: 30%;">GST</th>
-                      <th style="width: 20%;">Action</th>
-                    </tr>
+                  <thead id="TableHeadId" class="thead-light">
+                 
                   </thead>
                   <tbody id="TableBodyId">
 
@@ -540,41 +536,6 @@
       </footer>
     </div>
   </main>
-
-
-  <template id="TemplateForRow">
-    {{log this}}
-    <tr>
-      <td>
-
-        <div class="d-flex">
-          <div class="form-check my-auto">
-            <input class="form-check-input" type="checkbox" id="customCheck1" checked>
-          </div>
-          <img class="w-10 ms-3"
-            src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/ecommerce/adidas-hoodie.jpg"
-            alt="hoodie">
-          <h6 class="ms-3 my-auto">{{ItemName}}</h6>
-        </div>
-
-      </td>
-      <td>{{Date}}</td>
-      <td class="text-sm">
-        <a href="../Show/Show.html?RowPK={{pk}}" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
-          <i class="fas fa-eye text-secondary"></i>
-        </a>
-        <a href="../ItemEdit/ItemEdit.html?RowPK={{pk}}" href="javascript:;" class="mx-3 " data-bs-toggle="tooltip"
-          data-bs-original-title="Edit product">
-          <i class="fas fa-user-edit text-secondary"></i>
-        </a>
-        <a href="javascript:;" class="DeleteButtonClass" data-rowpk="{{pk}}" data-bs-toggle="tooltip"
-          data-bs-original-title="Delete product">
-          <i class="fas fa-trash text-secondary"></i>
-        </a>
-      </td>
-
-    </tr>
-  </template>
 
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
