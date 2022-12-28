@@ -10,13 +10,6 @@ let jVarLocalStorageKeyName = ConfigObject.LocalStorageKeyName;
 let jVarCommonKeys = KeysObject.CommonKeys;
 let jVarCommonProjectName = ConfigObject.ProjectName;
 
-// let jVarCommonKeys = {
-//     inFolderName: "Masters",
-//     inFileName: "Items",
-//     inItemName: "ItemName"
-// };
-// let jVarCommonProjectName = "JSONApi";
-
 let StartFunc = async () => {
     CheckUserFuncsjFStartFunc({
         inUserKey: jVarLocalStorageKeyName,
@@ -28,7 +21,6 @@ let StartFunc = async () => {
     await ShowAllStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 
     AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
-
 };
 
 StartFunc().then();
