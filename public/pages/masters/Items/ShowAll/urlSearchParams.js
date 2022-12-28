@@ -14,4 +14,13 @@ let ReturnFromSave = () => {
     return { FromSave };
 };
 
-export { ReturnRowPK, ReturnFromSave }
+let ReturnFromDelete = () => {
+    let jVarLocalSearch = document.location.search;
+    const params = new URLSearchParams(jVarLocalSearch);
+    const FromDelete = params.get("FromDelete");
+    const RowPK = params.get("RowPK");
+
+    return { FromDelete, RowPK };
+};
+
+export { ReturnRowPK, ReturnFromSave, ReturnFromDelete }
