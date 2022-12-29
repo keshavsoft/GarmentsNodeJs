@@ -3,7 +3,7 @@ import { StartFunc as ForCreateNewStartFunc } from "./FetchFuncs/ForCreateNew.js
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     await ShowOnDom();
-  //  await ForCreateNewStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+    await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
 };
 
 let ShowOnDom = async () => {
@@ -14,6 +14,12 @@ let ShowOnDom = async () => {
     if (jVarLocalVeticalHtml.KTF) {
         jVarLocalVerticalId.innerHTML = jVarLocalVeticalHtml.HtmlString;
     };
+};
+
+let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+    let LocalDataFromFetch = await ForCreateNewStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+
+    console.log("cccccccccccc : ", LocalDataFromFetch);
 };
 
 export { StartFunc };

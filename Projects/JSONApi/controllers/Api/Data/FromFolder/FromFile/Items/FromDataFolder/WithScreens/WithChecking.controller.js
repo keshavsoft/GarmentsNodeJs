@@ -6,7 +6,7 @@ let CreateNewFunc = async (req, res, next) => {
     let LocalFileName = req.body.FileNameOnly;
     let LocalItemName = req.body.ItemName;
     let LocalScreenName = req.body.ScreenName;
-    //console.log("ppppppppppppp");
+    console.log("ppppppppppppp");
 
     let PromiseData = await Repos.CreateNewFunc({
         inDataPK: LocalDataPk,

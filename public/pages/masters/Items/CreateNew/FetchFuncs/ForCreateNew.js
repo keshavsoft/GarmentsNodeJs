@@ -22,8 +22,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-        console.log("cccccccccccc : ", data);
-        //    LocalAfterSaveFunc({ inFetchPostData: data });
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
