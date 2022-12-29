@@ -9,7 +9,7 @@ exports.InsertFunc = async ({ inDataPK, inFolderName, inFileNameOnly, inItemName
         inDataPK,
         inFolderName, inFileNameOnly, inItemName,
         inScreenName,
-        inJsonPk,
+        inMainRowPK: inJsonPk,
         inSubTableKey,
         inDataToInsert
     });

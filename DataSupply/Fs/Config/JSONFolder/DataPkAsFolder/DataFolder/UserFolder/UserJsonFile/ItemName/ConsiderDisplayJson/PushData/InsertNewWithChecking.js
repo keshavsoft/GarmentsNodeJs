@@ -5,23 +5,7 @@ let CommonFromPullData = require("../../PullData/FromFolderFileItemName");
 let CommonFromConfigFolder = require("../../../../../../ConfigFolder/UserFolder/UserFileAsFolder/DisplayJsonFile/ItemName/ScreenName/TableColumns/PullData/AsArray");
 let CommonObjectToSave = require("../../../../../../ConfigFolder/UserFolder/UserFileAsFolder/DisplayJsonFile/ItemName/ScreenName/TableColumns/PullData/ObjectToSave");
 
-const toNumbers = arr => arr.map(Number);
-
-let LocalGeneratePk = ({ inDataWithKey }) => {
-    let LocalNewPk = 1;
-    let LocalPkArray = toNumbers(Object.keys(inDataWithKey));
-
-    if (LocalPkArray.length > 0) {
-        LocalNewPk = Math.max(...LocalPkArray) + 1;
-    };
-
-    return LocalNewPk;
-};
-
 let StartFunc = async ({ inFolderName, inFileNameOnly, inItemName, inScreenName, inDataPK, inDataToInsert }) => {
-    console.log("LocalFromCheck : ", inFolderName, inFileNameOnly, inItemName, inScreenName, inDataPK, inDataToInsert);
-
-
     let LocalinFolderName = inFolderName;
     let LocalinFileNameOnly = inFileNameOnly;
     let LocalinItemName = inItemName;
@@ -62,7 +46,7 @@ let StartFunc = async ({ inFolderName, inFileNameOnly, inItemName, inScreenName,
         inDataPK: LocalinDataPK,
         inObjectToInsert: inDataToInsert
     });
-    console.log("LocalFromCheck : ", LocalFromCheck);
+    
     if (LocalFromCheck.KTF === false) {
         LocalReturnData.KReason = LocalFromCheck.KReason;
         return await LocalReturnData;
