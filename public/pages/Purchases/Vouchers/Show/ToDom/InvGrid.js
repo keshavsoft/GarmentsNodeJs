@@ -1,40 +1,17 @@
 import { StartFunc as TableHeadStartFunc } from "../FetchFuncs/HtmlPull/TableHead.js";
 import { StartFunc as TableRowStartFunc } from "../FetchFuncs/HtmlPull/TableRow.js";
+import { StartFunc as TableFootStartFunc } from "../FetchFuncs/HtmlPull/TableFoot.js";
 
 let StartFunc = async ({ inData }) => {
     await ShowOnDomTableHeader();
     await ShowOnDomTableBody({ inData });
+    await ShowOnDomTableFooter();
 };
-
-let ShowOnDom = ({ inData }) => {
-    let jVarLocalBillNumberId = document.getElementById("BillNumberId");
-    let jVarLocalGSTId = document.getElementById("GSTId");
-
-    if (jVarLocalBillNumberId !== null) {
-        jVarLocalBillNumberId.innerHTML = inData.BillNumber;
-    };
-
-    if (jVarLocalGSTId !== null) {
-        jVarLocalGSTId.value = inData.GST;
-    };
-
-    console.log("sssssss : ", inData);
-    // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
-
-    // inData.forEach(element => {
-
-    //     let jVarLocalToShowHtml = template(element);
-
-    //     jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    // });
-
-};
-
 
 let ShowOnDomTableBody = async ({ inData }) => {
     let jVarLocalTableBodyId = document.getElementById("InvTableBodyId");
     let jVarLocalTemplate = await TableRowStartFunc();
-    console.log("inData : ", inData, jVarLocalTemplate);
+    
     if (jVarLocalTemplate.KTF) {
         var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
 
@@ -65,5 +42,17 @@ let ShowOnDomTableHeader = async () => {
         jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
     };
 };
+
+let ShowOnDomTableFooter = async () => {
+    let jVarLocalTableHeadId = document.getElementById("InvTableFooterId");
+
+    let jVarLocalHeadHtml = await TableFootStartFunc();
+    
+    if (jVarLocalHeadHtml.KTF) {
+        jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
+    };
+};
+
+// InvTableFooterId
 
 export { StartFunc };
