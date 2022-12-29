@@ -10,7 +10,6 @@ let InsertFunc = async (req, res, next) => {
     let LocalDataToInsert = req.body.DataToInsert;
     let LocalSubTableKey = req.body.SubTableKey;
 
-    console.log("sssssssss  : ", req.body);
     let PromiseData = await Repos.InsertFunc({
         inDataPK: LocalDataPk,
         inFolderName: LocalFolderName,

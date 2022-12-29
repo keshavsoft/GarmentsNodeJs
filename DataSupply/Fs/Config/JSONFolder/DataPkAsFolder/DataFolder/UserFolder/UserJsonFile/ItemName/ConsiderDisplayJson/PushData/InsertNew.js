@@ -45,7 +45,7 @@ let StartFunc = async ({ inFolderName, inFileNameOnly, inItemName, inScreenName,
         inDataPK: LocalinDataPK,
         inObjectToInsert: inDataToInsert
     });
-    console.log("LocalFromCheck : ", LocalFromCheck);
+    
     if (LocalFromCheck.KTF === false) {
         LocalReturnData.KReason = LocalFromCheck.KReason;
         return await LocalReturnData;
