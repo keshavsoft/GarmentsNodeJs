@@ -14,7 +14,8 @@ let StartFunc = async () => {
         inUserKey: jVarLocalStorageKeyName,
         inKTokenKey: jVarCommonKToken
     });
-    await FormLoadFuncsStartFunc();
+
+    await FormLoadFuncsStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
     AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 };
 
