@@ -21,7 +21,8 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
             FolderName: inFolderName,
             ItemName: inItemName,
             JsonPk: jVarLocalRowPK,
-            ScreenName: "Create"
+            ScreenName: "Create",
+            SubTableKey: "InvGrid"
         };
 
         inFetchPostData.DataToInsert = PreparePostData();
@@ -30,7 +31,9 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         //let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
         //let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking`;
 
-        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/ScreensFromDisplayJson/SubTable/Footer/Save`;
+       // let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/ScreensFromDisplayJson/SubTable/Footer/Save`;
+
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert`;
 
         let jVarLocalFetchHeaders = {
             method: "post",

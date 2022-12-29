@@ -1,4 +1,4 @@
-let Repos = require("../../../../../../../../Repository/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking");
+let Repos = require("../../../../../../../../../Repository/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking");
 
 let InsertFunc = async (req, res, next) => {
     let LocalDataPk = req.KeshavSoft.DataPk;
@@ -7,9 +7,10 @@ let InsertFunc = async (req, res, next) => {
     let LocalItemName = req.body.ItemName;
     let LocalScreenName = req.body.ScreenName;
     let LocalJsonPK = req.body.JsonPk;
-    let LocalDataToInsert = req.body.inPostData;
+    let LocalDataToInsert = req.body.DataToInsert;
+    let LocalSubTableKey = req.body.SubTableKey;
 
-
+    console.log("sssssssss  : ", req.body);
     let PromiseData = await Repos.InsertFunc({
         inDataPK: LocalDataPk,
         inFolderName: LocalFolderName,
@@ -17,6 +18,7 @@ let InsertFunc = async (req, res, next) => {
         inItemName: LocalItemName,
         inScreenName: LocalScreenName,
         inJsonPk: LocalJsonPK,
+        inSubTableKey: LocalSubTableKey,
         inDataToInsert: LocalDataToInsert
     });
 
@@ -33,13 +35,15 @@ let PostFunc = async (req, res, next) => {
     let LocalFileName = req.body.FileNameOnly;
     let LocalItemName = req.body.ItemName;
     let LocalJsonPK = req.body.JsonPk;
+    let LocalSubTableKey = "";
 
     let PromiseData = await Repos.PostFunc({
         inDataPK: LocalDataPk,
         inFolderName: LocalFolderName,
         inFileNameOnly: LocalFileName,
         inItemName: LocalItemName,
-        inJsonPk: LocalJsonPK
+        inJsonPk: LocalJsonPK,
+        inSubTableKey: LocalSubTableKey
     });
 
     res.end(JSON.stringify(PromiseData));
