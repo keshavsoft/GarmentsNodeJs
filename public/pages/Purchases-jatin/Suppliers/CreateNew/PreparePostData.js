@@ -11,6 +11,8 @@ let StartFunc = () => {
     jVarLocalReturnData.GST = jVarLocalGSTId.value;
     jVarLocalReturnData.Phone = jVarLocalPhoneId.value;
 
+
+    console.log("jVarLocalReturnData : ", jVarLocalReturnData);
     return jVarLocalReturnData;
 };
 
