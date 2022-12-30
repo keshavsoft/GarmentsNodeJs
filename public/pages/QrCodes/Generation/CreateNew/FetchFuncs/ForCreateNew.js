@@ -1,7 +1,7 @@
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    try {
-        let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
+    let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
+    try {
         let inFetchPostData = {
             FolderName: inFolderName,
             FileNameOnly: inFileName,
@@ -23,13 +23,16 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
 
-        LocalReturnObject.KTF = true;
-        return await LocalReturnObject;
+        if (data.KTF) {
+            LocalReturnObject.JsonData = data.JsonData;
+        };
 
+        LocalReturnObject.KTF = true;
     } catch (error) {
         console.log("error:", error);
-    }
-
+    };
+    
+    return await LocalReturnObject; 
 };
 
 let LocalAfterSaveFunc = ({ inFetchPostData }) => {

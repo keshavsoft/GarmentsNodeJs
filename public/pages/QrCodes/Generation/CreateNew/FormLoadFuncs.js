@@ -16,10 +16,32 @@ let ShowOnDom = async () => {
     };
 };
 
+// let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+//     let LocalDataFromFetch = await ForCreateNewStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+
+//     console.log("cccccccccccc : ", LocalDataFromFetch);
+// };
+
+
 let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+    
     let LocalDataFromFetch = await ForCreateNewStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+ console.log("jatin",LocalDataFromFetch );
 
-    console.log("cccccccccccc : ", LocalDataFromFetch);
+    if (LocalDataFromFetch.KTF) {
+        console.log("123333", );
+        let jVarLocalBarcodeId = document.getElementById('BarcodeId');
+        // let jVarLocalBillNumberId = document.getElementById('BillNumberId');
+        console.log("ssssss",LocalDataFromFetch);
+
+        if ("Barcode" in LocalDataFromFetch.JsonData) {
+            console.log(jVarLocalBarcodeId,LocalDataFromFetch.JsonData.Barcode );
+            jVarLocalBarcodeId.value = LocalDataFromFetch.JsonData.Barcode;
+        };
+
+        // if ("BillNumber" in LocalDataFromFetch.JsonData) {
+        //     jVarLocalBillNumberId.value = LocalDataFromFetch.JsonData.BillNumber;
+        // };
+    };
 };
-
 export { StartFunc };
