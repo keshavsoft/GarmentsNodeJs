@@ -4,14 +4,15 @@ let FromNode = async ({ inFolderName, inFileName, inItemName, inProjectName }) =
 
         //let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
         let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/AsArrayWithPK`;
-
+ 
+        
         let inFetchPostData = {
             inFolderName,
             inFileNameOnly: inFileName,
             inItemName,
             inScreenName: "Create"
         };
-
+        console.log("jVarLocalFetchUrl", jVarLocalFetchUrl,inFetchPostData);
         let jVarLocalFetchHeaders = {
             method: "post",
             headers: {

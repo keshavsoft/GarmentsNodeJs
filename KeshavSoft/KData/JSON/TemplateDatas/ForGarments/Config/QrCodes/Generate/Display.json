@@ -372,8 +372,8 @@
                     },
                     "ServerSide": {
                         "DefaultValueCreate": {
-                            "ControlType": "",
-                            "Type": "",
+                            "ControlType": "Barcode",
+                            "Type": "MAGUVAA",
                             "IncrementBy": 1,
                             "StartValue": 1,
                             "ConsiderFirmPeriod": false

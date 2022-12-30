@@ -1,29 +1,29 @@
-let FromNode = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let StartFunc = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
-        //let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/NoConfig/${inFolderName}/${inFileName}.json/${inItemName}`;
-        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/AsArrayWithPK`;
-
         let inFetchPostData = {
-            inFolderName,
-            inFileNameOnly: inFileName,
-            inItemName,
-            inScreenName: "Create"
+            FileNameOnly: inFileName,
+            FolderName: inFolderName,
+            ItemName: inItemName,
+            JsonPk: inRowPK,
+            Screenname: "Create"
         };
+        
+        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
 
         let jVarLocalFetchHeaders = {
-            method: "post",
+            method: "DELETE",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(inFetchPostData)
         };
-
+        
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-
+        
         if (data.KTF === false) {
             LocalReturnObject.KReason = data.KReason;
             return await LocalReturnObject;
@@ -40,4 +40,4 @@ let FromNode = async ({ inFolderName, inFileName, inItemName, inProjectName }) =
 
 };
 
-export { FromNode };
+export { StartFunc };

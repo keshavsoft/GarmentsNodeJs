@@ -1,18 +1,25 @@
+import { ReturnRowPK } from "../urlSearchParams.js";
+import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
+
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
+        let jVarLocalRowPK = ReturnRowPK().RowPK;
 
         let inFetchPostData = {
-            FolderName: inFolderName,
             FileNameOnly: inFileName,
+            FolderName: inFolderName,
             ItemName: inItemName,
+            JsonPk: jVarLocalRowPK,
             ScreenName: "Create"
         };
 
-        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking/CreateNew`;
+        inFetchPostData.DataToUpdate = PreparePostDataStartFunc();
+
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking`;
 
         let jVarLocalFetchHeaders = {
-            method: "post",
+            method: "PATCH",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -23,29 +30,20 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
 
+        if (data.KTF === false) {
+            LocalReturnObject.KReason = data.KReason;
+            return await LocalReturnObject;
+        };
+
+        LocalReturnObject.JsonData = data.JsonData;
+        LocalReturnObject.RowPK = jVarLocalRowPK;
+
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
 
     } catch (error) {
         console.log("error:", error);
     }
-
-};
-
-let LocalAfterSaveFunc = ({ inFetchPostData }) => {
-    if (inFetchPostData.KTF) {
-        //argon.showSwal('success-message');
-        window.location = "../ShowAll/ShowAll.html?FromSave=true";
-    } else {
-        if ("KReason" in inFetchPostData) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: inFetchPostData.KReason,
-                footer: '<a href="">Why do I have this issue?</a>'
-            });
-        };
-    };
 
 };
 
