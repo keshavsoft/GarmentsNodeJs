@@ -22,14 +22,6 @@ let ShowOnDomTableBody = async ({ inData }) => {
                 jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
             }
         );
-
-        // inData.forEach(element => {
-
-        //     let jVarLocalToShowHtml = template(element);
-
-        //     jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-        // });
-
     };
 };
 
@@ -37,7 +29,7 @@ let ShowOnDomTableHeader = async () => {
     let jVarLocalTableHeadId = document.getElementById("InvTableHeadId");
 
     let jVarLocalHeadHtml = await TableHeadStartFunc();
-    console.log("jVarLocalTableHeadId : ", jVarLocalTableHeadId);
+    
     if (jVarLocalHeadHtml.KTF) {
         jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
     };
@@ -52,7 +44,5 @@ let ShowOnDomTableFooter = async () => {
         jVarLocalTableHeadId.innerHTML = jVarLocalHeadHtml.HtmlString;
     };
 };
-
-// InvTableFooterId
 
 export { StartFunc };

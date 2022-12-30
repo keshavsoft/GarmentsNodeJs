@@ -1,28 +1,20 @@
-//import { StartFunc as PushDataStartFunc } from "./PushData/FetchFuncs.js";
-//import { StartFunc as UpdateFuncsStartFunc } from "./ButtonFuncs/UpdateFuncs.js";
 import { StartFunc as SaveFuncsStartFunc } from "./ButtonFuncs/InvTable/Footer/SaveFuncs.js";
+//import { StartFunc as ShowOnDomStartFunc } from "./ToDom/ShowOnDom.js";
+import { StartFunc as InvGridStartFunc } from "./ToDom/InvGrid.js";
 
 let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    // let jVarLocalUpdateId = document.getElementById("UpdateId");
-    
-
-    // if (jVarLocalUpdateId !== null) {
-    //     jVarLocalUpdateId.addEventListener("click", (event) => {
-    //         UpdateFuncsStartFunc({
-    //             inFolderName, inFileName, inItemName, inProjectName,
-    //             inEvent: event
-    //         })
-    //     });
-    // };
-
     let jVarLocalInvTableFooterSaveButtonId = document.getElementById("InvTableFooterSaveButtonId");
-    
+
     if (jVarLocalInvTableFooterSaveButtonId !== null) {
-        jVarLocalInvTableFooterSaveButtonId.addEventListener("click", (event) => {
-            SaveFuncsStartFunc({
+        jVarLocalInvTableFooterSaveButtonId.addEventListener("click", async (event) => {
+            let LocalFromSave = await SaveFuncsStartFunc({
                 inFolderName, inFileName, inItemName, inProjectName,
                 inEvent: event
-            })
+            });
+
+            if (LocalFromSave.KTF) {
+                await InvGridStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+            };
         });
     };
 };

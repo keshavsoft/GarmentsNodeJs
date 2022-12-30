@@ -31,17 +31,6 @@ let ShowOnDom = async ({ inData }) => {
     };
 
     await InvGridStartFunc({ inData });
-
-    console.log("sssssss : ", inData);
-    // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
-
-    // inData.forEach(element => {
-
-    //     let jVarLocalToShowHtml = template(element);
-
-    //     jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    // });
-
 };
 
 export { StartFunc };

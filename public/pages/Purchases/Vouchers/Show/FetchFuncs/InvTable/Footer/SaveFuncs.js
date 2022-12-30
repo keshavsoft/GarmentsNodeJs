@@ -27,12 +27,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
         inFetchPostData.DataToInsert = PreparePostData();
 
-        console.log("inFetchPostData : ", inFetchPostData);
-        //let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
-        //let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking`;
-
-       // let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/ScreensFromDisplayJson/SubTable/Footer/Save`;
-
         let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert`;
 
         let jVarLocalFetchHeaders = {
@@ -46,13 +40,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
-        console.log("data : ", data);
-        // if (data.KTF === false) {
-        //     LocalReturnObject.KReason = data.KReason;
-        //     return await LocalReturnObject;
-        // };
-
-        // LocalReturnObject.JsonData = data.JsonData;
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
