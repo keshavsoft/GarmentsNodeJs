@@ -3,6 +3,7 @@ import { StartFunc as ShowOnDomStartFunc } from "../Show/ToDom/ShowOnDom.js";
 import { StartFunc as AddListenersStartFunc } from "../Show/AddListeners.js";
 import { ConfigObject } from "../../../ApiConfig.js";
 import { KeysObject } from "../ConfigKeys.js";
+import { StartFunc as FormLoadStartFunc } from "../Show/ToDom/FormLoad.js";
 
 let jVarCommonKToken = ConfigObject.TokenName;
 let jVarLocalStorageKeyName = ConfigObject.LocalStorageKeyName;
@@ -15,7 +16,9 @@ let jFStartFunc = async () => {
         inKTokenKey: jVarCommonKToken
     });
 
-    await ShowOnDomStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
+    await FormLoadStartFunc();
+
+    // await ShowOnDomStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 };
 
 jFStartFunc().then(() => {
