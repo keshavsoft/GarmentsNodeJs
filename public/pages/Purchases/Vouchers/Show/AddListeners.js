@@ -1,6 +1,5 @@
 import { StartFunc as SaveFuncsStartFunc } from "./ButtonFuncs/InvTable/Footer/SaveFuncs.js";
-//import { StartFunc as ShowOnDomStartFunc } from "./ToDom/ShowOnDom.js";
-import { StartFunc as InvGridStartFunc } from "./ToDom/InvGrid.js";
+import { StartFunc as ShowOnDomStartFunc } from "./ToDom/ShowOnDom.js";
 
 let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalInvTableFooterSaveButtonId = document.getElementById("InvTableFooterSaveButtonId");
@@ -11,9 +10,9 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
                 inFolderName, inFileName, inItemName, inProjectName,
                 inEvent: event
             });
-
+            console.log("LocalFromSave ", LocalFromSave);
             if (LocalFromSave.KTF) {
-                await InvGridStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+                await ShowOnDomStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
             };
         });
     };
