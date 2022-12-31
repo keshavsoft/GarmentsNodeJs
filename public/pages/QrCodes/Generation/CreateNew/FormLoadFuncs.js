@@ -4,7 +4,14 @@ import { StartFunc as ItemsShowOnDom } from "./Items/ShowOnDom.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     await ItemsShowOnDom({ inProjectName });
-    await ShowOnDom();
+
+    if (document.getElementById('ItemsDataListId')) {
+        var element = document.getElementById('ItemsDataListId');
+        const example = new Choices(element);
+    };
+
+
+    // await ShowOnDom();
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
 };
 

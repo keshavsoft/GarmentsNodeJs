@@ -123,16 +123,21 @@
             </div>
         </div>
 
-        <datalist id="fomatDataList">
-            <option value="dd-MM-yyyy"></option>
-            <option value="yyyy-MM-dd"></option>
+        <datalist id="TypeList">
+            <option value="Max"></option>
+            <option value="Barcode"></option>
+            <option value="PresentDate"></option>
+            <option value="LastVoucher"></option>
+            <option value="SKML"></option>
+            <option value="MaxOnDate"></option>
 
         </datalist>
 
-        <datalist id="ParentClassesDataList">
-            <option value="col-md-4"></option>
-            <option value="col-md-8"></option>
-            <option value="col-md-12"></option>
+        <datalist id="ControlTypeDataList">
+            <option value="Number"></option>
+            <option value="String"></option>
+            <option value="Barcode"></option>
+            <option value="Date"></option>
 
         </datalist>
     </main>
@@ -290,7 +295,7 @@
             <div class="col row">
                 <label class="col-md-5 col-form-label">Type</label>
                 <div class="col-7">
-                    <input class="form-control" type="text" name="Type"  value="{{Type}}" >
+                    <input class="form-control" type="text" name="Type" list="TypeList"  value="{{Type}}" >
                 </div>
             </div>
             </div>
@@ -300,7 +305,7 @@
                                     <div class="row">
                 <label class="col-md-5 col-form-label">IncrementBy</label>
             <div class="col-7">
-                <input class="form-control" type="text" name="IncrementBy" value="{{IncrementBy}}">
+                <input class="form-control" type="Number" min="0" name="IncrementBy" value="{{IncrementBy}}">
             </div>
         
         </div>
@@ -311,7 +316,7 @@
             <div class="row">
                 <label class="col-md-5 col-form-label">StartValue</label>
                 <div class="col-7">
-                    <input class="form-control" type="text" name="StartValue" value="{{StartValue}}" >
+                    <input class="form-control" type="Number" min="0" name="StartValue" value="{{StartValue}}" >
                 </div>
             </div>
         
@@ -321,7 +326,7 @@
             <div class="row">
                 <label class="col-md-5 col-form-label">ControlType</label>
                 <div class="col-7">
-                    <input class="form-control" type="text" name="ControlType" value="{{ControlType}}" >
+                    <input class="form-control" type="text" name="ControlType" list="ControlTypeDataList" value="{{ControlType}}" >
                 </div>
             </div>
         

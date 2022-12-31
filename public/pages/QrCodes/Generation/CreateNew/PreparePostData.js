@@ -11,9 +11,9 @@ let StartFunc = () => {
 
     jVarLocalReturnData.Barcode = jVarLocalBarcodeId.value;
 
-    jVarLocalReturnData.Price1 = jVarLocalPrice1Id.value;
+    jVarLocalReturnData.CostPrice = jVarLocalPrice1Id.value;
 
-    jVarLocalReturnData.Price2 = jVarLocalPrice2Id.value;
+    jVarLocalReturnData.SalePrice = jVarLocalPrice2Id.value;
 
 
     console.log("jVarLocalReturnData : ", jVarLocalReturnData);
