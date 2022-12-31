@@ -123,10 +123,12 @@
             </div>
         </div>
 
-        <datalist id="formcontrolDataList">
-            <option value="form-control"></option>
+        <datalist id="fomatDataList">
+            <option value="dd-MM-yyyy"></option>
+            <option value="yyyy-MM-dd"></option>
+
         </datalist>
-     
+
         <datalist id="ParentClassesDataList">
             <option value="col-md-4"></option>
             <option value="col-md-8"></option>
@@ -295,14 +297,10 @@
         </div>
          
     </td>
-    <td>
+     <td>
     <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../key}}" data-filename="{{@../../../key}}" data-itemname="{{@../../key}}" data-screenname="{{@../key}}">
         Update
     </button>
-    <!-- <button type="button" class="btn btn-outline-info UpdateButtonClass"
-    onclick="jFUpdateData(event , '{{@../../../../key}}','{{@../../../key}}','{{@../../key}}','{{@../key}}','{{@key}}')">
-    Update
-</button> -->
     </td>
     </tr>
     
@@ -544,7 +542,7 @@
 
         jFChangeHeaderActiveClass();
     </script>
-<script src="../../../../../../../Js/Columns/Tabular/Alter/SubMenu/ServerSide/TransformBeforeSave.js" type="module"></script>
+    <script src="../../../../../../../Js/Columns/Tabular/Alter/SubMenu/ServerSide/SaveCheck.js" type="module"></script>
 
 </body>
 

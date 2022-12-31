@@ -7,8 +7,9 @@ let StartFunc = async ({ inData }) => {
 let ShowOnDomTableBody = async ({ inData }) => {
     let jVarLocalTableBodyId = document.getElementById("InvTableBodyId");
     let jVarLocalTemplate = await TableRowStartFunc();
-    
+
     if (jVarLocalTemplate.KTF) {
+        jVarLocalTableBodyId.innerHTML = "";
         var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
 
         Object.entries(inData.InvGrid).forEach(

@@ -123,10 +123,12 @@
             </div>
         </div>
 
-        <datalist id="formcontrolDataList">
-            <option value="form-control"></option>
+        <datalist id="fomatDataList">
+            <option value="dd-MM-yyyy"></option>
+            <option value="yyyy-MM-dd"></option>
+
         </datalist>
-     
+
         <datalist id="ParentClassesDataList">
             <option value="col-md-4"></option>
             <option value="col-md-8"></option>
@@ -274,13 +276,13 @@
         
         <div class="row mb-3">
             <div class="col row">
-                <label class="col-md-8 col-form-label">Validate</label>
+                <label class="col-md-8 col-form-label">ConsiderFirmPeriod</label>
                 <div class="col-4">
                     <div class="form-check  form-switch">
-                        {{#if Validate}}
-                        <input class="form-check-input" type="checkbox" name="Validate" checked>
+                        {{#if ConsiderFirmPeriod}}
+                        <input class="form-check-input" type="checkbox" name="ConsiderFirmPeriod" checked>
                         {{else}}
-                        <input class="form-check-input" type="checkbox" name="Validate">
+                        <input class="form-check-input" type="checkbox" name="ConsiderFirmPeriod">
                         {{/if}}
                     </div>
                 </div>
@@ -293,9 +295,41 @@
             </div>
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col-12 col-xl-4">
+                                    <div class="row">
+                <label class="col-md-5 col-form-label">IncrementBy</label>
+            <div class="col-7">
+                <input class="form-control" type="text" name="IncrementBy" value="{{IncrementBy}}">
+            </div>
+        
+        </div>
+        
+            </div>
+            <div class="col-12 col-xl-4">
+                
+            <div class="row">
+                <label class="col-md-5 col-form-label">StartValue</label>
+                <div class="col-7">
+                    <input class="form-control" type="text" name="StartValue" value="{{StartValue}}" >
+                </div>
+            </div>
+        
+        </div>
+        <div class="col-12 col-xl-4">
+                
+            <div class="row">
+                <label class="col-md-5 col-form-label">ControlType</label>
+                <div class="col-7">
+                    <input class="form-control" type="text" name="ControlType" value="{{ControlType}}" >
+                </div>
+            </div>
+        
+        </div>
+        </div>
          
     </td>
-    <td>
+      <td>
     <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../key}}" data-filename="{{@../../../key}}" data-itemname="{{@../../key}}" data-screenname="{{@../key}}">
         Update
     </button>
@@ -544,7 +578,7 @@
 
         jFChangeHeaderActiveClass();
     </script>
-<script src="../../../../../../../Js/Columns/Tabular/Alter/SubMenu/ServerSide/TransformBeforeSave.js" type="module"></script>
+    <script src="../../../../../../../Js/Columns/Tabular/Alter/SubMenu/ServerSide/DefaultValueCreate.js" type="module"></script>
 
 </body>
 

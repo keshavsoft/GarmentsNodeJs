@@ -10,9 +10,12 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
                 inFolderName, inFileName, inItemName, inProjectName,
                 inEvent: event
             });
-            console.log("LocalFromSave ", LocalFromSave);
+
             if (LocalFromSave.KTF) {
-                await ShowOnDomStartFunc({ inFolderName, inFileName, inItemName, inProjectName });
+                await ShowOnDomStartFunc({
+                    inFolderName, inFileName, inItemName, inProjectName,
+                    inShowSuccess: true
+                });
             };
         });
     };
