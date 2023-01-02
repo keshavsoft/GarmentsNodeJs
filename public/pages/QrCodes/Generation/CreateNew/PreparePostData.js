@@ -6,15 +6,26 @@ let StartFunc = () => {
     let jVarLocalPrice2Id = document.getElementById("Price2Id");
 
     let jVarLocalReturnData = {};
-    jVarLocalReturnData.ProductName = jVarLocalProductNameId.value;
-    jVarLocalReturnData.ProductAliasName = jVarLocalProductAliasNameId.value;
 
-    jVarLocalReturnData.Barcode = jVarLocalBarcodeId.value;
+    if (jVarLocalProductNameId !== null) {
+        jVarLocalReturnData.ProductName = jVarLocalProductNameId.value;
+    };
 
-    jVarLocalReturnData.CostPrice = jVarLocalPrice1Id.value;
+    if (jVarLocalProductAliasNameId !== null) {
+        jVarLocalReturnData.ProductAliasName = jVarLocalProductAliasNameId.value;
+    };
 
-    jVarLocalReturnData.SalePrice = jVarLocalPrice2Id.value;
+    if (jVarLocalBarcodeId !== null) {
+        jVarLocalReturnData.Barcode = jVarLocalBarcodeId.value;
+    };
 
+    if (jVarLocalPrice1Id !== null) {
+        jVarLocalReturnData.CostPrice = jVarLocalPrice1Id.value;
+    };
+
+    if (jVarLocalPrice2Id !== null) {
+        jVarLocalReturnData.SalePrice = jVarLocalPrice2Id.value;
+    };
 
     console.log("jVarLocalReturnData : ", jVarLocalReturnData);
     return jVarLocalReturnData;
