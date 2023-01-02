@@ -20,15 +20,19 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, in
 };
 
 let ShowOnDom = async ({ inData, inShowSuccess }) => {
+    let jVarLocalVoucherNameId = document.getElementById("VoucherNameId");
     let jVarLocalBillNumberId = document.getElementById("BillNumberId");
-    let jVarLocalGSTId = document.getElementById("GSTId");
+    let jVarLocalDateId = document.getElementById("DateId");
 
+    if (jVarLocalVoucherNameId !== null) {
+        jVarLocalVoucherNameId.innerHTML = inData.VoucherName;
+    };
     if (jVarLocalBillNumberId !== null) {
         jVarLocalBillNumberId.innerHTML = inData.BillNumber;
     };
 
-    if (jVarLocalGSTId !== null) {
-        jVarLocalGSTId.value = inData.GST;
+    if (jVarLocalDateId !== null) {
+        jVarLocalDateId.innerHTML = inData.Date;
     };
 
     await InvGridStartFunc({ inData });
