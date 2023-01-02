@@ -1,5 +1,5 @@
 let StartFunc = () => {
-    let jVarLocalProductNameId = document.getElementById("ProductNameId");
+    let jVarLocalProductNameId = document.getElementById("ItemsDataListId");
     let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameId");
     let jVarLocalBarcodeId = document.getElementById("BarcodeId");
     let jVarLocalPrice1Id = document.getElementById("Price1Id");
@@ -27,7 +27,6 @@ let StartFunc = () => {
         jVarLocalReturnData.SalePrice = jVarLocalPrice2Id.value;
     };
 
-    console.log("jVarLocalReturnData : ", jVarLocalReturnData);
     return jVarLocalReturnData;
 };
 
