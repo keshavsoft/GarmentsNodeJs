@@ -2,10 +2,14 @@ import { ReturnRowPK } from "../../../urlSearchParams.js";
 
 let PreparePostData = () => {
     let jVarLocalItemNameId = document.getElementById("ItemNameId");
-    let jVarLocalGSTId = document.getElementById("GSTId");
+    let jVarLocalRateId = document.getElementById("RateId");
+    let jVarLocalQty = document.getElementById("QtyId");
+    
 
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
+    jVarLocalReturnData.UnitRate = parseInt(jVarLocalRateId.value);
+    jVarLocalReturnData.Qty = parseInt(jVarLocalQty.value);
     //jVarLocalReturnData.GST = jVarLocalGSTId.value;
 
     return jVarLocalReturnData;
