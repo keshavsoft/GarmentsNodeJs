@@ -1,4 +1,4 @@
-import { StartFunc as PushDataStartFunc } from "./PushData/FetchFuncs.js";
+import { StartFunc as PushDataStartFunc } from "../PushData/FetchFuncs.js";
 import { StartFunc as StartFuncKeyPressFuncs } from "./Pages/Pricing/KeyPressFuncs.js";
 
 let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
