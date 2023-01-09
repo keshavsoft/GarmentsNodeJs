@@ -19,14 +19,30 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
 let ShowOnDom = ({ inData }) => {
     let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
-    let jVarLocalGSTId = document.getElementById("GSTId");
+    let jVarLocalBarcodeId = document.getElementById("BarcodeId");
+    let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameId");
+    let jVarLocalCostPriceId = document.getElementById("CostPriceId");
+    let jVarLocalSalePriceId = document.getElementById("SalePriceId");
+    let jVarLocalPersentageId = document.getElementById("PersentageId");
 
     if (jVarLocalItemNameId !== null) {
-        jVarLocalItemNameId.innerHTML = inData.ItemName;
+        jVarLocalItemNameId.innerHTML = inData.ProductName;
+    };
+    if (jVarLocalBarcodeId !== null) {
+        jVarLocalBarcodeId.innerHTML = inData.Barcode;
+    };
+    if (jVarLocalProductAliasNameId !== null) {
+        jVarLocalProductAliasNameId.innerHTML = inData.ProductAliasName;
+    };
+    if (jVarLocalCostPriceId !== null) {
+        jVarLocalCostPriceId.innerHTML = inData.CostPrice;
     };
 
-    if (jVarLocalGSTId !== null) {
-        jVarLocalGSTId.value = inData.GST;
+    if (jVarLocalSalePriceId !== null) {
+        jVarLocalSalePriceId.innerHTML = inData.SalePrice;
+    };
+    if (jVarLocalPersentageId !== null) {
+        jVarLocalPersentageId.innerHTML = inData.Persentage;
     };
 
     console.log("sssssss : ", inData);
