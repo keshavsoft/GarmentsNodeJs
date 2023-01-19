@@ -1,11 +1,15 @@
 let _ = require("lodash");
 
-let CommonPullDataFromConfig = require("../../../../PullData/AsJson");
-let CommonFromPushData = require("../../../../PushData/FromFoldFile");
+//let CommonPullDataFromConfig = require("../../../../../PullData/AsJson");
+let CommonPullDataFromConfig = require("../../../../../PullData/AsJson");
 
-let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtablecolumnkey, DataAttribute, BodyAsJson }) => {
-    const LocalDataToUpdate = (({ DisplayName, ShowInTable, Insert, CreateNew, IsTextArea, ShowTotal }) => ({ DisplayName, ShowInTable, Insert, CreateNew, IsTextArea, ShowTotal }))(BodyAsJson);
-    console.log("LocalDataToUpdate------------- : ", LocalDataToUpdate);
+let CommonFromPushData = require("../../../../../PushData/FromFoldFile");
+
+//let CommonFromPushData = require("../../../../../PushData/FromFoldFile");
+
+let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName, BodyAsJson }) => {
+
+    const LocalDataToUpdate = (({ ShowBalance,CreateNew,ShowTotals }) => ({ ShowBalance,CreateNew,ShowTotals }))(BodyAsJson);
     let LocalinDataPK = DataPK;
 
     let inJsonConfig = { inFolderName: FolderName, inJsonFileName: FileName }
@@ -15,8 +19,9 @@ let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtabl
     let LocalFromUpdate;
     let LocalReturnObject = { KTF: false };
 
-    let LocalFromPullData = await CommonPullDataFromConfig.FromJsonConfig({
-        inJsonConfig,
+    let LocalFromPullData = await CommonPullDataFromConfig.FromFoldFile({
+        inFolderName: FolderName,
+        inFileNameWithExtension: `${FileName}.json`,
         inDataPK: LocalinDataPK
     });
 
@@ -24,15 +29,10 @@ let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtabl
 
     if (LocalItemName in LocalNewData) {
         if (LocalScreenName in LocalNewData[LocalItemName]) {
-            if ("TableColumns" in LocalNewData[LocalItemName][LocalScreenName]) {
-                LocalFindColumnObject = _.find(LocalNewData[LocalItemName][LocalScreenName].TableColumns, { DataAttribute });
-
-                LocalFindColumnObject.DisplayName = LocalDataToUpdate.DisplayName;
-                LocalFindColumnObject.ShowInTable = LocalDataToUpdate.ShowInTable;
-                LocalFindColumnObject.Insert = LocalDataToUpdate.Insert;
-                LocalFindColumnObject.CreateNew = LocalDataToUpdate.CreateNew;
-                LocalFindColumnObject.IsTextArea = LocalDataToUpdate.IsTextArea;
-                LocalFindColumnObject.ShowTotal = LocalDataToUpdate.ShowTotal;
+            if ("TableInfo" in LocalNewData[LocalItemName][LocalScreenName]) {
+                LocalNewData[LocalItemName][LocalScreenName].TableInfo.FooterType.ShowBalance = LocalDataToUpdate.ShowBalance;
+                LocalNewData[LocalItemName][LocalScreenName].TableInfo.FooterType.CreateNew = LocalDataToUpdate.CreateNew;
+                LocalNewData[LocalItemName][LocalScreenName].TableInfo.FooterType.ShowTotals = LocalDataToUpdate.ShowTotals;
 
                 LocalFromUpdate = await CommonFromPushData.StartFunc({
                     inFolderName: FolderName,
@@ -41,8 +41,6 @@ let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtabl
                     inDataToUpdate: LocalNewData,
                     inOriginalData: LocalFromPullData.JsonData
                 });
-
-                //console.log("LocalFromUpdate : ", LocalFromUpdate);
 
                 if (LocalFromUpdate.KTF) {
                     LocalReturnObject.KTF = true;

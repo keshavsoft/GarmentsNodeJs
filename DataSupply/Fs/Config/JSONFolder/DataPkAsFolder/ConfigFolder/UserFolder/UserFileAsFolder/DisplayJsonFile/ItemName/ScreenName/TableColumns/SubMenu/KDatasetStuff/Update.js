@@ -1,19 +1,21 @@
 let _ = require("lodash");
 
-let CommonPullDataFromConfig = require("../../../../PullData/AsJson");
-let CommonFromPushData = require("../../../../PushData/FromFoldFile");
+let CommonPullDataFromConfig = require("../../../../../PullData/AsJson");
+let CommonFromPushData = require("../../../../../PushData/FromFoldFile");
 
-let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtablecolumnkey, DataAttribute, BodyAsJson }) => {
-    const LocalDataToUpdate = (({ DisplayName, ShowInTable, Insert, CreateNew, IsTextArea, ShowTotal }) => ({ DisplayName, ShowInTable, Insert, CreateNew, IsTextArea, ShowTotal }))(BodyAsJson);
-    console.log("LocalDataToUpdate------------- : ", LocalDataToUpdate);
+
+let Update = async ({ DataPK, folderName, FileName, ItemName, ScreenName, DataAttribute, BodyAsJson }) => {
+    console.log("BodyAsJson", BodyAsJson);
+    const LocalDataToUpdate = (({ Validate, DataListReverse, Type }) => ({ Validate, DataListReverse, Type }))(BodyAsJson);
     let LocalinDataPK = DataPK;
 
-    let inJsonConfig = { inFolderName: FolderName, inJsonFileName: FileName }
+    let inJsonConfig = { inFolderName: folderName, inJsonFileName: FileName }
     let LocalItemName = ItemName;
     let LocalScreenName = ScreenName;
     let LocalFindColumnObject;
     let LocalFromUpdate;
     let LocalReturnObject = { KTF: false };
+    let LocalJsonTableColumnsKey = "TableColumns";
 
     let LocalFromPullData = await CommonPullDataFromConfig.FromJsonConfig({
         inJsonConfig,
@@ -24,18 +26,15 @@ let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtabl
 
     if (LocalItemName in LocalNewData) {
         if (LocalScreenName in LocalNewData[LocalItemName]) {
-            if ("TableColumns" in LocalNewData[LocalItemName][LocalScreenName]) {
+            if (LocalJsonTableColumnsKey in LocalNewData[LocalItemName][LocalScreenName]) {
                 LocalFindColumnObject = _.find(LocalNewData[LocalItemName][LocalScreenName].TableColumns, { DataAttribute });
+                LocalFindColumnObject.KDatasetStuff.Validate = LocalDataToUpdate.Validate;
+                LocalFindColumnObject.KDatasetStuff.Type = LocalDataToUpdate.Type;
+                LocalFindColumnObject.KDatasetStuff.DataListReverse = LocalDataToUpdate.DataListReverse;
 
-                LocalFindColumnObject.DisplayName = LocalDataToUpdate.DisplayName;
-                LocalFindColumnObject.ShowInTable = LocalDataToUpdate.ShowInTable;
-                LocalFindColumnObject.Insert = LocalDataToUpdate.Insert;
-                LocalFindColumnObject.CreateNew = LocalDataToUpdate.CreateNew;
-                LocalFindColumnObject.IsTextArea = LocalDataToUpdate.IsTextArea;
-                LocalFindColumnObject.ShowTotal = LocalDataToUpdate.ShowTotal;
 
                 LocalFromUpdate = await CommonFromPushData.StartFunc({
-                    inFolderName: FolderName,
+                    inFolderName: folderName,
                     inFileNameWithExtension: FileName,
                     inDataPK: LocalinDataPK,
                     inDataToUpdate: LocalNewData,
@@ -49,6 +48,7 @@ let Update = async ({ DataPK, FolderName, FileName, ItemName, ScreenName,subtabl
                 };
 
                 return await LocalReturnObject;
+
             };
         };
     };
