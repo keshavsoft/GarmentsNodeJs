@@ -1,8 +1,10 @@
 //import { StartFunc as VeticalStartFunc } from "./FetchFuncs/HtmlPull/Vetical.js";
 import { StartFunc as ForCreateNewStartFunc } from "./FetchFuncs/ForCreateNew.js";
+import { StartFunc as SuppliersShowOnDom } from "./Suppliers/ShowOnDom.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     // await ShowOnDom();
+    await SuppliersShowOnDom({ inProjectName });
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
 };
 

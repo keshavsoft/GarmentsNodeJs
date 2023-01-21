@@ -8,9 +8,8 @@ let StartFunc = () => {
     let jVarLocalFromDelete = ReturnFromDelete();
 
     if (jVarLocalFromDelete.FromDelete) {
-        // argon.showSwal('auto-close')
+        let timerInterval;
 
-        let timerInterval
         Swal.fire({
             title: `Deleted successfully... ${jVarLocalFromDelete.RowPK}`,
             html: 'I will close in <b></b> milliseconds.',

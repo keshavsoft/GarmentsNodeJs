@@ -3,13 +3,12 @@ let StartFunc = async ({ inProjectName }) => {
 
     try {
         let inFetchPostData = {
-            inFolderName: "Masters",
-            inFileNameOnly: "Items",
-            inItemName: "ItemName",
+            inFolderName: "Purchases",
+            inFileNameOnly: "Suppliers",
+            inItemName: "SuppliersName",
             ScreenName: "ForDataList"
         };
 
-        
         //   let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking/CreateNew`;
         let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/AsArrayWithPK`;
 
