@@ -1,6 +1,6 @@
 import { StartFunc as PushDataStartFunc } from "./PushData/FetchFuncs.js";
 
-let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let LocalCeateNewFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     let jVarLocalCreateNewButtonId = document.getElementById("CreateNewButtonId");
 
     jVarLocalCreateNewButtonId.addEventListener("click", async () => {
@@ -15,12 +15,14 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     });
 };
 
+let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+    LocalCeateNewFunc({ inFolderName, inFileName, inItemName, inProjectName });
+};
+
 let LocalAfterSaveFunc = ({ inFetchPostData }) => {
 
     if (inFetchPostData.KTF) {
-        //argon.showSwal('success-message');
-        window.location = "../ShowAll/ShowAll.html?FromSave=true";
-        //  window.location = "../ShowAll/ShowAll.html";
+      //  window.location = "../ShowAll/ShowAll.html?FromSave=true";
     } else {
         if ("KReason" in inFetchPostData) {
             Swal.fire({

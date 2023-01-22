@@ -2,9 +2,9 @@ import { StartFunc as FetchFunc } from "./FetchFunc.js";
 
 let StartFunc = async ({ inProjectName }) => {
     let jVarLocalFromFetch = await FetchFunc({ inProjectName });
-    console.log("jVarLocalFromFetch : ", jVarLocalFromFetch);
     if (jVarLocalFromFetch.KTF) {
-        let jVarLocalItemsDataListId = document.getElementById("ItemsDataListId");
+        let jVarLocalSupplierNameSelectId = "SupplierNameSelectId";
+        let jVarLocalItemsDataListId = document.getElementById(jVarLocalSupplierNameSelectId);
 
         if (jVarLocalItemsDataListId !== null) {
             var options = '';

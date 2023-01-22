@@ -5,6 +5,13 @@ import { StartFunc as SuppliersShowOnDom } from "./Suppliers/ShowOnDom.js";
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     // await ShowOnDom();
     await SuppliersShowOnDom({ inProjectName });
+    
+    if (document.getElementById('SupplierNameSelectId')) {
+        var element = document.getElementById('SupplierNameSelectId');
+        const example = new Choices(element);
+    };
+
+
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
 };
 

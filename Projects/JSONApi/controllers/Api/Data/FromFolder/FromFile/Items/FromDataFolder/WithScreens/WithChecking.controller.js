@@ -32,6 +32,7 @@ let InsertFunc = async (req, res, next) => {
     let LocalJsonPK = req.body.JsonPk;
     let LocalDataToInsert = req.body.inPostData;
 
+    console.log("LocalDataToInsert : ", LocalDataToInsert);
 
     let PromiseData = await Repos.InsertFunc({
         inDataPK: LocalDataPk,

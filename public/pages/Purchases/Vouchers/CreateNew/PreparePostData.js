@@ -1,12 +1,13 @@
 let StartFunc = () => {
-    let jVarLocalVoucherNameId = document.getElementById("VoucherNameId");
+    let jVarLocalSupplierNameSelectId = "SupplierNameSelectId"
+    let jVarLocalHtmlSupplierNameSelectId = document.getElementById(jVarLocalSupplierNameSelectId);
     let jVarLocalBillNumberId = document.getElementById("BillNumberId");
     let jVarLocalDateId = document.getElementById("DateId");
-    console.log("jVarLocalVoucherNameId : ", jVarLocalVoucherNameId);
     let jVarLocalReturnData = {};
-
-    if ((jVarLocalVoucherNameId === null) === false) {
-        jVarLocalReturnData.VoucherName = jVarLocalVoucherNameId.value;
+ 
+    if ((jVarLocalHtmlSupplierNameSelectId === null) === false) {
+        let jVarLocalSupplierName = jVarLocalHtmlSupplierNameSelectId.name;
+        jVarLocalReturnData[jVarLocalSupplierName] = jVarLocalHtmlSupplierNameSelectId.value;
     };
 
     jVarLocalReturnData.BillNumber = jVarLocalBillNumberId.value;
