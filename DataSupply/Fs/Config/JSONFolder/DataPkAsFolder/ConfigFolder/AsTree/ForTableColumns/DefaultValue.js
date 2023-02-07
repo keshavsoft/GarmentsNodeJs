@@ -1,8 +1,10 @@
-let CommonFromUserFolder = require("../../../../UserFolder/getDirectories");
-let CommonFromgetDirectories = require("../../../../getDirectories");
+let CommonFromUserFolder = require("../../UserFolder/getDirectories");
+let CommonFromgetDirectories = require("../../getDirectories");
 let _ = require("lodash");
 
+
 let AsObject = async ({ inDataPK }) => {
+    console.log("inDataPK--",inDataPK);
     let LocalDataPK = inDataPK;
     let LocalReturnObject = {};
     LocalReturnObject.Folders = {};
@@ -37,30 +39,16 @@ let AsObject = async ({ inDataPK }) => {
                             ([ScreenKey, ScreenValue]) => {
                                 LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey] = JSON.parse(JSON.stringify(ScreenValue));
 
-                                if ("SubTableColumnsObject" in ScreenValue && ScreenValue.SubTableColumnsObject !== undefined) {
-                                    Object.entries(ScreenValue.SubTableColumnsObject).forEach(
-                                        ([SubColumnKey, SubColumnValue]) => {
-                                            LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject[SubColumnKey] = JSON.parse(JSON.stringify(SubColumnValue));
-
-                                            if ("TableColumnsObject" in SubColumnValue && SubColumnValue.TableColumnsObject !== undefined) {
-                                                Object.entries(SubColumnValue.TableColumnsObject).forEach(
-                                                    ([SubColumnTableColumnKey, SubColumnTableColumnValue]) => {
-                                                        LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject[SubColumnKey].TableColumnsObject[SubColumnTableColumnKey] = {
-
-                                                            DataAttribute: SubColumnTableColumnValue.DataAttribute,
-                                                            DisplayName: SubColumnTableColumnValue.DisplayName,
-                                                            Validate: SubColumnTableColumnValue.ServerSide.TransformBeforeSave.Validate,
-                                                            Type: SubColumnTableColumnValue.ServerSide.TransformBeforeSave.Type
-                                                        };
-                                                    }
-                                                );
-
-                                            };
-
-                                        }
-                                    );
-
-                                };
+                                Object.entries(ScreenValue.TableColumnsObject).forEach(
+                                    ([ColumnKey, ColumnValue]) => {
+                                        LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].TableColumnsObject[ColumnKey] = {
+                                            DataAttribute: ColumnValue.DataAttribute,
+                                            DisplayName: ColumnValue.DisplayName,
+                                            DefaultValue:ColumnValue.DefaultValue,
+                                            TextAlign:ColumnValue.TextAlign
+                                        };
+                                    }
+                                );
                             }
                         );
                     }

@@ -5,15 +5,11 @@ let fs = require("fs");
 let LocalCheckBeforeInsert = ({ inOriginalData, inDataToUpdate }) => {
     let LocalReturnObject = { KTF: true };
     console.log("ssssssssss : ", JSON.stringify(inDataToUpdate).length, JSON.stringify(inOriginalData).length);
-    //debug("inserted length : ", JSON.stringify(inDataToUpdate).length, inOriginalData.length, JSON.stringify(inDataToUpdate).length - inOriginalData.length);
-
-    //debug("inserted length : ", JSON.stringify(inDataToUpdate).length, JSON.stringify(inOriginalData).length, JSON.stringify(inDataToUpdate).length - inOriginalData.length, Math.abs(JSON.stringify(inDataToUpdate).length - inOriginalData.length));
 
     return LocalReturnObject;
 };
 
-let StartFunc = async ({ inFolderName, inFileNameWithExtension, inOriginalData, inDataToUpdate, inDataPK }) => {
-    console.log("hhhhhhhhhh");
+let StartFunc = async ({  inOriginalData, inDataToUpdate, inDataPK }) => {
     let LocalDataPK = inDataPK;
 
     let LocalReturnObject = {
@@ -23,14 +19,8 @@ let StartFunc = async ({ inFolderName, inFileNameWithExtension, inOriginalData, 
 
     if (LocalDataPK > 0) {
         let LocalDataFromCommonCreate;
-        let LocalDataFromJSON;
-        let LocalFolderName = inFolderName;
-        let LocalFileNameWithExtension = inFileNameWithExtension;
-        let LocalFilePath;
 
-        LocalDataFromCommonCreate = CommonCheck.ForExistence({
-            inFolderName: LocalFolderName,
-            inFileNameOnly: path.parse(LocalFileNameWithExtension).name,
+        LocalDataFromCommonCreate = CommonCheck.StartFunc({
             inDataPK: LocalDataPK
         });
         //   console.log("11111111111LocalDataFromCommonCreate --------: ", LocalDataFromCommonCreate);
@@ -43,7 +33,7 @@ let StartFunc = async ({ inFolderName, inFileNameWithExtension, inOriginalData, 
         LocalCheckBeforeInsert({ inOriginalData, inDataToUpdate });
 
         try {
-            fs.writeFileSync(LocalDataFromCommonCreate.DisplayJsonPath, JSON.stringify(inDataToUpdate));
+            fs.writeFileSync(LocalDataFromCommonCreate.ReportFilePath, JSON.stringify(inDataToUpdate));
         } catch (error) {
             console.log("ssssss : ", error);
         };

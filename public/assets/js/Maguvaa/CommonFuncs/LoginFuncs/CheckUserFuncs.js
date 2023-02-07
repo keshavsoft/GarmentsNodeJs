@@ -3,7 +3,7 @@ import { OnHeaderFunc } from "./HeaderFuncs/ShowUserDetails.js";
 let jFStartFunc = ({ inUserKey, inKTokenKey }) => {
     let jVarLocalKToken = inKTokenKey;
     let jVarLocalTokenValue = getCookie(jVarLocalKToken);
-
+ //   console.log("jVarLocalTokenValue: ", jVarLocalTokenValue);
     if (jVarLocalTokenValue === null) {
         window.location = "/pages/authentication/signin/illustration.html";
     } else {

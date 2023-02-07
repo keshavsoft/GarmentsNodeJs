@@ -22,7 +22,7 @@ let StartFunc = ({ inFolderName, inFileName, inItemName, inProjectName }) => {
 let LocalAfterSaveFunc = ({ inFetchPostData }) => {
 
     if (inFetchPostData.KTF) {
-      //  window.location = "../ShowAll/ShowAll.html?FromSave=true";
+        window.location = "../ShowAll/ShowAll.html?FromSave=true";
     } else {
         if ("KReason" in inFetchPostData) {
             Swal.fire({

@@ -1,5 +1,5 @@
-let CommonFromUserFolder = require("../../../../UserFolder/getDirectories");
-let CommonFromgetDirectories = require("../../../../getDirectories");
+let CommonFromUserFolder = require("../../UserFolder/getDirectories");
+let CommonFromgetDirectories = require("../../getDirectories");
 let _ = require("lodash");
 
 let AsObject = async ({ inDataPK }) => {
@@ -40,20 +40,29 @@ let AsObject = async ({ inDataPK }) => {
                                 if ("SubTableColumnsObject" in ScreenValue && ScreenValue.SubTableColumnsObject !== undefined) {
                                     Object.entries(ScreenValue.SubTableColumnsObject).forEach(
                                         ([SubColumnKey, SubColumnValue]) => {
+                                            //LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject = JSON.parse(JSON.stringify(ScreenValue));
                                             LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject[SubColumnKey] = JSON.parse(JSON.stringify(SubColumnValue));
+                                            // console.log("ssssssssss : ", "TableColumnsObject" in SubColumnValue);
 
                                             if ("TableColumnsObject" in SubColumnValue && SubColumnValue.TableColumnsObject !== undefined) {
                                                 Object.entries(SubColumnValue.TableColumnsObject).forEach(
                                                     ([SubColumnTableColumnKey, SubColumnTableColumnValue]) => {
                                                         LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject[SubColumnKey].TableColumnsObject[SubColumnTableColumnKey] = {
-
                                                             DataAttribute: SubColumnTableColumnValue.DataAttribute,
-                                                            DisplayName: SubColumnTableColumnValue.DisplayName,
-                                                            ControlType: SubColumnTableColumnValue.ServerSide.DefaultValueShow.ControlType,
-                                                            Format: SubColumnTableColumnValue.ServerSide.DefaultValueShow.Format,
-                                                            Type: SubColumnTableColumnValue.ServerSide.DefaultValueShow.Type,
-                                                            Transform: SubColumnTableColumnValue.ServerSide.DefaultValueShow.Transform
+                                                            DisplayName: SubColumnTableColumnValue.DisplayName
                                                         };
+
+                                                        // Object.entries(SubColumnValue.TableColumns).forEach(
+                                                        //     ([SubTableColumnKey, SubTableColumnValue]) => {
+                                                        //         LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableColumnsObject[SubTableColumnKey] = {
+                                                        //             DataAttribute: SubTableColumnValue.DataAttribute,
+                                                        //             DisplayName: SubTableColumnValue.DisplayName,
+                                                        //             px: SubTableColumnValue.Widths.px
+
+                                                        //         };
+                                                        //     }
+                                                        // );
+
                                                     }
                                                 );
 

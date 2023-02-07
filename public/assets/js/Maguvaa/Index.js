@@ -5,8 +5,9 @@ let jVarCommonKToken = "KToken";
 let jVarLocalStorageKeyName = "kUserName";
 
 let jFStartFunc = ({ inUserKey }) => {
+   // console.log("ssssssssssss");
     CheckUserFuncsjFStartFunc({
-        inUserKey: jVarLocalStorageKeyName,
+        inUserKey,
         inKTokenKey: jVarCommonKToken
     });
 };
