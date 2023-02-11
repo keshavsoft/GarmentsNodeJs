@@ -422,9 +422,9 @@
                             <div class="card-body">
                               <div class="multisteps-form__progress">
                                 <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">
-                                  <span>Voucher Details</span>
+                                  <span>User Info</span>
                                 </button>
-                                <button class="multisteps-form__progress-btn" type="button" title="Address">Product Details</button>
+                                <button class="multisteps-form__progress-btn" type="button" title="Address">Address</button>
                                 <button class="multisteps-form__progress-btn" type="button" title="Socials">Socials</button>
                                 <button class="multisteps-form__progress-btn" type="button" title="Profile">Profile</button>
                               </div>
@@ -438,15 +438,39 @@
                           <form class="multisteps-form__form mb-8">
                             <!--single form panel-->
                             <div class="card multisteps-form__panel p-3 border-radius-xl bg-white js-active" data-animation="FadeIn">
-                              <h5 class="font-weight-bolder mb-0">Voucher Details</h5>
+                              <h5 class="font-weight-bolder mb-0">About me</h5>
                               <p class="mb-0 text-sm">Mandatory informations</p>
                               <div class="multisteps-form__content">
-                                <h3 id="VoucherNameId" class="mt-lg-0 mt-4">Apple Bundle</h3>
-                                <br>
-                                <h5 id="BillNumberId">$1,419</h5>
-                                <br>
-                                <label id="DateId" class="mt-4">Description</label>
-
+                                <div class="row mt-3">
+                                  <div class="col-12 col-sm-6">
+                                    <label>First Name</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Michael" />
+                                  </div>
+                                  <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                                    <label>Last Name</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Prior" />
+                                  </div>
+                                </div>
+                                <div class="row mt-3">
+                                  <div class="col-12 col-sm-6">
+                                    <label>Company</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Creative Tim" />
+                                  </div>
+                                  <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                                    <label>Email Address</label>
+                                    <input class="multisteps-form__input form-control" type="email" placeholder="eg. argon@dashboard.com" />
+                                  </div>
+                                </div>
+                                <div class="row mt-3">
+                                  <div class="col-12 col-sm-6">
+                                    <label>Password</label>
+                                    <input class="multisteps-form__input form-control" type="password" placeholder="******" />
+                                  </div>
+                                  <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                                    <label>Repeat Password</label>
+                                    <input class="multisteps-form__input form-control" type="password" placeholder="******" />
+                                  </div>
+                                </div>
                                 <div class="button-row d-flex mt-4">
                                   <button class="btn bg-gradient-dark ms-auto mb-0 js-btn-next" type="button" title="Next">Next</button>
                                 </div>
@@ -456,19 +480,36 @@
                             <div class="card multisteps-form__panel p-3 border-radius-xl bg-white" data-animation="FadeIn">
                               <h5 class="font-weight-bolder">Address</h5>
                               <div class="multisteps-form__content">
-                                <div class="table table-responsive">
-                                    <table class="table align-items-center mb-0">
-                                        <thead id="InvTableHeadId">
-
-                                        </thead>
-                                        <tbody id="InvTableBodyId">
-
-                                        </tbody>
-                                        <tfoot id="InvTableFooterId">
-
-                                        </tfoot>
-                                    </table>
-                                </div>                             
+                                <div class="row mt-3">
+                                  <div class="col">
+                                    <label>Address 1</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Street 111" />
+                                  </div>
+                                </div>
+                                <div class="row mt-3">
+                                  <div class="col">
+                                    <label>Address 2</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Street 221" />
+                                  </div>
+                                </div>
+                                <div class="row mt-3">
+                                  <div class="col-12 col-sm-6">
+                                    <label>City</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="eg. Tokyo" />
+                                  </div>
+                                  <div class="col-6 col-sm-3 mt-3 mt-sm-0">
+                                    <label>State</label>
+                                    <select class="multisteps-form__select form-control">
+                                      <option selected="selected">...</option>
+                                      <option value="1">State 1</option>
+                                      <option value="2">State 2</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-6 col-sm-3 mt-3 mt-sm-0">
+                                    <label>Zip</label>
+                                    <input class="multisteps-form__input form-control" type="text" placeholder="7 letters" />
+                                  </div>
+                                </div>
                                 <div class="button-row d-flex mt-4">
                                   <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Prev</button>
                                   <button class="btn bg-gradient-dark ms-auto mb-0 js-btn-next" type="button" title="Next">Next</button>
@@ -531,8 +572,19 @@
                         <div class="card-body">
                             <h5 class="mb-4">Voucher Details</h5>
                             <div class="row">
+                                <div class="col-xl-5 col-lg-6">
+                                    <select class="form-control" name="choices-questions" id="ItemsDataListId"></select>
+                                    <input type="number" min="0" id="RateId" class="form-control">
+                                    <input type="number" min="0" id="QtyId" class="form-control">
+                                    <button class="btn btn-primary" id="InvTableFooterSaveButtonId">Save</button>
+                                </div>
                                 <div class="col-lg-5 mx-auto">
-                                 
+                                    <h3 id="VoucherNameId" class="mt-lg-0 mt-4">Apple Bundle</h3>
+                                    <br>
+                                    <h5 id="BillNumberId">$1,419</h5>
+                                    <br>
+                                    <label id="DateId" class="mt-4">Description</label>
+
 
                                     <div class="row mt-4">
 
@@ -542,7 +594,19 @@
                             <div class="row mt-5">
                                 <div class="col-12">
                                     <h5 class="ms-3">Other Products</h5>
-                            
+                                    <div class="table table-responsive">
+                                        <table class="table align-items-center mb-0">
+                                            <thead id="InvTableHeadId">
+
+                                            </thead>
+                                            <tbody id="InvTableBodyId">
+
+                                            </tbody>
+                                            <tfoot id="InvTableFooterId">
+
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -704,7 +768,6 @@
     <script src="../../../../assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="../../../../assets/js/plugins/chartjs.min.js"></script>
     <script src="../../../../assets/js/plugins/choices.min.js"></script>
-    <script src="../../../../assets/js/plugins/multistep-form.js"></script>
     <!-- Kanban scripts -->
     <script src="../../../../assets/js/plugins/dragula/dragula.min.js"></script>
     <script src="../../../../assets/js/plugins/jkanban/jkanban.js"></script>
