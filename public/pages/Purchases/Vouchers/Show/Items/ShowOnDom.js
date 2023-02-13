@@ -5,7 +5,6 @@ let StartFunc = async ({ inProjectName }) => {
 
     if (jVarLocalFromFetch.KTF) {
         let jVarLocalItemsDataListId = document.getElementById("ItemsDataListId");
-        console.log("jVarLocalItemsDataListId : ", jVarLocalItemsDataListId);
         if (jVarLocalItemsDataListId !== null) {
             var options = '';
 
