@@ -4,11 +4,18 @@ let PreparePostData = () => {
     let jVarLocalItemNameId = document.getElementById("ItemsDataListId");
     let jVarLocalRateId = document.getElementById("RateId");
     let jVarLocalQty = document.getElementById("QtyId");
-    
+    console.log("jVarLocalQty : ", jVarLocalQty);
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
-    jVarLocalReturnData.UnitRate = parseInt(jVarLocalRateId.value);
-    jVarLocalReturnData.Qty = parseInt(jVarLocalQty.value);
+
+    if (!(jVarLocalRateId === null)) {
+        jVarLocalReturnData.UnitRate = parseInt(jVarLocalRateId.value);
+    };
+
+    if (!(jVarLocalQty === null)) {
+        jVarLocalReturnData.Qty = parseInt(jVarLocalQty.value);
+    };
+
     //jVarLocalReturnData.GST = jVarLocalGSTId.value;
 
     return jVarLocalReturnData;
@@ -18,6 +25,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
         let jVarLocalRowPK = ReturnRowPK().RowPK;
+        jVarLocalRowPK = 2;
 
         let inFetchPostData = {
             FileNameOnly: inFileName,
@@ -29,7 +37,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         };
 
         inFetchPostData.DataToInsert = PreparePostData();
-
+        console.log("inFetchPostData------------ : ", inFetchPostData);
         let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert`;
 
         let jVarLocalFetchHeaders = {

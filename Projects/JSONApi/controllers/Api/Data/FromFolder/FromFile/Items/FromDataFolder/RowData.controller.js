@@ -9,7 +9,7 @@ let PostFunc = async (req, res, next) => {
     let LocalItemName = req.body.ItemName;
     let LocalJsonPK = req.body.JsonPk;
     //JsonPk
-
+console.log("aaaaaaaaaaaaaaaaa");
     let PromiseData = await Repos.PostFunc({
         inDataPK: LocalDataPk,
         inFolderName: LocalFolderName,
