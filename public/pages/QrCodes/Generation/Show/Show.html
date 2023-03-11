@@ -441,7 +441,7 @@
                                                 Saree
                                             </div> -->
                                         </div>
-                                        
+
                                     </div>
 
 
@@ -456,7 +456,7 @@
                                     <h4 id="CostPriceId" class="mt-lg-0 mt-4"></h4>
                                     <h4 id="SalePriceId" class="mt-lg-0 mt-4"></h4>
                                     <h4 id="PersentageId" class="mt-lg-0 mt-4"></h4>
-                                    
+
                                     <br>
                                     <h6 class="mb-0 mt-3">Price</h6>
                                     <h5>$1,419</h5>
@@ -728,6 +728,70 @@
                 </div>
             </footer>
         </div>
+
+
+        <!-- Modal for only qrcode -->
+        <div class="modal fade" id="ModalForQrCodeOnly" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">QrCodesOnly</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="ModalBodyorQrCodeOnly">
+                        <div>
+                            <div style="width: 50%; float: left; height: 70px;">
+                                <div class="row">
+                                    <div style="text-align: center;" class="col" id="QrCodeOnModalId">
+                                        {{QrCode}}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div style="text-align: center;" class="col">{{CustomerName}}</div>
+                                </div>
+                                <div class="row">
+                                    <b>
+                                        <div style="text-align: center;" class="col">
+                                            {{Mobile}}
+                                        </div>
+                                    </b>
+                                </div>
+                                <div class="row">
+                                    <div style="text-align: center;" class="col">
+                                        {{GarmentsName}} : {{GarmentsPcs}}/{{GarmentPcsTotal}}
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div style="margin-left: 50%; height: 70px;">
+
+                                <div class="row">
+                                    <div style="text-align: center;" class="col">
+                                        <canvas id="CanvasId" width=1 height=1
+                                            style="border:1px solid #fff;visibility:hidden"></canvas>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div style="text-align: center;" class="col" id="ModalGarments">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary"
+                            onclick="printJS('ModalBodyorQrCodeOnly', 'html')">Print</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
 
@@ -914,7 +978,7 @@
             console.log("ssssssss");
         };
 
-        jFAddListeners();
+      //  jFAddListeners();
     </script>
 </body>
 

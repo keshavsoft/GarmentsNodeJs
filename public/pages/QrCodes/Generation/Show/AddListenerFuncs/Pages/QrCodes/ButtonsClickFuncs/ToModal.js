@@ -5,8 +5,19 @@ let StartFunc = () => {
 };
 
 let jFShowQrCodeButtonClickFunc = () => {
-    let jVarLocalDivToShowQrCodeId = document.getElementById("DivToShowQrCodeId");
-    GenerateQrCodeOnModal({ inQrData: "16", inCanvasId: jVarLocalDivToShowQrCodeId });
+    let jVarLocalQrCodeOnModalId = document.getElementById("QrCodeOnModalId");
+    jVarLocalQrCodeOnModalId.innerHTML = "16";
+
+    GenerateQrCodeOnModal({ inQrData: "16", inCanvasId: document.getElementById("CanvasId") });
+
+    let jVarLocalId = "ModalForQrCodeOnly";
+
+    var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
+
+    myModal.show();
+
+    // let jVarLocalDivToShowQrCodeId = document.getElementById("DivToShowQrCodeId");
+
 };
 
 let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
@@ -40,6 +51,5 @@ let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
         canvas.style.visibility = 'visible';
     }
 };
-
 
 export { StartFunc };
