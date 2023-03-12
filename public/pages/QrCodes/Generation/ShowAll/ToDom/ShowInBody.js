@@ -18,21 +18,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 let ShowOnDom = async ({ inData }) => {
     await ShowOnDomTableHeader();
     await ShowOnDomTableBody({ inData });
-    // let jVarLocalTableBodyId = document.getElementById("TableBodyId");
-
-    // let jVarLocalTemplate = await TableRowStartFunc();
-
-    // if (jVarLocalTemplate.KTF) {
-    //     var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
-
-    //     inData.forEach(element => {
-
-    //         let jVarLocalToShowHtml = template(element);
-
-    //         jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    //     });
-
-    // };
 };
 
 let ShowOnDomTableBody = async ({ inData }) => {
@@ -43,7 +28,6 @@ let ShowOnDomTableBody = async ({ inData }) => {
         var template = Handlebars.compile(jVarLocalTemplate.HtmlString);
 
         inData.forEach(element => {
-
             let jVarLocalToShowHtml = template(element);
 
             jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);

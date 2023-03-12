@@ -7,18 +7,36 @@ let StartFunc = () => {
 let jFShowQrCodeButtonClickFunc = () => {
     let jVarLocalQrCodeOnModalId = document.getElementById("QrCodeOnModalId");
     jVarLocalQrCodeOnModalId.innerHTML = "16";
-
-    GenerateQrCodeOnModal({ inQrData: "16", inCanvasId: document.getElementById("CanvasId") });
+    let jVarLocalFromDom = DataFromDom();
+    console.log("jVarLocalFromDom : ", jVarLocalFromDom);
+    GenerateQrCodeOnModal({
+        inQrData: `${jVarLocalFromDom.Barcode}/${jVarLocalFromDom.ProductName}/${jVarLocalFromDom.ProductAliasName}`, inCanvasId: document.getElementById("CanvasId")
+    });
 
     let jVarLocalId = "ModalForQrCodeOnly";
 
     var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
 
     myModal.show();
+};
 
-    // let jVarLocalDivToShowQrCodeId = document.getElementById("DivToShowQrCodeId");
+
+let DataFromDom = () => {
+    let jVarLocalReturnObject = {};
+
+    let jVarLocalBarcodeId = document.getElementById("BarcodeId");
+    let jVarLocalItemNameLabelId = document.getElementById("ItemNameLabelId");
+    let jVarLocalProductAliasName = document.getElementById("ProductAliasNameId");
+
+    jVarLocalReturnObject.Barcode = jVarLocalBarcodeId.innerText;
+    jVarLocalReturnObject.ProductName = jVarLocalItemNameLabelId.innerText;
+    jVarLocalReturnObject.ProductAliasName = jVarLocalProductAliasName.innerText;
+
+
+    return jVarLocalReturnObject;
 
 };
+
 
 let GenerateQrCodeOnModal = ({ inQrData = "", inCanvasId }) => {
     var canvas = inCanvasId;

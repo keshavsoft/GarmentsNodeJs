@@ -29,7 +29,7 @@ let StartFunc = () => {
         jVarLocalReturnData.SalePrice = parseInt(jVarLocalPrice2Id.value);
     };
     if (jVarLocalPecentagePrice !== null) {
-        jVarLocalReturnData.Persentage = parseInt(jVarLocalPecentagePrice.value);
+        jVarLocalReturnData.PercentageValueAddition = parseInt(jVarLocalPecentagePrice.value);
     };
 
     return jVarLocalReturnData;

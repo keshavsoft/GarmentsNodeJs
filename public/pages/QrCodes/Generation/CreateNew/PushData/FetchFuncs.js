@@ -2,8 +2,6 @@ import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
-        let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
-
         let inFetchPostData = {
             FolderName: inFolderName,
             FileNameOnly: inFileName,
