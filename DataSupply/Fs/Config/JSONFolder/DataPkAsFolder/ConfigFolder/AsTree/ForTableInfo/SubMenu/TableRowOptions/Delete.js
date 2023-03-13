@@ -1,6 +1,7 @@
-let CommonFromUserFolder = require("../../UserFolder/getDirectories");
-let CommonFromgetDirectories = require("../../getDirectories");
+let CommonFromUserFolder = require("../../../../UserFolder/getDirectories");
+let CommonFromgetDirectories = require("../../../../getDirectories");
 let _ = require("lodash");
+
 
 let AsObject = async ({ inDataPK }) => {
     let LocalDataPK = inDataPK;
@@ -35,23 +36,13 @@ let AsObject = async ({ inDataPK }) => {
 
                         Object.entries(ItemValue.Screens).forEach(
                             ([ScreenKey, ScreenValue]) => {
-                                LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableInfo = {};
+                                delete ScreenValue.TableColumnsObject;
 
-                                if ("SubTableInfo" in ScreenValue && ScreenValue.SubTableInfo !== undefined) {
+                                if ("TableInfo" in ScreenValue) {
+                                    ScreenValue.Simple = ScreenValue.TableInfo.TableRowOptions.Delete.Simple;
 
-                                    Object.entries(ScreenValue.SubTableInfo).forEach(
-                                        ([SubInfoKey, SubInfoValue]) => {
-                                            LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey].SubTableInfo[SubInfoKey] = {
-                                                ShowFooter: SubInfoValue.ShowFooter,
-                                                HeadRowSearch: SubInfoValue.HeadRowSearch,
-                                                DataAttributesFromTableInfo: SubInfoValue.DataAttributesFromTableInfo,
-                                                DataAttributesFromTableDataRow: SubInfoValue.DataAttributesFromTableDataRow
-
-                                            }
-                                        }
-
-                                    );
                                 }
+                                LoopInsideFile.Files[FileKey].Items[ItemKey].Screens[ScreenKey] = JSON.parse(JSON.stringify(ScreenValue));
 
                             }
                         );
@@ -71,11 +62,12 @@ let AsObject = async ({ inDataPK }) => {
 
     return await LocalReturnObject;
 };
+
 let LocalMockFunc = async () => {
-    let LocalData = await AsObject({ inDataPK: 1024 });
-    console.log("LocalData : ", LocalData);
+    let LocalData = await AsObject({ inDataPK: 1022 });
+    // console.log("LocalData : ", LocalData);
 };
 
-// LocalMockFunc().then();
+LocalMockFunc().then();
 
 module.exports = { AsObject };

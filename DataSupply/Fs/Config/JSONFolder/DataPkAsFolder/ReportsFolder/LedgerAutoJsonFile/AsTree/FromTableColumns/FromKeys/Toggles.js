@@ -1,4 +1,4 @@
-let CommonFileData = require("../../PullDataFromFile/FromJson");
+let CommonFileData = require("../../../PullDataFromFile/FromJson");
 
 let StartFunc = async ({ inDataPK }) => {
     let LocalReturnData = { KTF: false, DirPath: "", CreatedLog: {} };
@@ -26,24 +26,21 @@ let StartFunc = async ({ inDataPK }) => {
 let LocalBuildJsonData = ({ inJsonData }) => {
     let LocalReturnObject = {};
     LocalReturnObject.Reports = {};
-console.log("jatin");
     Object.entries(inJsonData).forEach(
         ([key, value]) => {
             LocalReturnObject.Reports[key] = {};
-            LocalReturnObject.Reports[key].VouchersConsider = {};
+            LocalReturnObject.Reports[key].TableColumns = {};
 
-            value.VouchersConsider.forEach(element => {
-                //   LocalReturnObject.Reports[key].VouchersConsider[element.pk] = { Active: element.Active };
-                LocalReturnObject.Reports[key].VouchersConsider[element.pk] = {
-                    FolderName:element.FolderName,
-                    FileName:element.FileName,
-                    ItemName:element.ItemName,
-                    ColumnNameToPick: element.ColumnNameToPick,
-                    Active: element.Active,
-                    FromFolder: element.FromFolder,
-                    ItemNameConsider: element.ItemNameConsider};
+            // console.log("value",value);
 
-                //  LocalReturnObject.Reports[key].VouchersConsider[element.pk] = { ...element };
+            value.TableColumns.forEach(element => {
+                LocalReturnObject.Reports[key].TableColumns[element.pk] = {
+                    DisplayName:element.DisplayName,
+                    DataAttribute:element.DataAttribute,
+                    CreateNew:element.CreateNew,
+                    Insert: element.Insert,
+                    ShowInTable: element.ShowInTable};
+
             });
         }
     );
@@ -53,13 +50,13 @@ console.log("jatin");
 
 let MockFunc = () => {
     StartFunc({
-        inDataPK: 301
+        inDataPK: 1022
 
     }).then((PromiseData) => {
-        console.log("PromiseData--", PromiseData.JsonData.Reports.StockBalances);
+        // console.log("PromiseData--", PromiseData.JsonData.Reports.valuePurchases);
     });
 };
 
-//MockFunc();
+// MockFunc();
 
 module.exports = { StartFunc };

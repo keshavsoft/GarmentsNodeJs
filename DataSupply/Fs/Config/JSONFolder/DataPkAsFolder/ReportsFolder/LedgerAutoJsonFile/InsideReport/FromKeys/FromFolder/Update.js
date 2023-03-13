@@ -4,7 +4,7 @@ let CommonPullDataFromConfig = require("../../../PullDataFromFile/FromJson");
 let CommonFromPushData = require("../../../PushDataFromFile/FromJson");
 
 let Update = async ({ DataPK, ItemName, voucher, BodyAsJson }) => {
-    const LocalDataToUpdate = (({ FolderName, FileName, Active }) => ({ FolderName, FileName, Active }))(BodyAsJson);
+    const LocalDataToUpdate = (({ FromFolder,ItemNameConsider,JsonFileConsider }) => ({ FromFolder,ItemNameConsider,JsonFileConsider }))(BodyAsJson);
     let LocalinDataPK = DataPK;
     let LocalReportName = ItemName;
     let LocalVouchersConsiderPk = parseInt(voucher);
@@ -28,11 +28,9 @@ let Update = async ({ DataPK, ItemName, voucher, BodyAsJson }) => {
             LocalFilterObject.pk = LocalVouchersConsiderPk;
             LocalFindColumnObject = _.find(LocalNewData[LocalReportName].VouchersConsider, LocalFilterObject);
 
-            console.log("ooooooo---", LocalFindColumnObject.FolderName, LocalDataToUpdate.FolderName);
-
-            LocalFindColumnObject.FolderName = LocalDataToUpdate.FolderName;
-            LocalFindColumnObject.FileName = LocalDataToUpdate.FileName;
-            LocalFindColumnObject.Active = LocalDataToUpdate.Active;
+            LocalFindColumnObject.FromFolder = LocalDataToUpdate.FromFolder;
+            LocalFindColumnObject.ItemNameConsider = LocalDataToUpdate.ItemNameConsider;
+            LocalFindColumnObject.JsonFileConsider = LocalDataToUpdate.JsonFileConsider ;
 
 
             LocalFromUpdate = await CommonFromPushData.StartFunc({

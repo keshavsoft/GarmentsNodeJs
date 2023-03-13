@@ -26,7 +26,7 @@ let StartFunc = async ({ inDataPK }) => {
 let LocalBuildJsonData = ({ inJsonData }) => {
     let LocalReturnObject = {};
     LocalReturnObject.Reports = {};
-console.log("jatin");
+
     Object.entries(inJsonData).forEach(
         ([key, value]) => {
             LocalReturnObject.Reports[key] = {};
@@ -38,10 +38,9 @@ console.log("jatin");
                     FolderName:element.FolderName,
                     FileName:element.FileName,
                     ItemName:element.ItemName,
-                    ColumnNameToPick: element.ColumnNameToPick,
-                    Active: element.Active,
                     FromFolder: element.FromFolder,
-                    ItemNameConsider: element.ItemNameConsider};
+                    ItemNameConsider: element.ItemNameConsider,
+                    JsonFileConsider: element.JsonFileConsider };
 
                 //  LocalReturnObject.Reports[key].VouchersConsider[element.pk] = { ...element };
             });
