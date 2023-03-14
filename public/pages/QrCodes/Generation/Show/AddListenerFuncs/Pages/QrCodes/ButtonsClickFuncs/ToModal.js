@@ -6,13 +6,10 @@ let StartFunc = () => {
 
 let jFShowQrCodeButtonClickFunc = () => {
     let jVarLocalFromDom = DataFromDom();
-    let jVarLocalData = "";
 
     GenerateQrCodeOnModal({
-        inQrData: `${jVarLocalFromDom.Barcode}
-        /${jVarLocalFromDom.ProductName}
-        /${jVarLocalFromDom.ProductAliasName}
-        /${jVarLocalFromDom.UserDescription}`, inCanvasId: document.getElementById("CanvasId")
+        inQrData: `${jVarLocalFromDom.Barcode}/${jVarLocalFromDom.ProductName}/${jVarLocalFromDom.ProductAliasName}/${jVarLocalFromDom.UserDescription}`,
+        inCanvasId: document.getElementById("CanvasId")
     });
 
     let jVarLocalId = "ModalForQrCodeOnly";
