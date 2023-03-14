@@ -14,6 +14,12 @@ let jFShowQrCodeButtonClickFunc = () => {
 
     jFShowQrCodeDetails({ inData: jVarLocalFromDom });
 
+    jFShowItemNameLabelIdDetails({ inData: jVarLocalFromDom });
+    jFShowProductAliasNameIdDetails({ inData: jVarLocalFromDom });
+    jFShowUserDescriptionDetails({ inData: jVarLocalFromDom });
+
+
+
     let jVarLocalId = "ModalForQrCodeOnly";
 
     var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
@@ -24,6 +30,23 @@ let jFShowQrCodeButtonClickFunc = () => {
 let jFShowQrCodeDetails = ({ inData }) => {
     let jVarLocalQrCodeOnModalId = document.getElementById("QrCodeOnModalId");
     jVarLocalQrCodeOnModalId.innerText = inData.Barcode;
+};
+
+
+let jFShowItemNameLabelIdDetails = ({ inData }) => {
+    console.log("inData",inData);
+    let jVarLocalItemNameLabelId = document.getElementById("ProductNameModalId");
+    jVarLocalItemNameLabelId.innerText = inData.ProductName;
+};
+
+let jFShowProductAliasNameIdDetails = ({ inData }) => {
+    let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameModalId");
+    jVarLocalProductAliasNameId.innerText = inData.ProductAliasName;
+};
+
+let jFShowUserDescriptionDetails = ({ inData }) => {
+    let jVarLocalUserDescription = document.getElementById("UserDescriptionModalId");
+    jVarLocalUserDescription.innerText = inData.UserDescription;
 };
 
 let DataFromDom = () => {
