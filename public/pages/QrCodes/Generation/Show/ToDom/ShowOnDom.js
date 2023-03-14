@@ -18,12 +18,14 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 };
 
 let ShowOnDom = ({ inData }) => {
+    console.log("inData : ", inData);
     let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
     let jVarLocalBarcodeId = document.getElementById("BarcodeId");
     let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameId");
     let jVarLocalCostPriceId = document.getElementById("CostPriceId");
     let jVarLocalSalePriceId = document.getElementById("SalePriceId");
     let jVarLocalPersentageId = document.getElementById("PersentageId");
+    let jVarLocalUserDescription = document.getElementById("UserDescriptionId");
 
     if (jVarLocalItemNameId !== null) {
         jVarLocalItemNameId.innerHTML = inData.ProductName;
@@ -41,20 +43,14 @@ let ShowOnDom = ({ inData }) => {
     if (jVarLocalSalePriceId !== null) {
         jVarLocalSalePriceId.innerHTML = inData.SalePrice;
     };
+
     if (jVarLocalPersentageId !== null) {
         jVarLocalPersentageId.innerHTML = inData.Persentage;
     };
 
-    console.log("sssssss : ", inData);
-    // var template = Handlebars.compile(jVarLocalTemplate.innerHTML);
-
-    // inData.forEach(element => {
-
-    //     let jVarLocalToShowHtml = template(element);
-
-    //     jVarLocalTableBodyId.insertAdjacentHTML("afterbegin", jVarLocalToShowHtml);
-    // });
-
+    if (jVarLocalUserDescription !== null) {
+        jVarLocalUserDescription.innerHTML = inData.UserDescription;
+    };
 };
 
 export { StartFunc };

@@ -5,7 +5,7 @@ let StartFunc = () => {
     let jVarLocalPrice1Id = document.getElementById("Price1Id");
     let jVarLocalPrice2Id = document.getElementById("Price2Id");
     let jVarLocalPecentagePrice = document.getElementById("PecentagePrice");
-
+    let jVarLocaleditDeschiption = document.getElementById("edit-deschiption").querySelector("p");
 
     let jVarLocalReturnData = {};
 
@@ -30,6 +30,10 @@ let StartFunc = () => {
     };
     if (jVarLocalPecentagePrice !== null) {
         jVarLocalReturnData.PercentageValueAddition = parseInt(jVarLocalPecentagePrice.value);
+    };
+
+    if (jVarLocaleditDeschiption !== null) {
+        jVarLocalReturnData.UserDescription = jVarLocaleditDeschiption.innerHTML;
     };
 
     return jVarLocalReturnData;
