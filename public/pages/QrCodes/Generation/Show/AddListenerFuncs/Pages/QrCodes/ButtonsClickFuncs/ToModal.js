@@ -12,6 +12,8 @@ let jFShowQrCodeButtonClickFunc = () => {
         inCanvasId: document.getElementById("CanvasId")
     });
 
+    jFShowQrCodeDetails({ inData: jVarLocalFromDom });
+
     let jVarLocalId = "ModalForQrCodeOnly";
 
     var myModal = new bootstrap.Modal(document.getElementById(jVarLocalId), { keyboard: true, focus: true });
@@ -19,6 +21,10 @@ let jFShowQrCodeButtonClickFunc = () => {
     myModal.show();
 };
 
+let jFShowQrCodeDetails = ({ inData }) => {
+    let jVarLocalQrCodeOnModalId = document.getElementById("QrCodeOnModalId");
+    jVarLocalQrCodeOnModalId.innerText = inData.Barcode;
+};
 
 let DataFromDom = () => {
     let jVarLocalReturnObject = {};
