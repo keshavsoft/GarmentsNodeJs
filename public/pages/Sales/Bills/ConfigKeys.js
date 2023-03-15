@@ -1,8 +1,8 @@
 let KeysObject = {
     CommonKeys: {
-        inFolderName: "Purchases",
-        inFileName: "Vouchers",
-        inItemName: "VouchersName"
+        inFolderName: "Sales",
+        inFileName: "Bills",
+        inItemName: "POS"
     }
 };
 
