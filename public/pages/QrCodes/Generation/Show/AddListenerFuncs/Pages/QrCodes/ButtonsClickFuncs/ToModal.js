@@ -6,9 +6,8 @@ let StartFunc = () => {
 
 let jFShowQrCodeButtonClickFunc = () => {
     let jVarLocalFromDom = DataFromDom();
-
     GenerateQrCodeOnModal({
-        inQrData: `${jVarLocalFromDom.Barcode}/${jVarLocalFromDom.ProductName}/${jVarLocalFromDom.ProductAliasName}/${jVarLocalFromDom.UserDescription}`,
+        inQrData: `${jVarLocalFromDom.Barcode}/${jVarLocalFromDom.ProductName}/${jVarLocalFromDom.ProductAliasName}/${jVarLocalFromDom.UserDescription}/${jVarLocalFromDom.SalePrice}`,
         inCanvasId: document.getElementById("CanvasId")
     });
 
@@ -17,6 +16,8 @@ let jFShowQrCodeButtonClickFunc = () => {
     jFShowItemNameLabelIdDetails({ inData: jVarLocalFromDom });
     jFShowProductAliasNameIdDetails({ inData: jVarLocalFromDom });
     jFShowUserDescriptionDetails({ inData: jVarLocalFromDom });
+    jFShowUserSalePriceDetails({ inData: jVarLocalFromDom });
+
 
 
 
@@ -34,7 +35,7 @@ let jFShowQrCodeDetails = ({ inData }) => {
 
 
 let jFShowItemNameLabelIdDetails = ({ inData }) => {
-    console.log("inData",inData);
+    console.log("inData", inData);
     let jVarLocalItemNameLabelId = document.getElementById("ProductNameModalId");
     jVarLocalItemNameLabelId.innerText = inData.ProductName;
 };
@@ -48,6 +49,10 @@ let jFShowUserDescriptionDetails = ({ inData }) => {
     let jVarLocalUserDescription = document.getElementById("UserDescriptionModalId");
     jVarLocalUserDescription.innerText = inData.UserDescription;
 };
+let jFShowUserSalePriceDetails = ({ inData }) => {
+    let jVarLocalSalePrice = document.getElementById("SalePriceModalId");
+    jVarLocalSalePrice.innerText = inData.SalePrice;
+};
 
 let DataFromDom = () => {
     let jVarLocalReturnObject = {};
@@ -55,12 +60,15 @@ let DataFromDom = () => {
     let jVarLocalBarcodeId = document.getElementById("BarcodeId");
     let jVarLocalItemNameLabelId = document.getElementById("ItemNameLabelId");
     let jVarLocalProductAliasName = document.getElementById("ProductAliasNameId");
-    let jVarLocalUserDescription = document.getElementById("UserDescription");
+    let jVarLocalUserDescription = document.getElementById("UserDescriptionId");
+    let jVarLocalSalePrice = document.getElementById("SalePriceId");
 
     jVarLocalReturnObject.Barcode = jVarLocalBarcodeId.innerText;
     jVarLocalReturnObject.ProductName = jVarLocalItemNameLabelId.innerText;
     jVarLocalReturnObject.ProductAliasName = jVarLocalProductAliasName.innerText;
-    jVarLocalReturnObject.UserDescription = UserDescriptionId.innerText;
+    jVarLocalReturnObject.UserDescription = jVarLocalUserDescription.innerText;
+    jVarLocalReturnObject.SalePrice = jVarLocalSalePrice.innerText;
+
 
     return jVarLocalReturnObject;
 };

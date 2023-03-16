@@ -26,6 +26,8 @@ let ShowOnDom = ({ inData }) => {
     let jVarLocalSalePriceId = document.getElementById("SalePriceId");
     let jVarLocalPersentageId = document.getElementById("PersentageId");
     let jVarLocalUserDescription = document.getElementById("UserDescriptionId");
+    let jVarLocalSalePrice = document.getElementById("SalePrice");
+
 
     if (jVarLocalItemNameId !== null) {
         jVarLocalItemNameId.innerHTML = inData.ProductName;
@@ -50,6 +52,9 @@ let ShowOnDom = ({ inData }) => {
 
     if (jVarLocalUserDescription !== null) {
         jVarLocalUserDescription.innerHTML = inData.UserDescription;
+    };
+    if (jVarLocalSalePrice !== null) {
+        jVarLocalSalePrice.innerHTML = inData.SalePrice;
     };
 };
 
