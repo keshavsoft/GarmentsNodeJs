@@ -40,6 +40,7 @@ let LocalAfterSaveFunc = ({ inFetchPostData }) => {
     if (inFetchPostData.KTF) {
         //argon.showSwal('success-message');
         window.location = "../ShowAll/ShowAll.html?FromSave=true";
+        
     } else {
         if ("KReason" in inFetchPostData) {
             Swal.fire({
