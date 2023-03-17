@@ -1,0 +1,41 @@
+{
+    "OpeningStock": {
+        "1": {
+            "pk": "",
+            "ProductName": "Item1",
+            "ProductAliasName": "",
+            "Barcode": "M-16",
+            "Price1": "",
+            "Price2": "",
+            "CostPrice": null,
+            "SalePrice": null,
+            "PercentageValueAddition": 0,
+            "UserDescription": "Some initial <strong>bold</strong> text"
+        },
+        "2": {
+            "pk": "",
+            "ProductName": "Item1",
+            "ProductAliasName": "",
+            "Barcode": "M-17",
+            "Price1": "",
+            "Price2": "",
+            "CostPrice": 110,
+            "SalePrice": 143,
+            "PercentageValueAddition": 30,
+            "UserDescription": "Some initial <strong>bold</strong> text"
+        },
+        "3": {
+            "pk": "",
+            "ProductName": "Item1",
+            "ProductAliasName": "",
+            "Barcode": "M-18",
+            "Price1": "",
+            "Price2": "",
+            "CostPrice": null,
+            "SalePrice": null,
+            "PercentageValueAddition": 0,
+            "UserDescription": "Some initial <strong>bold</strong> text",
+            "SupplierName": "Sup16"
+        }
+    }
+}
