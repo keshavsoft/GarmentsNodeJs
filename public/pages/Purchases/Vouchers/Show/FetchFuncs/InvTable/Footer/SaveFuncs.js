@@ -4,6 +4,7 @@ let PreparePostData = () => {
     let jVarLocalItemNameId = document.getElementById("ItemsDataListId");
     let jVarLocalRateId = document.getElementById("RateId1");
     let jVarLocalQty = document.getElementById("QtyId1");
+    let jVarLocalSno = document.getElementById("Snoid");
 
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
@@ -14,6 +15,9 @@ let PreparePostData = () => {
 
     if (!(jVarLocalQty === null)) {
         jVarLocalReturnData.Qty = parseInt(jVarLocalQty.value);
+    };
+    if (!(jVarLocalSno === null)) {
+        jVarLocalReturnData.sno = parseInt(jVarLocalSno.value);
     };
 
     //jVarLocalReturnData.GST = jVarLocalGSTId.value;
