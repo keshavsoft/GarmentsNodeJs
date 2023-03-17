@@ -22,6 +22,5 @@ let jFStartFunc = async () => {
 };
 
 jFStartFunc().then(() => {
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanbbbbbbbbbbbbb");
     AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 });

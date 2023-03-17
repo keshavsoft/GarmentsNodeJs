@@ -2,9 +2,9 @@ import { ReturnRowPK } from "../../../urlSearchParams.js";
 
 let PreparePostData = () => {
     let jVarLocalItemNameId = document.getElementById("ItemsDataListId");
-    let jVarLocalRateId = document.getElementById("RateId");
-    let jVarLocalQty = document.getElementById("QtyId");
-    console.log("jVarLocalQty : ", jVarLocalQty);
+    let jVarLocalRateId = document.getElementById("RateId1");
+    let jVarLocalQty = document.getElementById("QtyId1");
+
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
 
@@ -37,7 +37,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         };
 
         inFetchPostData.DataToInsert = PreparePostData();
-        console.log("inFetchPostData------------ : ", inFetchPostData, jVarLocalRowPK);
         let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert`;
 
         let jVarLocalFetchHeaders = {
