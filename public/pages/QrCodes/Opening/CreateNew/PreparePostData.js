@@ -36,7 +36,20 @@ let StartFunc = () => {
         jVarLocalReturnData.UserDescription = jVarLocaleditDeschiption.innerHTML;
     };
 
+    jVarLocalSupplierNameFunc({ inData: jVarLocalReturnData });
+
     return jVarLocalReturnData;
+};
+
+let jVarLocalSupplierNameFunc = ({ inData }) => {
+    let jVarLocalSupplierNameSelectId = "SupplierNameSelectId"
+    let jVarLocalHtmlSupplierNameSelectId = document.getElementById(jVarLocalSupplierNameSelectId);
+
+    if ((jVarLocalHtmlSupplierNameSelectId === null) === false) {
+        let jVarLocalSupplierName = jVarLocalHtmlSupplierNameSelectId.name;
+        inData[jVarLocalSupplierName] = jVarLocalHtmlSupplierNameSelectId.value;
+    };
+
 };
 
 export { StartFunc };
