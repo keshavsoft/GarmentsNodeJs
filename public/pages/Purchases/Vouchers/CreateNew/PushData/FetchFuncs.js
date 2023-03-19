@@ -12,8 +12,7 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         };
 
         inFetchPostData.inPostData = PreparePostDataStartFunc();
-        console.log("inFetchPostData : ", inFetchPostData);
-        //        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/Insert`;
+        
         let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking/Insert`;
 
         let jVarLocalFetchHeaders = {
