@@ -1,3 +1,5 @@
+{{log "inv" this @../key}}
+
 <tr>
     <td>{{sno}}</td>
     <td>
@@ -15,7 +17,8 @@
     <td>{{UnitRate}}</td>
     <td>{{Qty}}</td>
     <td class="text-sm">
-        <a href="../Show/Show.html?RowPK={{pk}}" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+        <a href="../../../QrCodes/Generation/CreateNew/CreateNew.html?RowPK={{FK}}&InvRowPK={{pk}}"
+            data-bs-toggle="tooltip" data-bs-original-title="Preview product">
             <i class="fas fa-eye text-secondary"></i>
         </a>
         <a href="../ItemEdit/ItemEdit.html?RowPK={{pk}}" href="javascript:;" class="mx-3 " data-bs-toggle="tooltip"
