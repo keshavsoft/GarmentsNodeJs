@@ -36,7 +36,44 @@ let StartFunc = () => {
         jVarLocalReturnData.UserDescription = jVarLocaleditDeschiption.innerHTML;
     };
 
+    jVarLocalSupplierNameFunc({ inData: jVarLocalReturnData });
+    jVarLocalBillNumber({ inData: jVarLocalReturnData });
+    jVarLocalCommonPrepareObject({
+        inData: jVarLocalReturnData,
+        inIdName: "DateId"
+    });
+
     return jVarLocalReturnData;
+};
+
+let jVarLocalSupplierNameFunc = ({ inData }) => {
+    let jVarLocalSupplierNameSelectId = "SupplierNameSelectId"
+    let jVarLocalHtmlSupplierNameSelectId = document.getElementById(jVarLocalSupplierNameSelectId);
+
+    if ((jVarLocalHtmlSupplierNameSelectId === null) === false) {
+        let jVarLocalSupplierName = jVarLocalHtmlSupplierNameSelectId.name;
+        inData[jVarLocalSupplierName] = jVarLocalHtmlSupplierNameSelectId.value;
+    };
+};
+
+let jVarLocalBillNumber = ({ inData }) => {
+    let jVarLocalSupplierNameSelectId = "BillNumberId"
+    let jVarLocalHtmlSupplierNameSelectId = document.getElementById(jVarLocalSupplierNameSelectId);
+
+    if ((jVarLocalHtmlSupplierNameSelectId === null) === false) {
+        let jVarLocalSupplierName = jVarLocalHtmlSupplierNameSelectId.name;
+        inData[jVarLocalSupplierName] = jVarLocalHtmlSupplierNameSelectId.value;
+    };
+};
+
+let jVarLocalCommonPrepareObject = ({ inData, inIdName }) => {
+    let jVarLocalSupplierNameSelectId = inIdName;
+    let jVarLocalHtmlSupplierNameSelectId = document.getElementById(jVarLocalSupplierNameSelectId);
+
+    if ((jVarLocalHtmlSupplierNameSelectId === null) === false) {
+        let jVarLocalSupplierName = jVarLocalHtmlSupplierNameSelectId.name;
+        inData[jVarLocalSupplierName] = jVarLocalHtmlSupplierNameSelectId.value;
+    };
 };
 
 export { StartFunc };

@@ -1,15 +1,21 @@
 import { StartFunc as VeticalStartFunc } from "./FetchFuncs/HtmlPull/Vetical.js";
 import { StartFunc as ForCreateNewStartFunc } from "./FetchFuncs/ForCreateNew.js";
-import { StartFunc as ItemsShowOnDom } from "./Items/ShowOnDom.js";
+import { StartFunc as SuppliersStartFunc } from "./Suppliers/ShowOnDom.js";
+import { StartFunc as ItemsStartFunc } from "./Items/ShowOnDom.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    await ItemsShowOnDom({ inProjectName });
+    await SuppliersStartFunc({ inProjectName });
+    await ItemsStartFunc({ inProjectName });
 
     if (document.getElementById('ItemsDataListId')) {
         var element = document.getElementById('ItemsDataListId');
         const example = new Choices(element);
     };
 
+    if (document.getElementById('SupplierNameSelectId')) {
+        var element = document.getElementById('SupplierNameSelectId');
+        const example = new Choices(element);
+    };
 
     // await ShowOnDom();
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
@@ -35,7 +41,7 @@ let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemN
         if ("Barcode" in LocalDataFromFetch.JsonData) {
             if (jVarLocalBarcodeId !== null) {
                 jVarLocalBarcodeId.value = LocalDataFromFetch.JsonData.Barcode;
-                
+
             }
         };
 
