@@ -4,7 +4,6 @@ let StartFunc = ({ inQueryData }) => {
     localDateFunc({ inQueryData });
     localBillNumberFunc({ inQueryData });
     localItemsDataListFunc({ inQueryData });
-    localItemsDataListFunc({ inQueryData });
     localPriceFunc({ inQueryData });
     localInventorySerialFunc({ inQueryData });
     localPurchasePkFunc({ inQueryData });
@@ -35,7 +34,7 @@ let localBillNumberFunc = ({ inQueryData }) => {
 let localItemsDataListFunc = ({ inQueryData }) => {
 
     let localinQueryData = inQueryData;
-    let jvarlocalItemsDataList = document.getElementById("ItemsDataListId");
+    let jvarlocalItemsDataList = document.getElementById("ItemsDataId");
     jvarlocalItemsDataList.value = localinQueryData.ItemName;
 };
 
