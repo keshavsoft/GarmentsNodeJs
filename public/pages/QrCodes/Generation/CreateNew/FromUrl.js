@@ -1,5 +1,6 @@
 let StartFunc = () => {
     let jVarLocalQueryParams = jFgetUrlQueryParams();
+    jFLocalShowOnDom();
     console.log("jVarLocalQueryParams : ", jVarLocalQueryParams);
 };
 
@@ -15,6 +16,10 @@ let jFgetUrlQueryParams = () => {
         };
     }
     return queryParams;
+};
+
+let jFLocalShowOnDom = () => {
+
 };
 
 export { StartFunc }

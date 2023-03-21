@@ -4,7 +4,7 @@ import { StartFunc as ItemsStartFunc } from "./Items/ShowOnDom.js";
 import { StartFunc as FromUrlStartFunc } from "./FromUrl.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
-    await SuppliersStartFunc({ inProjectName });
+   // await SuppliersStartFunc({ inProjectName });
     await ItemsStartFunc({ inProjectName });
 
     if (document.getElementById('ItemsDataListId')) {
@@ -12,10 +12,10 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const example = new Choices(element);
     };
 
-    if (document.getElementById('SupplierNameSelectId')) {
-        var element = document.getElementById('SupplierNameSelectId');
-        const example = new Choices(element);
-    };
+    // if (document.getElementById('SupplierNameSelectId')) {
+    //     var element = document.getElementById('SupplierNameSelectId');
+    //     const example = new Choices(element);
+    // };
 
     FromUrlStartFunc();
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
