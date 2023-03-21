@@ -1,7 +1,7 @@
-import { StartFunc as VeticalStartFunc } from "./FetchFuncs/HtmlPull/Vetical.js";
 import { StartFunc as ForCreateNewStartFunc } from "./FetchFuncs/ForCreateNew.js";
 import { StartFunc as SuppliersStartFunc } from "./Suppliers/ShowOnDom.js";
 import { StartFunc as ItemsStartFunc } from "./Items/ShowOnDom.js";
+import { StartFunc as FromUrlStartFunc } from "./FromUrl.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     await SuppliersStartFunc({ inProjectName });
@@ -17,18 +17,8 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const example = new Choices(element);
     };
 
-    // await ShowOnDom();
+    FromUrlStartFunc();
     await ShowOnDomDefaultValuesFromFetch({ inFolderName, inFileName, inItemName, inProjectName });
-};
-
-let ShowOnDom = async () => {
-    let jVarLocalVerticalId = document.getElementById("VerticalId");
-
-    let jVarLocalVeticalHtml = await VeticalStartFunc();
-
-    if (jVarLocalVeticalHtml.KTF) {
-        jVarLocalVerticalId.innerHTML = jVarLocalVeticalHtml.HtmlString;
-    };
 };
 
 let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
@@ -44,10 +34,6 @@ let ShowOnDomDefaultValuesFromFetch = async ({ inFolderName, inFileName, inItemN
 
             }
         };
-
-        // if ("BillNumber" in LocalDataFromFetch.JsonData) {
-        //     jVarLocalBillNumberId.value = LocalDataFromFetch.JsonData.BillNumber;
-        // };
     };
 };
 export { StartFunc };
