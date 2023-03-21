@@ -1,7 +1,9 @@
+import { StartFunc as StartFuncShowOnDom } from "./ShowOnDom.js";
+
 let StartFunc = () => {
     let jVarLocalQueryParams = jFgetUrlQueryParams();
-    jFLocalShowOnDom();
-    console.log("jVarLocalQueryParams : ", jVarLocalQueryParams);
+    StartFuncShowOnDom({ inQueryData: jVarLocalQueryParams });
+
 };
 
 let jFgetUrlQueryParams = () => {
@@ -16,10 +18,6 @@ let jFgetUrlQueryParams = () => {
         };
     }
     return queryParams;
-};
-
-let jFLocalShowOnDom = () => {
-
 };
 
 export { StartFunc }

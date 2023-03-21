@@ -1,0 +1,48 @@
+let StartFunc = ({ inQueryData }) => {
+
+    localSupplierNameFunc({ inQueryData });
+    localDateFunc({ inQueryData });
+    localBillNumberFunc({ inQueryData });
+    localItemsDataListFunc({ inQueryData });
+    localItemsDataListFunc({ inQueryData });
+    localPriceFunc({ inQueryData });
+    
+};
+
+let localSupplierNameFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalSupplierName = document.getElementById("SupplierNameSelectId");
+    jvarlocalSupplierName.value = localinQueryData.SupplierName;
+};
+
+let localDateFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalDate = document.getElementById("DateId");
+    jvarlocalDate.value = localinQueryData.Date;
+};
+
+let localBillNumberFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalBillNumberId = document.getElementById("BillNumberId");
+    jvarlocalBillNumberId.value = localinQueryData.BillNumber;
+};
+
+let localItemsDataListFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalItemsDataList = document.getElementById("ItemsDataListId");
+    jvarlocalItemsDataList.value = localinQueryData.ItemName;
+};
+
+
+let localPriceFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalPrice = document.getElementById("Price1Id");
+    jvarlocalPrice.value = localinQueryData.UnitRate;
+};
+
+export { StartFunc };
