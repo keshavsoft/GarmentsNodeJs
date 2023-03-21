@@ -6,6 +6,8 @@ let StartFunc = ({ inQueryData }) => {
     localItemsDataListFunc({ inQueryData });
     localItemsDataListFunc({ inQueryData });
     localPriceFunc({ inQueryData });
+    localInventorySerialFunc({ inQueryData });
+    localPurchasePkFunc({ inQueryData });
     
 };
 
@@ -37,12 +39,25 @@ let localItemsDataListFunc = ({ inQueryData }) => {
     jvarlocalItemsDataList.value = localinQueryData.ItemName;
 };
 
-
 let localPriceFunc = ({ inQueryData }) => {
 
     let localinQueryData = inQueryData;
     let jvarlocalPrice = document.getElementById("Price1Id");
     jvarlocalPrice.value = localinQueryData.UnitRate;
+};
+
+let localInventorySerialFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalInventorySerial = document.getElementById("InventorySerialId");
+    jvarlocalInventorySerial.value = localinQueryData.InventorySerial;
+};
+
+let localPurchasePkFunc = ({ inQueryData }) => {
+
+    let localinQueryData = inQueryData;
+    let jvarlocalPurchasePk = document.getElementById("PurchasePkId");
+    jvarlocalPurchasePk.value = localinQueryData.PurchasePk;
 };
 
 export { StartFunc };
