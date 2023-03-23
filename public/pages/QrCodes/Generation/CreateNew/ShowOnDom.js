@@ -32,9 +32,8 @@ let localBillNumberFunc = ({ inQueryData }) => {
 };
 
 let localItemsDataListFunc = ({ inQueryData }) => {
-    console.log("inQueryData ", inQueryData);
     let localinQueryData = inQueryData;
-    let jvarlocalItemsDataList = document.getElementById("ItemsDataId");
+    let jvarlocalItemsDataList = document.getElementById("ItemNameId");
     jvarlocalItemsDataList.value = localinQueryData.ItemName;
 };
 
