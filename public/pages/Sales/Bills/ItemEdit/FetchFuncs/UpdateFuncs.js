@@ -1,22 +1,25 @@
+import { ReturnRowPK } from "../urlSearchParams.js";
 import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
 
 let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
+        let jVarLocalRowPK = ReturnRowPK().RowPK;
 
         let inFetchPostData = {
-            FolderName: inFolderName,
             FileNameOnly: inFileName,
+            FolderName: inFolderName,
             ItemName: inItemName,
+            JsonPk: jVarLocalRowPK,
             ScreenName: "Create"
         };
 
-        inFetchPostData.inPostData = PreparePostDataStartFunc();
-        
-        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking/Insert`;
+        inFetchPostData.DataToUpdate = PreparePostDataStartFunc();
+
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking`;
 
         let jVarLocalFetchHeaders = {
-            method: "post",
+            method: "PATCH",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -27,7 +30,13 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
 
-     //   LocalAfterSaveFunc({ inFetchPostData: data });
+        if (data.KTF === false) {
+            LocalReturnObject.KReason = data.KReason;
+            return await LocalReturnObject;
+        };
+
+        LocalReturnObject.JsonData = data.JsonData;
+        LocalReturnObject.RowPK = jVarLocalRowPK;
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
