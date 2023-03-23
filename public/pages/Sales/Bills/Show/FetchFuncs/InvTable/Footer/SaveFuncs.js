@@ -5,6 +5,7 @@ let PreparePostData = () => {
     let jVarLocalRateId = document.getElementById("RateId1");
     let jVarLocalQty = document.getElementById("QtyId1");
     let jVarLocalSno = document.getElementById("Snoid");
+    let jVarLocalQrCode = document.getElementById("QrCode");
 
     let jVarLocalReturnData = {};
     jVarLocalReturnData.ItemName = jVarLocalItemNameId.value;
@@ -16,8 +17,13 @@ let PreparePostData = () => {
     if (!(jVarLocalQty === null)) {
         jVarLocalReturnData.Qty = parseInt(jVarLocalQty.value);
     };
+
     if (!(jVarLocalSno === null)) {
         jVarLocalReturnData.sno = parseInt(jVarLocalSno.value);
+    };
+
+    if (!(jVarLocalQrCode === null)) {
+        jVarLocalReturnData.Barcode = jVarLocalQrCode.value;
     };
 
     //jVarLocalReturnData.GST = jVarLocalGSTId.value;
