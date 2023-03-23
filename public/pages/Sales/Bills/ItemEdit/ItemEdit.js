@@ -1,9 +1,8 @@
 import { jFStartFunc as CheckUserFuncsjFStartFunc } from "../../../../CommonFuncs/LoginFuncs/CheckUserFuncs.js";
-import { StartFunc as ShowOnDomStartFunc } from "../Show/ToDom/ShowOnDom.js";
-import { StartFunc as AddListenersStartFunc } from "../Show/AddListeners.js";
+import { StartFunc as ShowOnDomStartFunc } from "../ItemEdit/ToDom/ShowOnDom.js";
+import { StartFunc as AddListenersStartFunc } from "../ItemEdit/AddListeners.js";
 import { ConfigObject } from "../../../ApiConfig.js";
 import { KeysObject } from "../ConfigKeys.js";
-import { StartFunc as FormLoadStartFunc } from "../Show/ToDom/FormLoad.js";
 
 let jVarCommonKToken = ConfigObject.TokenName;
 let jVarLocalStorageKeyName = ConfigObject.LocalStorageKeyName;
@@ -16,11 +15,8 @@ let jFStartFunc = async () => {
         inKTokenKey: jVarCommonKToken
     });
 
-    await FormLoadStartFunc({ inProjectName: jVarCommonProjectName });
-
     await ShowOnDomStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
+    AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
 };
 
-jFStartFunc().then(() => {
-    AddListenersStartFunc({ ...jVarCommonKeys, inProjectName: jVarCommonProjectName });
-});
+jFStartFunc().then();

@@ -1,4 +1,6 @@
+{{log "sssssssssss" this}}
 <tr>
+    <td>{{sno}}</td>
     <td>
         <div class="d-flex">
             <div class="form-check my-auto">
@@ -14,7 +16,8 @@
     <td>{{UnitRate}}</td>
     <td>{{Qty}}</td>
     <td class="text-sm">
-        <a href="../Show/Show.html?RowPK={{pk}}" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+        <a href="../../../QrCodes/Generation/CreateNew/CreateNew.html?PurchasePk={{FK}}&InventorySerial={{pk}}&SupplierName={{SupplierName}}&BillNumber={{BillNumber}}&Date={{Date}}&ItemName={{ItemName}}&UnitRate={{UnitRate}}"
+            data-bs-toggle="tooltip" data-bs-original-title="Preview product">
             <i class="fas fa-eye text-secondary"></i>
         </a>
         <a href="../ItemEdit/ItemEdit.html?RowPK={{pk}}" href="javascript:;" class="mx-3 " data-bs-toggle="tooltip"

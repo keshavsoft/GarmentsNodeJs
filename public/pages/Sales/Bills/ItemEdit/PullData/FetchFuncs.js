@@ -1,19 +1,16 @@
-import { StartFunc as PreparePostDataStartFunc } from "../PreparePostData.js";
-
-let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) => {
+let FromNode = async ({ inFolderName, inFileName, inItemName, inRowPK, inProjectName }) => {
     try {
         let LocalReturnObject = { KTF: false, KResult: "", JsonData: {} };
 
         let inFetchPostData = {
-            FolderName: inFolderName,
             FileNameOnly: inFileName,
+            FolderName: inFolderName,
             ItemName: inItemName,
-            ScreenName: "Create"
+            JsonPk: inRowPK,
+            Screenname: "Create"
         };
 
-        inFetchPostData.inPostData = PreparePostDataStartFunc();
-        
-        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/WithChecking/Insert`;
+        let jVarLocalFetchUrl = `/${inProjectName}/API/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
 
         let jVarLocalFetchHeaders = {
             method: "post",
@@ -27,7 +24,12 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
         const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         const data = await response.json();
 
-     //   LocalAfterSaveFunc({ inFetchPostData: data });
+        if (data.KTF === false) {
+            LocalReturnObject.KReason = data.KReason;
+            return await LocalReturnObject;
+        };
+
+        LocalReturnObject.JsonData = data.JsonData;
 
         LocalReturnObject.KTF = true;
         return await LocalReturnObject;
@@ -38,4 +40,4 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 
 };
 
-export { StartFunc };
+export { FromNode };
