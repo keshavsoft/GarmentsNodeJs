@@ -18,7 +18,6 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName }) 
 };
 
 let ShowOnDom = ({ inData }) => {
-    console.log("inData : ", inData);
     let jVarLocalItemNameId = document.getElementById("ItemNameLabelId");
     let jVarLocalBarcodeId = document.getElementById("BarcodeId");
     let jVarLocalProductAliasNameId = document.getElementById("ProductAliasNameId");
@@ -33,7 +32,8 @@ let ShowOnDom = ({ inData }) => {
         jVarLocalItemNameId.innerHTML = inData.ProductName;
     };
     if (jVarLocalBarcodeId !== null) {
-        jVarLocalBarcodeId.innerHTML = inData.Barcode;
+        //jVarLocalBarcodeId.innerHTML = inData.Barcode;
+        jVarLocalBarcodeId.innerHTML = `M-${inData.pk}`;
     };
     if (jVarLocalProductAliasNameId !== null) {
         jVarLocalProductAliasNameId.innerHTML = inData.ProductAliasName;

@@ -6,6 +6,8 @@ let StartFunc = () => {
 
 let jFShowQrCodeButtonClickFunc = () => {
     let jVarLocalFromDom = DataFromDom();
+
+    console.log("jVarLocalFromDom : ", jVarLocalFromDom);
     GenerateQrCodeOnModal({
         inQrData: `${jVarLocalFromDom.Barcode}/${jVarLocalFromDom.ProductName}/${jVarLocalFromDom.ProductAliasName}/${jVarLocalFromDom.UserDescription}/${jVarLocalFromDom.SalePrice}`,
         inCanvasId: document.getElementById("CanvasId")
@@ -17,9 +19,6 @@ let jFShowQrCodeButtonClickFunc = () => {
     jFShowProductAliasNameIdDetails({ inData: jVarLocalFromDom });
     jFShowUserDescriptionDetails({ inData: jVarLocalFromDom });
     jFShowUserSalePriceDetails({ inData: jVarLocalFromDom });
-
-
-
 
     let jVarLocalId = "ModalForQrCodeOnly";
 
