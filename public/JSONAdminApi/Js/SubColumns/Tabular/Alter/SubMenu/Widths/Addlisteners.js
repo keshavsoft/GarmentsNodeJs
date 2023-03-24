@@ -15,19 +15,9 @@ let jFLocalClickFunc = async (event) => {
     let jVarLocalsubtablecolumnkey = jVarLocalCurrentTarget.dataset.subtablecolumnkey;
     let jVarLocaltablecolumnkey = jVarLocalCurrentTarget.dataset.tablecolumnkey;
 
-    // <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../../key}}"
-    //  data-filename="{{@../../../../key}}" data-itemname="{{@../../../key}}"
-    //   data-screenname="{{@../../key}}" data-subtablecolumnkey={{@../key}}
-    //   data-tablecolumnkey={{@key}}>
-    //     Update
-    // </button>
-
-
     let jVarLocalColsestTr = jVarLocalCurrentTarget.closest("tr");
-    let jVarLocalDataAttribute = jVarLocalColsestTr.querySelector('[name="DataAttribute"]');
     let jVarLocalWidths = jVarLocalColsestTr.querySelector('[name="px"]');
 
-    let jVarLocalDataAttributeValue = jVarLocalDataAttribute.value;
     let jVarLocalWidthsValue = jVarLocalWidths.value;
 
     let BodyAsJson = {
@@ -36,7 +26,7 @@ let jFLocalClickFunc = async (event) => {
 
     let jFetchUrl = "/JSONAdminApi/AdminApi/AsTree/Json/UserFolders/ScreensFromDisplayJson/SubTableColumns/SubKeys/Widths";
 
-    let response = await fetch(jFetchUrl, {
+    let jFetchBody = {
         method: "PATCH",
         headers: {
             'Accept': 'application/json',
@@ -47,24 +37,16 @@ let jFLocalClickFunc = async (event) => {
             FileName: jVarLocalfilename,
             ItemName: jVarLocalitemname,
             ScreenName: jVarLocalscreenname,
-            DataAttribute: jVarLocalDataAttributeValue,
+            DataAttribute: jVarLocaltablecolumnkey,
             subtablecolumnkey: jVarLocalsubtablecolumnkey,
-            tablecolumnkey: jVarLocaltablecolumnkey,
             BodyAsJson
         })
-    });
+    }
+
+    let response = await fetch(jFetchUrl, jFetchBody);
 
     switch (response.status) {
         case 200:
-            //window.location = "";
-            // let jVarLocalNewLocation = "";
-            // jVarLocalNewLocation += `?inFolderName=${jVarLocalFolderName}`
-            // jVarLocalNewLocation += `&inFileName=${jVarLocalfilename}`
-            // jVarLocalNewLocation += `&inItemName=${jVarLocalitemname}`
-            // jVarLocalNewLocation += `&inScreenName=${jVarLocalscreenname}`
-            // jVarLocalNewLocation += `&inColumnName=${jVarLocalDataAttributeValue}`;
-            // console.log("jVarLocalNewLocation : ", jVarLocalNewLocation);
-            // window.location = jVarLocalNewLocation;
 
             let jVarLocalNewLocation = "";
             jVarLocalNewLocation += `?inFolderName=${jVarLocalFolderName}`
@@ -72,8 +54,7 @@ let jFLocalClickFunc = async (event) => {
             jVarLocalNewLocation += `&inItemName=${jVarLocalitemname}`
             jVarLocalNewLocation += `&inScreenName=${jVarLocalscreenname}`
             jVarLocalNewLocation += `&subtablecolumnkey=${jVarLocalsubtablecolumnkey}`;
-            jVarLocalNewLocation += `&inColumnName=${jVarLocalDataAttributeValue}`;
-            console.log("jVarLocalNewLocation : ", jVarLocalNewLocation);
+            jVarLocalNewLocation += `&inColumnName=${jVarLocaltablecolumnkey}`;
             window.location = jVarLocalNewLocation;
 
             break;

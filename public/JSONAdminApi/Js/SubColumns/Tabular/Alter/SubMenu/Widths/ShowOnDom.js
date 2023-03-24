@@ -1,4 +1,3 @@
-//import { jFStartFunc as ApplyClassesjFStartFunc } from "./ApplyClasses.js";
 import { StartFunc as ApplyClassesStartFunc } from "../../../ApplyClasses.js";
 
 let jFCreateFoldersToDom = async () => {

@@ -99,6 +99,7 @@ let LocalForApplyClasses = ({ indataFromApi }) => {
                                     if ("SubTableColumnsObject" in jVarLocalFirstScreen) {
                                         if (Object.values(jVarLocalFirstScreen.SubTableColumnsObject).length > 0) {
                                             jVarLocalsubtablecolumnkey = Object.values(jVarLocalFirstScreen.SubTableColumnsObject)[0];
+                                            jVarLocalsubtablecolumnkey.TabPageClass = " show active";
                                             jVarLocalsubtablecolumnkey.MenuClass = " active";
                                         };
                                     };

@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>TabularColumnsData</title>
+    <!-- Custom styles for this template -->
+    <link href="/JSONProject/css/headers.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="mb-5">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+    </svg>
+
+    <nav id="NavBarId" class="navbar navbar-expand-md navbar-dark bg-dark d-print-none" aria-label="KeshavSoft">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">KeshavSoft</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuNavItems" aria-controls="MenuNavItems" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="MenuNavItems">
+            <ul class="navbar-nav me-auto" id="MenuNavContainerId">
+
+                <li>
+                    <a href="../Toggles.html" class="nav-link text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"></path>
+                            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"></path>
+                        </svg>
+                        Parent
+                    </a>
+                </li>
+                <li>
+                    <a href="./ColumnReOrder.html" class="nav-link text-white ColumnReOrderAClass">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path d="M8.188 10H7V6.5h1.188a1.75 1.75 0 1 1 0 3.5z"></path>
+                            <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM7 5.5a1 1 0 0 0-1 1V13a.5.5 0 0 0 1 0v-2h1.188a2.75 2.75 0 0 0 0-5.5H7z"></path>
+                        </svg>
+                        ColumnReOrder
+                    </a>
+                </li>
+                <li>
+                    <a href="./Widths.html" class="nav-link text-white WidthsAClass">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path d="M8 1a.5.5 0 0 1 .5.5V6h-1V1.5A.5.5 0 0 1 8 1zm0 14a.5.5 0 0 1-.5-.5V10h1v4.5a.5.5 0 0 1-.5.5zM2 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7z"></path>
+                          </svg>
+                        Widths
+                    </a>
+                </li>
+                <li>
+                    <a href="./DisplayType.html" class="nav-link text-white DisplayTypeAClass">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479L12.258 3z"></path>
+                          </svg>
+                        DisplayType
+                    </a>
+                </li>
+                <li>
+                    <a href="./ServerSide/TransformBeforeSave.html" class="nav-link text-white DisplayTypeAClass">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
+                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
+                          </svg>
+                          ServerSide
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li id="HeaderLoginButtonId">
+                    <a href="#" class="nav-link text-white" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-x d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                            <path fill-rule="evenodd" d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"></path>
+                        </svg>
+                        Login
+                    </a>
+                </li>
+                <li id="HeaderUserIdLi" class="visually-hidden nav-item dropdown">
+                    <a href="#" id="HeaderUserIdDropDown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-white dropdown-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-person d-block mx-auto mb-1 d-none d-md-block" viewBox="0 0 16 16">
+                            <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"></path>
+                            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                        </svg>
+                        UserName
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="HeaderUserIdDropDown">
+                        <li><a class="dropdown-item" href="#" onclick="jVarGlobalClientObject.UI.ModalFuncs.Show()">
+                                <i class="bi bi-power" style="font-size: 1.3rem; color:orangered"></i>
+                                logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+    <main>
+        <div class="container">
+            <div id="KCont1">
+            </div>
+        </div>
+
+        <datalist id="DefaultValueDataList">
+            <option value="Object"></option>
+        </datalist>
+
+        <datalist id="TextAlignDataList">
+            <option value="Right"></option>
+            <option value="Left"></option>
+        </datalist>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom">
+    <div class="container">
+        <div class="bg-light d-flex justify-content-between">
+            <div>KeshavSoft</div>
+
+            <div data-BaseString="Last refresh : " id="KLastRefreshDT">Last refresh : </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- LOGIN  STARTED -->
+    <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter client user credentials</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="LoginFormPopUpId" class="" onsubmit="return false" novalidate="">
+                        <div class="mb-3 form-floating is-valid">
+                            <input type="text" class="form-control" id="KUserNameInput" required="">
+                            <label for="KUserNameInput">User Name</label>
+                            <div class="invalid-feedback">
+                                User Name cannot be empty.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="password" class="form-control" id="KPasswordInput" required="">
+                            <label for="KPasswordInput">Password</label>
+                            <div class="invalid-feedback">
+                                Password cannot be empty.
+                            </div>
+                        </div>
+                        <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
+                        <!-- <button type="button" class="btn btn-primary"
+                        onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
+                         -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN FINISHED -->
+
+    <script src="/ClassesStatic/CommonClass.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
+    <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
+
+
+<ul class="nav nav-tabs" role="tablist">
+    {{#each Folders}}
+    <li class="nav-item" role="presentation">
+        <button class="nav-link {{this.MenuClass}}" id="{{this.FolderName}}-tab" data-bs-toggle="tab"
+            data-bs-target="#{{this.FolderName}}" type="button" role="tab" aria-controls="{{this.FolderName}}"
+            aria-selected="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder"
+                viewBox="0 0 16 16">
+                <path
+                    d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z" />
+            </svg>
+            {{this.FolderName}}</button>
+    </li>
+    {{/each}}
+</ul>
+<div class="tab-content">
+    {{#each Folders}}
+    <div class="tab-pane fade {{this.TabPageClass}}" id="{{this.FolderName}}" role="tabpanel"
+        aria-labelledby="{{this.FolderName}}-tab">
+        {{> HbsTemplateForFilesOnly}}
+    </div>
+    {{/each}}
+</div>
+
+</script>
+
+
+    <script id="HbsTemplateForFilesOnly" type="text/x-handlebars">
+    <div class="d-flex align-items-start row">
+      <div class="nav flex-column nav-pills col-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          {{#each this.Files}}
+          <button class="nav-link {{ButtonClass}}" id="v-pills-{{../FolderName}}-{{@key}}-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-{{../FolderName}}-{{@key}}" type="button" role="tab"
+              aria-controls="v-pills-{{../FolderName}}-{{@key}}" aria-selected="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-json" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM4.151 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .084-.29.387.387 0 0 0-.152-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.352-.367 1.068 1.068 0 0 1-.123-.524c0-.244.064-.457.19-.639.128-.181.304-.322.528-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.185.384c0 .121.048.22.144.3a.97.97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211a1 1 0 0 1 .375.358c.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033a1.32 1.32 0 0 1-.082-.466h.764a.576.576 0 0 0 .074.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.091-.11.137-.265.137-.466v-2.745h.791v2.725c0 .44-.119.774-.357 1.005-.237.23-.565.345-.985.345a1.59 1.59 0 0 1-.568-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.243-.39Zm9.091-1.585v.522c0 .256-.039.47-.117.641a.862.862 0 0 1-.322.387.877.877 0 0 1-.47.126.883.883 0 0 1-.47-.126.87.87 0 0 1-.32-.387 1.55 1.55 0 0 1-.117-.641v-.522c0-.258.039-.471.117-.641a.87.87 0 0 1 .32-.387.868.868 0 0 1 .47-.129c.177 0 .333.043.47.129a.862.862 0 0 1 .322.387c.078.17.117.383.117.641Zm.803.519v-.513c0-.377-.069-.701-.205-.973a1.46 1.46 0 0 0-.59-.63c-.253-.146-.559-.22-.916-.22-.356 0-.662.074-.92.22a1.441 1.441 0 0 0-.589.628c-.137.271-.205.596-.205.975v.513c0 .375.068.699.205.973.137.271.333.48.589.626.258.145.564.217.92.217.357 0 .663-.072.917-.217.256-.146.452-.355.589-.626.136-.274.205-.598.205-.973Zm1.29-.935v2.675h-.746v-3.999h.662l1.752 2.66h.032v-2.66h.75v4h-.656l-1.761-2.676h-.032Z"/>
+                </svg>
+              {{this.FileName}}</button>
+          {{/each}}
+          <a href="#" data-foldername="{{this.FolderName}}" onclick="jVarLocalInsertFuncs.InsertFileToFolderUsingSwal(event)" class="btn btn-warning InsertClass" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-json" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM4.151 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .084-.29.387.387 0 0 0-.152-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1.001 1.001 0 0 1-.352-.367 1.068 1.068 0 0 1-.123-.524c0-.244.064-.457.19-.639.128-.181.304-.322.528-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.5.41.12.17.186.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.185.384c0 .121.048.22.144.3a.97.97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211a1 1 0 0 1 .375.358c.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Zm-3.104-.033a1.32 1.32 0 0 1-.082-.466h.764a.576.576 0 0 0 .074.27.499.499 0 0 0 .454.246c.19 0 .33-.055.422-.164.091-.11.137-.265.137-.466v-2.745h.791v2.725c0 .44-.119.774-.357 1.005-.237.23-.565.345-.985.345a1.59 1.59 0 0 1-.568-.094 1.145 1.145 0 0 1-.407-.266 1.14 1.14 0 0 1-.243-.39Zm9.091-1.585v.522c0 .256-.039.47-.117.641a.862.862 0 0 1-.322.387.877.877 0 0 1-.47.126.883.883 0 0 1-.47-.126.87.87 0 0 1-.32-.387 1.55 1.55 0 0 1-.117-.641v-.522c0-.258.039-.471.117-.641a.87.87 0 0 1 .32-.387.868.868 0 0 1 .47-.129c.177 0 .333.043.47.129a.862.862 0 0 1 .322.387c.078.17.117.383.117.641Zm.803.519v-.513c0-.377-.069-.701-.205-.973a1.46 1.46 0 0 0-.59-.63c-.253-.146-.559-.22-.916-.22-.356 0-.662.074-.92.22a1.441 1.441 0 0 0-.589.628c-.137.271-.205.596-.205.975v.513c0 .375.068.699.205.973.137.271.333.48.589.626.258.145.564.217.92.217.357 0 .663-.072.917-.217.256-.146.452-.355.589-.626.136-.274.205-.598.205-.973Zm1.29-.935v2.675h-.746v-3.999h.662l1.752 2.66h.032v-2.66h.75v4h-.656l-1.761-2.676h-.032Z"/>
+              </svg>
+               Insert New File
+        </a>
+      </div>
+      <div class="tab-content col-10">
+          {{#each this.Files}}
+          <div class="tab-pane fade {{TabPaneClass}}" id="v-pills-{{../FolderName}}-{{@key}}" role="tabpanel" aria-labelledby="v-pills-{{this.FileNameId}}-tab">
+              <div class="accordion">
+                {{> HbsTemplateForItemsOnly}}
+                </div>
+          </div>
+          {{/each}}
+      </div>
+  </div>
+  </script>
+
+    <script id="HbsTemplateForItemsOnly" type="text/x-handlebars">
+    <div class="card text-dark bg-light">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h4>{{FileName}}</h4>
+                </div>
+
+                <div class="col">
+                    <input type="text" class="form-control" name="" placeholder="Type to search..."
+                        onkeyup="jFTableSearch(event)" autofocus>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            {{#each this.Items}}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-{{@../../key}}-{{@../key}}-{{@key}}">
+                {{#if ShowOnLoad}}
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapse-{{@../../key}}-{{@../key}}-{{@key}}" aria-expanded="true" aria-controls="collapse-{{this.ItemNameForHtmlId}}">
+        {{ItemName}}
+        </button>
+        {{else}}
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapse-{{@../../key}}-{{@../key}}-{{@key}}" aria-expanded="false aria-controls="collapse-{{this.ItemNameForHtmlId}}">
+        {{ItemName}}
+        </button>
+        {{/if}}
+              </h2>
+              {{#if ShowOnLoad}}
+              <div id="collapse-{{@../../key}}-{{@../key}}-{{@key}}" class="accordion-collapse collapse show" aria-labelledby="heading-{{this.ItemNameForHtmlId}}">
+                <div class="accordion-body">
+                    {{>HbsTemplateForScreensOnly}}
+                </div>
+              </div>
+              {{else}}
+              <div id="collapse-{{@../../key}}-{{@../key}}-{{@key}}" class="accordion-collapse collapse" aria-labelledby="heading-{{this.ItemNameForHtmlId}}">
+                <div class="accordion-body">
+                    {{>HbsTemplateForScreensOnly}}
+                </div>
+              </div>
+              {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+            </script>
+
+
+    <script id="HbsTemplateForScreensOnly" type="text/x-handlebars">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ScreenName</th>
+                    <th>ScreenNameForHtmlId</th>
+                    <th>ColumnReOrder</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.Screens}}
+                <tr>
+                    <td class="text-center">
+                        {{ForSNo @index}}
+                    </td>
+                    <td>
+                        {{this.ScreenName}}
+                    </td>
+                    <td>
+                        {{this.ScreenNameForHtmlId}}
+                    </td>
+                    <td>
+                        <div class="form-check  form-switch">
+                            {{#if ColumnReOrder}}
+                            <input class="form-check-input" type="checkbox" name="ColumnReOrder" checked>
+                            {{else}}
+                            <input class="form-check-input" type="checkbox" name="ColumnReOrder">
+                            {{/if}}
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../key}}" data-filename="{{@../../key}}" data-itemname="{{@../key}}" data-screenname="{{ScreenName}}">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+       
+        </table>
+      </script>
+
+
+    <script>
+        //HbsTemplateForScreensWithSubTableColumnsOnly
+        class jClassForHbs {
+            static FillPartialFromScriptInHtml = ({ inHtmlHbsScriptId }) => {
+                let jVarLocalHbsTemplate = document.getElementById(inHtmlHbsScriptId);
+
+                if (jVarLocalHbsTemplate !== null) {
+                    Handlebars.registerPartial(inHtmlHbsScriptId, jVarLocalHbsTemplate.innerHTML);
+                };
+            };
+        };
+
+        let jVarLocalHbsTemplateForSubTableColumns = document.getElementById("HbsTemplateForSubTableColumns");
+        let jVarLocalHbsTemplateForColumns = document.getElementById("HbsTemplateForColumns");
+
+        let jVarLocalHbsTemplateForFiles = document.getElementById("HbsTemplateForFilesOnly");
+        jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForScreensOnly" });
+        jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForItemsOnly" });
+
+        let jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly = document.getElementById("HbsTemplateForScreensWithSubTableColumnsOnly");
+        let jVarLocalHbsTemplateForColumnsForTogglesOnly = document.getElementById("HbsTemplateForColumnsForTogglesOnly");
+        let jVarLocalHbsTemplateForTableColumnsForTogglesOnly = document.getElementById("HbsTemplateForTableColumnsForTogglesOnly");
+
+        // jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForTableColumnsForAllInOneWithValuesOnly" });
+
+        let jVarLocalHbsTemplateForTable = document.getElementById("HbsTemplateForTable");
+
+        Handlebars.registerHelper('ForSNo', function (item) {
+            return item + 1;
+        });
+
+        if (jVarLocalHbsTemplateForSubTableColumns !== null) {
+            Handlebars.registerPartial("HbsTemplateForSubTableColumns", jVarLocalHbsTemplateForSubTableColumns.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForColumns !== null) {
+            Handlebars.registerPartial("HbsTemplateForColumns", jVarLocalHbsTemplateForColumns.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForFiles !== null) {
+            Handlebars.registerPartial("HbsTemplateForFilesOnly", jVarLocalHbsTemplateForFiles.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForScreensWithSubTableColumnsOnly", jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForColumnsForTogglesOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForColumnsForTogglesOnly", jVarLocalHbsTemplateForColumnsForTogglesOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForTableColumnsForTogglesOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForTableColumnsForTogglesOnly", jVarLocalHbsTemplateForTableColumnsForTogglesOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForTable !== null) {
+            Handlebars.registerPartial("HbsTemplateForTable", jVarLocalHbsTemplateForTable.innerHTML);
+        };
+    </script>
+
+
+    <script>
+        let jFChangeHeaderActiveClass = () => {
+            let jVarLocalPathArray = window.location.pathname.split("/");
+            let jVarLocalHTMLName = jVarLocalPathArray[jVarLocalPathArray.length - 1];
+            jFChangeNavAnchorClass({ inClassName: jVarLocalHTMLName.split(".")[0] });
+        };
+
+        let jFChangeNavAnchorClass = ({ inClassName }) => {
+            let jVarLocalNavBarId = document.getElementById("NavBarId");
+            let jVarLocalAnchorNeeded = jVarLocalNavBarId.querySelector(`.${inClassName}AClass`);
+
+            if (jVarLocalAnchorNeeded !== null) {
+
+                if (jVarLocalAnchorNeeded.classList.contains("text-white")) {
+                    jVarLocalAnchorNeeded.classList.remove("text-white");
+                };
+
+                jVarLocalAnchorNeeded.classList.add("text-info");
+            };
+        };
+
+        jFChangeHeaderActiveClass();
+    </script>
+
+<script src="../../../../../Js/TableInfo/Tabular/FromKeys/ColumnReOrder/ColumnReOrder.js" type="module"></script>
+
+</body>
+
+</html>

@@ -22,7 +22,6 @@ let jFLocalClickFunc = async (event) => {
     let jVarLocalCreateNew = jVarLocalColsestTr.querySelector('[name="CreateNew"]');
     let jVarLocalIsTextArea = jVarLocalColsestTr.querySelector('[name="IsTextArea"]');
 
-    let jVarLocalDataAttributeValue = jVarLocalDataAttribute.value;
     let jVarLocalDisplayNameValue = jVarLocalDisplayName.value;
     let jVarLocalShowInTableValue = jVarLocalShowInTable.checked
     let jVarLocalInsertValue = jVarLocalInsert.checked
@@ -65,7 +64,8 @@ let jFLocalClickFunc = async (event) => {
             jVarLocalNewLocation += `&inFileName=${jVarLocalfilename}`
             jVarLocalNewLocation += `&inItemName=${jVarLocalitemname}`
             jVarLocalNewLocation += `&inScreenName=${jVarLocalscreenname}`
-            jVarLocalNewLocation += `&inColumnName=${jVarLocalDataAttributeValue}`;
+            jVarLocalNewLocation += `&subtablecolumnkey=${jVarLocalsubtablecolumnkey}`;
+            jVarLocalNewLocation += `&inColumnName=${jVarLocaltablecolumnkey}`;
             window.location = jVarLocalNewLocation;
 
             break;

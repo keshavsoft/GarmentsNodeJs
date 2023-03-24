@@ -147,6 +147,7 @@
             <option value="MaxOnDate"></option>
 
         </datalist>
+
     </main>
 
     <footer class="footer mt-auto py-3 bg-light fixed-bottom">
@@ -158,6 +159,7 @@
         </div>
     </div>
 </footer>
+
 
     <!-- LOGIN  STARTED -->
     <div class="modal fade" id="LoginModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -203,6 +205,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 
 
+
+
+
     <script id="HbsTemplateForScreensOnly" type="text/x-handlebars">
         <table class="table">
             <thead>
@@ -235,7 +240,7 @@
                 <tr>
                     <td colspan=5 >
                         <div class="collapse {{CollapseClass}}" id="{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}">
-                            {{> HbsTemplateForTableColumnsForTogglesOnly FolderName=../FolderName FileNameWithOutExtension=../FileNameWithOutExtension ItemName=../ItemName ScreenName=ScreenName}}
+                            {{> HbsTemplateForSubTableColumns}}
                         </div>
                     </td>
                 </tr>
@@ -246,109 +251,138 @@
       </script>
 
 
-    <script id="HbsTemplateForTableColumnsForTogglesOnly" type="text/x-handlebars">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th width="5%"></th>
-                    <th width="90%"></th>
-                    <th width="5%"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each SubTableColumnsObject}}
-              
-    <tr class="{{RowClass}}">
-    <td class="text-center">
-    {{ForSNo @index}}
-    </td>
-    <td>
-        <div class="row mb-3">
-            <div class="col-12 col-xl-6">
-                                    <div class="row">
-                <label class="col-md-5 col-form-label">DataAttribute</label>
-            <div class="col-7">
-                <input class="form-control" type="text" name="DataAttribute" disabled value="{{DataAttribute}}">
+
+    <script id="HbsTemplateForSubTableColumns" type="text/x-handlebars">
+
+
+        <ul class="nav nav-tabs" role="tablist">
+            {{#each SubTableColumnsObject}}
+          
+            <li class="nav-item" role="presentation">
+                <button class="nav-link {{this.MenuClass}}" id="{{this.FolderName}}-tab" data-bs-toggle="tab"
+                    data-bs-target="#{{@key}}-{{@../key}}-{{@../../key}}-{{@../../../key}}-{{@../../../../key}}" type="button" role="tab" aria-controls="{{this.FolderName}}"
+                    aria-selected="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z" />
+                    </svg>
+                    {{@key}}</button>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="tab-content">
+            {{#each SubTableColumnsObject}}
+            <div class="tab-pane fade {{this.TabPageClass}}" id="{{@key}}-{{@../key}}-{{@../../key}}-{{@../../../key}}-{{@../../../../key}}" role="tabpanel"
+                aria-labelledby="{{this.FolderName}}-tab">
+                {{> HbsTemplateForTableColumnsForTogglesOnly}}
             </div>
-        
+            {{/each}}
         </div>
         
-            </div>
-            <div class="col-12 col-xl-6">
-                
-            <div class="row">
-                <label class="col-md-5 col-form-label">DisplayName</label>
-                <div class="col-7">
-                    <input class="form-control" type="text" name="DisplayName" disabled value="{{DisplayName}}" >
-                </div>
-            </div>
-        
-        </div>
-        </div>
-        
-        <div class="row mb-3">
-            <div class="col row">
-                <label class="col-md-8 col-form-label">Transform</label>
-                <div class="col-4">
-                    <div class="form-check  form-switch">
-                        {{#if Transform}}
-                        <input class="form-check-input" type="checkbox" name="Transform" checked>
-                        {{else}}
-                        <input class="form-check-input" type="checkbox" name="Transform">
-                        {{/if}}
-                    </div>
-                </div>
-            </div>
-            <div class="col row">
-                <label class="col-md-5 col-form-label">Type</label>
-                <div class="col-7">
-                    <input class="form-control" type="text" name="Type" list="TypeList"  value="{{Type}}" >
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-xl-6">
-                                    <div class="row">
-                <label class="col-md-5 col-form-label">Format</label>
-            <div class="col-7">
-                <input class="form-control" type="text" name="Format" list="fomatDataList"  value="{{Format}}">
-            </div>
-        
-        </div>
-        
-            </div>
-            <div class="col-12 col-xl-6">
-                
-            <div class="row">
-                <label class="col-md-5 col-form-label">ControlType</label>
-                <div class="col-7">
-                    <input class="form-control" type="text" name="ControlType" list="ControTypeDataList" value="{{ControlType}}" >
-                </div>
-            </div>
-        
-        </div>
-        </div>
-         
-    </td>
-     <td>
-    <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../key}}" data-filename="{{@../../../key}}" data-itemname="{{@../../key}}" data-screenname="{{@../key}}">
-        Update
-    </button>
-    <!-- <button type="button" class="btn btn-outline-info UpdateButtonClass"
-    onclick="jFUpdateData(event , '{{@../../../../key}}','{{@../../../key}}','{{@../../key}}','{{@../key}}','{{@key}}')">
-    Update
-</button> -->
-    </td>
-    </tr>
-    
-                {{/each}}
-            </tbody>
-        </table>
-    
         </script>
 
-
+        <script id="HbsTemplateForTableColumnsForTogglesOnly" type="text/x-handlebars">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="5%"></th>
+                        <th width="90%"></th>
+                        <th width="5%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each TableColumnsObject}}
+                  
+        <tr class="{{RowClass}}">
+        <td class="text-center">
+        {{ForSNo @index}}
+        </td>
+        <td>
+            <div class="row mb-3">
+                <div class="col-12 col-xl-6">
+                                        <div class="row">
+                    <label class="col-md-5 col-form-label">DataAttribute</label>
+                <div class="col-7">
+                    <input class="form-control" type="text" name="DataAttribute" disabled value="{{DataAttribute}}">
+                </div>
+            
+            </div>
+            
+                </div>
+                <div class="col-12 col-xl-6">
+                    
+                <div class="row">
+                    <label class="col-md-5 col-form-label">DisplayName</label>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="DisplayName" disabled value="{{DisplayName}}" >
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col row">
+                    <label class="col-md-8 col-form-label">Transform</label>
+                    <div class="col-4">
+                        <div class="form-check  form-switch">
+                            {{#if Transform}}
+                            <input class="form-check-input" type="checkbox" name="Transform" checked>
+                            {{else}}
+                            <input class="form-check-input" type="checkbox" name="Transform">
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col row">
+                    <label class="col-md-5 col-form-label">Type</label>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="Type" list="TypeList"  value="{{Type}}" >
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-xl-6">
+                                        <div class="row">
+                    <label class="col-md-5 col-form-label">Format</label>
+                <div class="col-7">
+                    <input class="form-control" type="text" name="Format" list="fomatDataList"  value="{{Format}}">
+                </div>
+            
+            </div>
+            
+                </div>
+                <div class="col-12 col-xl-6">
+                    
+                <div class="row">
+                    <label class="col-md-5 col-form-label">ControlType</label>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="ControlType" list="ControTypeDataList" value="{{ControlType}}" >
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+             
+        </td>
+         <td>
+        <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../key}}" data-filename="{{@../../../key}}" data-itemname="{{@../../key}}" data-screenname="{{@../key}}">
+            Update
+        </button>
+        <!-- <button type="button" class="btn btn-outline-info UpdateButtonClass"
+        onclick="jFUpdateData(event , '{{@../../../../key}}','{{@../../../key}}','{{@../../key}}','{{@../key}}','{{@key}}')">
+        Update
+    </button> -->
+        </td>
+        </tr>
+        
+                    {{/each}}
+                </tbody>
+            </table>
+        
+            </script>
 
     <script id="HbsTemplateForTable" type="text/x-handlebars">
                         {{#each this.KData}}
@@ -580,7 +614,8 @@
 
         jFChangeHeaderActiveClass();
     </script>
-<script src="../../../../../../../Js/SubColumns/Tabular/Alter/SubMenu/ServerSide/DefaultValueShow.js" type="module"></script>
+    <script src="../../../../../../../Js/SubColumns/Tabular/Alter/SubMenu/ServerSide/TransformBeforeSave.js" type="module"></script>
+
 
 </body>
 

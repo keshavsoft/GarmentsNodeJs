@@ -290,7 +290,6 @@
             {{#each SubTableColumnsObject}}
             <div class="tab-pane fade {{this.TabPageClass}}" id="{{@key}}-{{@../key}}-{{@../../key}}-{{@../../../key}}-{{@../../../../key}}" role="tabpanel"
                 aria-labelledby="{{this.FolderName}}-tab">
-                <h1>sssssssssssssssss</h1>
                 {{> HbsTemplateForTableColumnsForTogglesOnly}}
             </div>
             {{/each}}
@@ -299,73 +298,50 @@
         </script>
 
         
-    <script id="HbsTemplateForTableColumnsForTogglesOnly" type="text/x-handlebars">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th width="5%"></th>
-                    <th width="90%"></th>
-                    <th width="5%"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each TableColumnsObject}}
-              
-    <tr class="{{RowClass}}">
-    <td class="text-center">
-    {{ForSNo @index}}
-    </td>
-    <td>
-        <div class="row mb-2">
-            <div class="col-12 col-xl-4">
+        <script id="HbsTemplateForTableColumnsForTogglesOnly" type="text/x-handlebars">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>DataAttribute</th>
+                        <th>DisplayName</th>
+                        <th>Widths</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each TableColumnsObject}}
+                  
+        <tr class="{{RowClass}}">
+        <td class="text-center">
+        {{ForSNo @index}}
+        </td>
+        <td>
+            <input class="form-control" type="text" name="DataAttribute" disabled value="{{DataAttribute}}">
     
-                <div class="row">
-                    <label class="col-md-6 col-form-label">DataAttribute</label>
-                    <div class="col-6">
-                     <input class="form-control" type="text" name="DataAttribute" disabled value="{{DataAttribute}}">
-                    </div>
-                </div>
+        </td>
+        <td>
+            <input class="form-control" type="text" name="DisplayName" list="ParentClassesDataList" disabled value="{{DisplayName}}" >
     
-            </div>
+        </td>
+        <td>
+            <input class="form-control" type="text" name="px"  value="{{px}}" >
     
-            <div class="col-12 col-xl-4">
-                
-                <div class="row">
-                    <label class="col-md-5 col-form-label">DisplayName</label>
-                    <div class="col-7">
-                      <input class="form-control" type="text" name="DisplayName" list="ParentClassesDataList" disabled value="{{DisplayName}}" >
-                    </div>
-                </div>
+        </td>
+        <td>
+        <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../../key}}"
+         data-filename="{{@../../../../key}}" data-itemname="{{@../../../key}}"
+          data-screenname="{{@../../key}}" data-subtablecolumnkey={{@../key}}
+          data-tablecolumnkey={{@key}}>
+            Update
+        </button>
+        </td>
+        </tr>
         
-            </div>
-    
-            <div class="col-12 col-xl-4">
-                
-                <div class="row">
-                    <label class="col-md-5 col-form-label">Widths</label>
-                    <div class="col-7">
-                      <input class="form-control" type="text" name="px"  value="{{px}}" >
-                    </div>
-                </div>
+                    {{/each}}
+                </tbody>
+            </table>
         
-            </div>
-        </div>  
-    </td>
-    <td>
-    <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../../key}}"
-     data-filename="{{@../../../../key}}" data-itemname="{{@../../../key}}"
-      data-screenname="{{@../../key}}" data-subtablecolumnkey={{@../key}}
-      data-tablecolumnkey={{@key}}>
-        Update
-    </button>
-    </td>
-    </tr>
-    
-                {{/each}}
-            </tbody>
-        </table>
-    
-        </script>
+            </script>
 
 
 

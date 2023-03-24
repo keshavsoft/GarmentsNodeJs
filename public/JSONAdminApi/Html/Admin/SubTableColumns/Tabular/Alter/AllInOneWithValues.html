@@ -16,8 +16,6 @@
 
 </head>
 
-
-
 <body class="mb-5">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -26,6 +24,7 @@
             </path>
         </symbol>
     </svg>
+
     <nav id="NavBarId" class="navbar navbar-expand-md navbar-dark bg-dark d-print-none" aria-label="KeshavSoft">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">KeshavSoft</a>
@@ -60,6 +59,16 @@
                             <path d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z"></path>
                           </svg>
                         Toggles
+                    </a>
+                </li>
+                <li>
+                    <a href="./DisplayNameAlter.html" class="nav-link text-white DisplayNameAlterAClass">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z"></path>
+                            <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"></path>
+                            <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"></path>
+                          </svg>
+                          DisplayNameAlter
                     </a>
                 </li>
                 <li>
@@ -120,13 +129,11 @@
     </div>
 </nav>
 
-
     <main>
         <div class="container">
             <div id="KCont1">
             </div>
         </div>
-
         <datalist id="DefaultValueDataList">
             <option value="Object"></option>
         </datalist>
@@ -135,6 +142,7 @@
             <option value="Right"></option>
             <option value="Left"></option>
         </datalist>
+
     </main>
 
     <footer class="footer mt-auto py-3 bg-light fixed-bottom">
@@ -172,9 +180,7 @@
                             </div>
                         </div>
                         <input type="submit" class=" btn btn-primary" onclick="jVarGlobalClientObject.Login.LoginCheck()">
-                        <!-- <button type="button" class="btn btn-primary"
-                        onclick="jVarGlobalAdmin.Login.LoginCheck()">Check</button>
-                         -->
+                       
                     </form>
                 </div>
             </div>
@@ -191,106 +197,131 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 
 
-    <script id="HbsTemplateForScreensOnly" type="text/x-handlebars">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>ScreenName</th>
-                <th>ScreenNameForHtmlId</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each this.Screens}}
-            <tr>
-                <td class="text-center">
-                    {{ForSNo @index}}
-                </td>
-                <td>
-                    {{this.ScreenName}}
-                </td>
-                <td>
-                    {{this.ScreenNameForHtmlId}}
-                </td>
-                <td>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}"
-                    aria-expanded="false" aria-controls="{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}">
-                    Toggle Columns
-                </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan=5 >
-                    <div class="collapse {{CollapseClass}}" id="{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}">
-                        {{> HbsTemplateForTableColumnsForAllInOneWithValuesOnly FolderName=../FolderName FileNameWithOutExtension=../FileNameWithOutExtension ItemName=../ItemName ScreenName=ScreenName}}
-                    </div>
-                </td>
-            </tr>
-            {{/each}}
-        </tbody>
-   
-    </table>
-  </script>
-
-
-
-    <script id="HbsTemplateForTableColumnsForAllInOneWithValuesOnly" type="text/x-handlebars">
-<div class="card text-dark bg-light">
-<div class="card-header">
-    <div class="row">
-        <div class="col">
-            <h4>TableColumns Toggles in {{ScreenName}}</h4>
-        </div>
-
-        <div class="col">
-            <input type="text" class="form-control" name="" placeholder="Type to search..."
-                onkeyup="jFTableSearch(event)" autofocus>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>DataAttribute</th>
-                <th>DisplayName</th>
-                <th>DefaultValue</th>
-<th>TextAlign</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each SubTableColumnsObject}}
-            <tr class="{{RowClass}}">
-                <td class="text-center">
-                    {{ForSNo @index}}
-                </td>
-                <td>
-                    <input class="form-control" type="text" name="DataAttribute" value="{{DataAttribute}}" list="TextAlignDataList" disabled>
-                </td>
-                <td>
-                    <input class="form-control" type="text" name="DisplayName" value="{{DisplayName}}" list="TextAlignDataList" disabled>
-                </td>
-                <td>
-                    <input class="form-control" type="text" name="DefaultValue" value="{{DefaultValue}}" list="DefaultValueDataList">
-                </td>
-                <td>
-                    <input class="form-control" type="text" name="TextAlign" value="{{TextAlign}}" list="TextAlignDataList">
-                </td>
-
-                <td class="text-right">
-                    <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../key}}" data-filename="{{@../../../key}}" data-itemname="{{@../../key}}" data-screenname="{{@../key}}">
-                        Update
+      <script id="HbsTemplateForScreensOnly" type="text/x-handlebars">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ScreenName</th>
+                    <th>ScreenNameForHtmlId</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.Screens}}
+                <tr>
+                    <td class="text-center">
+                        {{ForSNo @index}}
+                    </td>
+                    <td>
+                        {{this.ScreenName}}
+                    </td>
+                    <td>
+                        {{this.ScreenNameForHtmlId}}
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}"
+                        aria-expanded="false" aria-controls="{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}">
+                        Toggle Columns
                     </button>
-                </td>
-            </tr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan=5 >
+                        <div class="collapse {{CollapseClass}}" id="{{../FolderName}}-{{../FileNameWithOutExtension}}-{{../ItemName}}-{{ScreenName}}">
+                            {{> HbsTemplateForSubTableColumns}}
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+       
+        </table>
+      </script>
+
+
+      
+      <script id="HbsTemplateForSubTableColumns" type="text/x-handlebars">
+
+
+        <ul class="nav nav-tabs" role="tablist">
+            {{#each SubTableColumnsObject}}
+          
+            <li class="nav-item" role="presentation">
+                <button class="nav-link {{this.MenuClass}}" id="{{this.FolderName}}-tab" data-bs-toggle="tab"
+                    data-bs-target="#{{@key}}-{{@../key}}-{{@../../key}}-{{@../../../key}}-{{@../../../../key}}" type="button" role="tab" aria-controls="{{this.FolderName}}"
+                    aria-selected="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z" />
+                    </svg>
+                    {{@key}}</button>
+            </li>
             {{/each}}
-        </tbody>
-    </table>
-</div>
-</div>
-    </script>
+        </ul>
+        <div class="tab-content">
+            {{#each SubTableColumnsObject}}
+            <div class="tab-pane fade {{this.TabPageClass}}" id="{{@key}}-{{@../key}}-{{@../../key}}-{{@../../../key}}-{{@../../../../key}}" role="tabpanel"
+                aria-labelledby="{{this.FolderName}}-tab">
+                {{> HbsTemplateForTableColumnsForTogglesOnly}}
+            </div>
+            {{/each}}
+        </div>
+        
+        </script>
+
+        
+        <script id="HbsTemplateForTableColumnsForTogglesOnly" type="text/x-handlebars">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>DataAttribute</th>
+                        <th>DisplayName</th>
+                        <th>DefaultValue</th>
+                        <th>TextAlign</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each TableColumnsObject}}
+                  
+        <tr class="{{RowClass}}">
+        <td class="text-center">
+        {{ForSNo @index}}
+        </td>
+        <td>
+            <input class="form-control" type="text" name="DataAttribute" disabled value="{{DataAttribute}}">
+    
+        </td>
+        <td>
+            <input class="form-control" type="text" name="DisplayName" list="ParentClassesDataList" disabled value="{{DisplayName}}" >
+    
+        </td>
+        <td>
+            <input class="form-control" type="text" name="DefaultValue" value="{{DefaultValue}}" list="DefaultValueDataList">
+        </td>
+        <td>
+            <input class="form-control" type="text" name="TextAlign" value="{{TextAlign}}" list="TextAlignDataList">
+        </td>
+        <td>
+        <button type="button" class="btn btn-outline-info UpdateButtonClass" data-foldername="{{@../../../../../key}}"
+         data-filename="{{@../../../../key}}" data-itemname="{{@../../../key}}"
+          data-screenname="{{@../../key}}" data-subtablecolumnkey={{@../key}}
+          data-tablecolumnkey={{@key}}>
+            Update
+        </button>
+        </td>
+        </tr>
+        
+                    {{/each}}
+                </tbody>
+            </table>
+        
+            </script>
+
+
 
     <script id="HbsTemplateForTable" type="text/x-handlebars">
                         {{#each this.KData}}
@@ -326,7 +357,7 @@
 
                 </script>
 
-                <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
+    <script id="HbsTemplateForFoldersOnly" type="text/x-handlebars">
 
 
 <ul class="nav nav-tabs" role="tablist">
@@ -354,9 +385,9 @@
 </div>
 
 </script>
-                
 
-                <script id="HbsTemplateForFilesOnly" type="text/x-handlebars">
+
+    <script id="HbsTemplateForFilesOnly" type="text/x-handlebars">
     <div class="d-flex align-items-start row">
       <div class="nav flex-column nav-pills col-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           {{#each this.Files}}
@@ -387,7 +418,7 @@
   </div>
   </script>
 
-                <script id="HbsTemplateForItemsOnly" type="text/x-handlebars">
+    <script id="HbsTemplateForItemsOnly" type="text/x-handlebars">
     <div class="card text-dark bg-light">
         <div class="card-header">
             <div class="row">
@@ -438,463 +469,92 @@
 
 
 
-<script>
-    //HbsTemplateForScreensWithSubTableColumnsOnly
-    class jClassForHbs {
-        static FillPartialFromScriptInHtml = ({ inHtmlHbsScriptId }) => {
-            let jVarLocalHbsTemplate = document.getElementById(inHtmlHbsScriptId);
+    <script>
+        //HbsTemplateForScreensWithSubTableColumnsOnly
+        class jClassForHbs {
+            static FillPartialFromScriptInHtml = ({ inHtmlHbsScriptId }) => {
+                let jVarLocalHbsTemplate = document.getElementById(inHtmlHbsScriptId);
 
-            if (jVarLocalHbsTemplate !== null) {
-                Handlebars.registerPartial(inHtmlHbsScriptId, jVarLocalHbsTemplate.innerHTML);
+                if (jVarLocalHbsTemplate !== null) {
+                    Handlebars.registerPartial(inHtmlHbsScriptId, jVarLocalHbsTemplate.innerHTML);
+                };
             };
         };
-    };
 
-    let jVarLocalHbsTemplateForSubTableColumns = document.getElementById("HbsTemplateForSubTableColumns");
-    let jVarLocalHbsTemplateForColumns = document.getElementById("HbsTemplateForColumns");
+        let jVarLocalHbsTemplateForSubTableColumns = document.getElementById("HbsTemplateForSubTableColumns");
+        let jVarLocalHbsTemplateForColumns = document.getElementById("HbsTemplateForColumns");
 
-    let jVarLocalHbsTemplateForFiles = document.getElementById("HbsTemplateForFilesOnly");
-    jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForScreensOnly" });
-    jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForItemsOnly" });
+        let jVarLocalHbsTemplateForFiles = document.getElementById("HbsTemplateForFilesOnly");
+        jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForScreensOnly" });
+        jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForItemsOnly" });
 
-    let jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly = document.getElementById("HbsTemplateForScreensWithSubTableColumnsOnly");
-    let jVarLocalHbsTemplateForColumnsForTogglesOnly = document.getElementById("HbsTemplateForColumnsForTogglesOnly");
-    let jVarLocalHbsTemplateForTableColumnsForTogglesOnly = document.getElementById("HbsTemplateForTableColumnsForTogglesOnly");
-    jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForTableColumnsForAllInOneWithValuesOnly" });
-    let jVarLocalHbsTemplateForTable = document.getElementById("HbsTemplateForTable");
+        let jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly = document.getElementById("HbsTemplateForScreensWithSubTableColumnsOnly");
+        let jVarLocalHbsTemplateForColumnsForTogglesOnly = document.getElementById("HbsTemplateForColumnsForTogglesOnly");
+        let jVarLocalHbsTemplateForTableColumnsForTogglesOnly = document.getElementById("HbsTemplateForTableColumnsForTogglesOnly");
 
-    Handlebars.registerHelper('ForSNo', function (item) {
-        return item + 1;
-    });
+        // jClassForHbs.FillPartialFromScriptInHtml({ inHtmlHbsScriptId: "HbsTemplateForTableColumnsForAllInOneWithValuesOnly" });
 
-    if (jVarLocalHbsTemplateForSubTableColumns !== null) {
-        Handlebars.registerPartial("HbsTemplateForSubTableColumns", jVarLocalHbsTemplateForSubTableColumns.innerHTML);
-    };
+        let jVarLocalHbsTemplateForTable = document.getElementById("HbsTemplateForTable");
 
-    if (jVarLocalHbsTemplateForColumns !== null) {
-        Handlebars.registerPartial("HbsTemplateForColumns", jVarLocalHbsTemplateForColumns.innerHTML);
-    };
-
-    if (jVarLocalHbsTemplateForFiles !== null) {
-        Handlebars.registerPartial("HbsTemplateForFilesOnly", jVarLocalHbsTemplateForFiles.innerHTML);
-    };
-
-    if (jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly !== null) {
-        Handlebars.registerPartial("HbsTemplateForScreensWithSubTableColumnsOnly", jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly.innerHTML);
-    };
-
-    if (jVarLocalHbsTemplateForColumnsForTogglesOnly !== null) {
-        Handlebars.registerPartial("HbsTemplateForColumnsForTogglesOnly", jVarLocalHbsTemplateForColumnsForTogglesOnly.innerHTML);
-    };
-
-    if (jVarLocalHbsTemplateForTableColumnsForTogglesOnly !== null) {
-        Handlebars.registerPartial("HbsTemplateForTableColumnsForTogglesOnly", jVarLocalHbsTemplateForTableColumnsForTogglesOnly.innerHTML);
-    };
-
-    if (jVarLocalHbsTemplateForTable !== null) {
-        Handlebars.registerPartial("HbsTemplateForTable", jVarLocalHbsTemplateForTable.innerHTML);
-    };
-</script>
-
-
-<script>
-    let jFChangeHeaderActiveClass = () => {
-        let jVarLocalPathArray = window.location.pathname.split("/");
-        let jVarLocalHTMLName = jVarLocalPathArray[jVarLocalPathArray.length - 1];
-        jFChangeNavAnchorClass({ inClassName: jVarLocalHTMLName.split(".")[0] });
-    };
-
-    let jFChangeNavAnchorClass = ({ inClassName }) => {
-        let jVarLocalNavBarId = document.getElementById("NavBarId");
-        let jVarLocalAnchorNeeded = jVarLocalNavBarId.querySelector(`.${inClassName}AClass`);
-
-        if (jVarLocalAnchorNeeded !== null) {
-
-            if (jVarLocalAnchorNeeded.classList.contains("text-white")) {
-                jVarLocalAnchorNeeded.classList.remove("text-white");
-            };
-
-            jVarLocalAnchorNeeded.classList.add("text-info");
-        };
-    };
-
-    jFChangeHeaderActiveClass();
-</script>
-
-    <!-- <script>
-        let jVarCommonSubRoute = "API";
-
-        class CommonFuncsForFolders {
-            static FuncsForFetchUpdate = {
-                PrepareObjectFromRow: ({ inJVarLocalRowElements }) => {
-                    let jVarLocalFetchBodydata = {};
-                    inJVarLocalRowElements.forEach((LoopElement) => {
-                        if (LoopElement.hasAttribute("checked")) {
-                            jVarLocalFetchBodydata[LoopElement.name] = LoopElement.checked;
-                        } else {
-                            jVarLocalFetchBodydata[LoopElement.name] = LoopElement.value;
-                        };
-                    });
-                    return jVarLocalFetchBodydata;
-                }
-            }
-
-            static getUrlQueryParams = () => {
-                var queryParams = {}, param;
-                var params = window.location.search.substring(1).split("&");
-                console.log("params : ", params);
-                for (var i = 0; i < params.length; i++) {
-                    param = params[i].split('=');
-                    console.log("param : ", param);
-                    if (param.length === 2) {
-                        queryParams[param[0]] = param[1];
-                    };
-                }
-                return queryParams;
-            }
-
-            static CreateFolders = () => {
-                let jVarLocalRoute = window.location.pathname.split("/")[1];
-                var jVarLocalQueryParams = this.getUrlQueryParams();
-                let jVarLocalSubRoute = jVarCommonSubRoute;
-                //let jVarLocalFetchUrl = `/${jVarLocalRoute}/${jVarLocalSubRoute}/Folders/Show/ForAdmin`;
-                let jVarLocalFetchUrl = `/${jVarLocalRoute}/AdminApi/Utility/Json/Folder/ForTableColumns/AllInOneWithValues`;
-
-                fetch(jVarLocalFetchUrl)
-                    .then(response => {
-                        return response.json();
-                        //return this.Login.StatusCodeFuncs.Code403({ inResponse: response });
-                    }).then(dataFromApi => {
-                        if (dataFromApi !== null) {
-                            if (Object.keys(jVarLocalQueryParams).length > 0) {
-                                this.ApplyClassesFromUrl({
-                                    indataFromApi: dataFromApi,
-                                    inQueryParamsAsObject: jVarLocalQueryParams
-                                });
-                            } else {
-                                this.ApplyClasses({ indataFromApi: dataFromApi });
-                            };
-                            try {
-
-                                //let jVarLocalFileNameChanged = this.ChangeFileName({ indataFromApi: dataFromApi });
-                                let jVarLocalRawTemplate = document.getElementById("HbsTemplateForFoldersOnly").innerHTML;
-                                console.log("jVarLocalRawTemplate : ", dataFromApi, jVarLocalRawTemplate);
-
-                                document.getElementById("KCont1").innerHTML = Handlebars.compile(jVarLocalRawTemplate)(dataFromApi);
-
-                            } catch (error) {
-                                console.log("error : ", error);
-                            };
-                        };
-                    });
-            }
-
-            static ApplyClasses1 = ({ indataFromApi }) => {
-                if (indataFromApi.length > 0) {
-                    indataFromApi[0].TabPageClass = " show active";
-                    indataFromApi[0].MenuClass = " active";
-                };
-            }
-            static ApplyClasses = ({ indataFromApi }) => {
-                let jVarLocalFirstFolder;
-                let jVarLocalFirstFile;
-                let jVarLocalFirstItem;
-                let jVarLocalFirstScreen;
-
-                if ("Folders" in indataFromApi) {
-                    if (Object.values(indataFromApi.Folders).length > 0) {
-                        jVarLocalFirstFolder = Object.values(indataFromApi.Folders)[0];
-                        jVarLocalFirstFolder.TabPageClass = " show active";
-                        jVarLocalFirstFolder.MenuClass = " active";
-
-                        if ("Files" in jVarLocalFirstFolder) {
-                            if (Object.values(jVarLocalFirstFolder.Files).length > 0) {
-                                jVarLocalFirstFile = Object.values(jVarLocalFirstFolder.Files)[0];
-                                jVarLocalFirstFile.TabPaneClass = " show active";
-                                jVarLocalFirstFile.ButtonClass = " active";
-
-                                if ("Items" in jVarLocalFirstFile) {
-                                    if (Object.values(jVarLocalFirstFile.Items).length > 0) {
-                                        jVarLocalFirstItem = Object.values(jVarLocalFirstFile.Items)[0];
-                                        jVarLocalFirstItem.ShowOnLoad = true;
-
-                                        if ("Screens" in jVarLocalFirstItem) {
-                                            if (Object.values(jVarLocalFirstItem.Screens).length > 0) {
-                                                jVarLocalFirstScreen = Object.values(jVarLocalFirstItem.Screens)[0];
-                                                jVarLocalFirstScreen.CollapseClass = " show";
-                                            };
-                                        };
-                                    };
-                                };
-                            };
-
-                        };
-
-                    };
-                };
-            }
-
-
-            static ChangeFileName = ({ indataFromApi }) => {
-                let jVarLocalReturnData;
-
-                jVarLocalReturnData = indataFromApi.map(elementLoopFolder => {
-                    if ("Files" in elementLoopFolder) {
-                        elementLoopFolder.Files.map(elementLoopFile => {
-                            if ("FileName" in elementLoopFile && ("FileNameWithOutExtension" in elementLoopFile) === false) {
-                                elementLoopFile.FileNameWithOutExtension = elementLoopFile.FileName.split(".")[0];
-                            };
-
-                            return elementLoopFile;
-                        });
-                    };
-
-                    return elementLoopFolder;
-                });
-
-
-
-                return jVarLocalReturnData;
-            }
-
-            static ApplyClassesFromUrl = ({ indataFromApi, inQueryParamsAsObject }) => {
-                let jVarLocalFolderName = inQueryParamsAsObject.inFolderName;
-                let jVarLocalFileName = inQueryParamsAsObject.inFileName;
-                let jVarLocalItemName = inQueryParamsAsObject.inItemName;
-                let jVarLocalScreenName = inQueryParamsAsObject.inScreenName;
-                let jVarLocalColumnName = inQueryParamsAsObject.inColumnName;
-
-                let jVarLocalFirstFolder;
-                let jVarLocalFirstFile;
-                let jVarLocalFirstItem;
-                let jVarLocalFirstScreen;
-
-                if ("Folders" in indataFromApi) {
-                    if (jVarLocalFolderName in indataFromApi.Folders) {
-                        indataFromApi.Folders[jVarLocalFolderName].TabPageClass = " show active";
-                        indataFromApi.Folders[jVarLocalFolderName].MenuClass = " active";
-
-                        if ("Files" in indataFromApi.Folders[jVarLocalFolderName]) {
-                            if (jVarLocalFileName in indataFromApi.Folders[jVarLocalFolderName].Files) {
-                                indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].TabPaneClass = " show active";
-                                indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].ButtonClass = " active";
-
-                                if ("Items" in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName]) {
-                                    if (jVarLocalItemName in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items) {
-                                        indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].ShowOnLoad = true;
-
-                                        if ("Screens" in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName]) {
-                                            if (jVarLocalScreenName in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens) {
-                                                indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens[jVarLocalScreenName].CollapseClass = " show";
-
-                                                if ("TableColumnsObject" in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens[jVarLocalScreenName]) {
-                                                    if (jVarLocalColumnName in indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens[jVarLocalScreenName].TableColumnsObject) {
-                                                        indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens[jVarLocalScreenName].TableColumnsObject[jVarLocalColumnName].RowClass = "table-success";
-
-                                                        //                                                        console.log("--------- : ", jVarLocalColumnName, indataFromApi.Folders[jVarLocalFolderName].Files[jVarLocalFileName].Items[jVarLocalItemName].Screens[jVarLocalScreenName].TableColumnsObject[jVarLocalColumnName]);
-                                                    };
-                                                };
-                                            };
-                                        };
-                                    };
-                                };
-                            };
-                        };
-
-                    };
-                };
-            }
-
-        };
-
-        let serializeObject = (inHtmlTr) => {
-            console.log("inHtmlTr : ", inHtmlTr);
-            // Create a new FormData object
-            const formData = inHtmlTr.querySelectorAll("[name]");
-            console.log("formData : ", formData);
-            // Create an object to hold the name/value pairs
-            const pairs = {};
-
-            for (let i = 0; i < formData.length; i++) {
-                pairs[formData[i].name] = formData[i].value;
-            }
-
-            // Return the object
-            return pairs;
-        };
-
-        let jFTableSearch = (inEvent) => {
-            let jVarLocalCurrentTarget = inEvent.currentTarget;
-            let jVarLocalClosestCard = jVarLocalCurrentTarget.closest(".card");
-            let jVarLocalTableBodyId = jVarLocalClosestCard.querySelector(".card-body table tbody");
-
-            var filter, table, tr, td, i;
-            filter = jVarLocalCurrentTarget.value;
-
-            for (var i = 0, row; row = jVarLocalTableBodyId.rows[i]; i++) {
-                jVarLocalTableBodyId.rows[i].classList.add("d-none");
-
-                for (var j = 0, col; col = row.cells[j]; j++) {
-                    if (col.innerHTML.includes(filter)) {
-
-                        jVarLocalTableBodyId.rows[i].classList.remove("d-none");
-
-                        break;
-                    };
-                }
-            }
-        };
-
-        let jFShowColumnsIntable = ({ inFolderName, inFileName, inItemName, inScreenName, inToShowHtmlControlId, inRowIndex }) => {
-            let jVarLocalTableBody = document.getElementById(inToShowHtmlControlId).querySelector("tbody");
-            let jVarLocalFetchUrl = `/JSONProject/AdminApi/Columns/ForDataList/ForDefaultValue/${inFolderName}/${inFileName}/${inItemName}/${inScreenName}`;
-            let jVarLocalConfigObject = {
-                FolderName: inFolderName,
-                FileName: inFileName,
-                ItemName: inItemName,
-                ScreenName: inScreenName
-            };
-            let jVarLocalDataWithRowClass;
-
-            fetch(jVarLocalFetchUrl).then(response => response.json())
-                .then(dataFromApi => {
-                    if (inRowIndex >= 0 && inRowIndex < dataFromApi.length - 1) {
-                        dataFromApi[inRowIndex].RowClass = "table-success";
-                    };
-
-                    let jVarLocalRawTemplate = document.getElementById("HbsTemplateForTable").innerHTML;
-
-                    jVarLocalTableBody.innerHTML = Handlebars.compile(jVarLocalRawTemplate)({ KData: dataFromApi, ConfigObject: jVarLocalConfigObject })
-                });
-        };
-
-        let jFUpdateData = (inEvent, inFolderName, inFileName, inItemName, inScreenName, inColumnName) => {
-            let jVarLocalCurrentTarget = inEvent.currentTarget;
-            let jVarLocalHtmlTr = jVarLocalCurrentTarget.closest("tr");
-            let jVarLocalRowElements = jVarLocalHtmlTr.querySelectorAll("input");
-            //let jVarLocalFetchBodydata = {};
-            let jVarLocalFetchBodydata = CommonFuncsForFolders.FuncsForFetchUpdate.PrepareObjectFromRow({ inJVarLocalRowElements: jVarLocalRowElements });
-
-            // jVarLocalRowElements.forEach((LoopElement) => {
-            //     jVarLocalFetchBodydata[LoopElement.name] = LoopElement.checked;
-            // });
-
-            let jVarLocalRoute = window.location.pathname.split("/")[1];
-
-            let jVarLocalFolderName = inFolderName;
-            let jVarLocalFileNameWithExtension = `${inFileName}.json`;
-            let jVarLocalItemName = inItemName;
-            let jVarLocalScreenName = inScreenName;
-            let jVarLocalColumnName = inColumnName;
-
-
-            let jVarLocalEndPoint = "{{inItemName.{{inScreenName.TableColumns[DataAttribute:inColumnName";
-
-            let jVarLocalFetchUrlWithOutinKQueryObject = `/${jVarLocalRoute}/AdminApi/Config/TableColumns/Update?inFolderName=${inFolderName}&inJsonFileName=${jVarLocalFileNameWithExtension}&inItemName=${inItemName}&inScreenName=${inScreenName}&inColumnName=${jVarLocalColumnName}`;
-            let jVarLocalFetchUrl = `${jVarLocalFetchUrlWithOutinKQueryObject}&inKQueryObject=${jVarLocalEndPoint}`
-
-            fetch(jVarLocalFetchUrl, {
-                method: "post",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(jVarLocalFetchBodydata)
-            }).then(response => response.text()).then(dataFromApi => {
-                let jVarLocalData = JSON.parse(dataFromApi);
-
-                if (jVarLocalData.KTF) {
-                    window.location = `?inFolderName=${jVarLocalFolderName}&inFileName=${inFileName}&inItemName=${jVarLocalItemName}&inScreenName=${jVarLocalScreenName}&inColumnName=${jVarLocalColumnName}`;
-                };
-            });
-        };
-
-
-        let jFUpdateData_Keshav_14mar2022 = (inEvent, inRowIndex) => {
-            console.log("inRowIndex : ", inRowIndex);
-            let jVarLocalCurrentTarget = inEvent.currentTarget;
-            let jVarLocalHtmlTr = jVarLocalCurrentTarget.closest("tr");
-
-            let jVarLocalConfigObject = {
-                KTF: true,
-                FolderName: jVarLocalCurrentTarget.dataset.foldername,
-                FileName: jVarLocalCurrentTarget.dataset.filenamewithoutextension,
-                ItemName: jVarLocalCurrentTarget.dataset.itemname,
-                ScreenName: jVarLocalCurrentTarget.dataset.screenname,
-                ColumnName: jVarLocalCurrentTarget.dataset.columnname
-            };
-
-            let jVarLocalEndPoint = "{{inItemName.{{inScreenName.TableColumns[DataAttribute:inColumnName";
-
-            // let jVarLocalUrlObject = jVarGlobalClientObject.AdminApi.Config.TableColumns.Update.CommonFuncs.CheckBeforeFetch();
-            console.log("jVarLocalUrlObject : ", jVarLocalConfigObject);
-            let jVarLocalFetchBodydata = jVarGlobalClientObject.AdminApi.Config.CommonFuncs.PreparePostData.ForUpdateTakeInput({ inJVarHtmlControl: jVarLocalHtmlTr });
-            console.log("jVarLocalFetchBodydata : ", jVarLocalFetchBodydata);
-            //  jVarLocalUrlObject.ColumnName = jVarLocalFetchBodydata.DataAttribute;
-
-            let jVarLocalFetchUrl = jVarGlobalClientObject.AdminApi.Config.TableColumns.Update.CommonFuncs.PrepareUrl.ForUpdate({ inUrlObject: jVarLocalConfigObject });;
-            console.log("jVarLocalFetchUrl : ", jVarLocalFetchUrl);
-            fetch(`${jVarLocalFetchUrl}&inKQueryObject=${jVarLocalEndPoint}`, {
-                method: "post",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(jVarLocalFetchBodydata)
-            }).then(response => response.text()).then(dataFromApi => {
-                let jVarLocalData = JSON.parse(dataFromApi);
-                console.log("jVarLocalData : ", jVarLocalData);
-                if (jVarLocalData.KTF) {
-                    //    window.location = "";
-                    jFShowColumnsIntable({
-                        inFolderName: jVarLocalConfigObject.FolderName,
-                        inFileName: jVarLocalConfigObject.FileName,
-                        inItemName: jVarLocalConfigObject.ItemName,
-                        inScreenName: jVarLocalConfigObject.ScreenName,
-                        inToShowHtmlControlId: `${jVarLocalConfigObject.FolderName}-${jVarLocalCurrentTarget.dataset.filenamewithoutextension}-${jVarLocalConfigObject.ItemName}-${jVarLocalConfigObject.ScreenName}`,
-                        inRowIndex
-                    });
-
-                };
-            });
-
-        };
-
-        let jFShowColumnTable = (inFolderName, inFileName, inItemName, inScreenName, inToShowHtmlControlId) => {
-            let jVarLocalToShowHtmlControlId = document.getElementById(inToShowHtmlControlId);
-
-            if (jVarLocalToShowHtmlControlId.classList.contains("show") === false) {
-                jVarLocalToShowHtmlControlId.classList.add("show");
-            }
-
-            jFShowColumnsIntable({
-                inFolderName, inFileName,
-                inItemName,
-                inScreenName,
-                inToShowHtmlControlId
-            });
-        };
-
-        let jFToggleColumnTable = (inToShowHtmlControlId) => {
-            jFShowColumnsIntable({
-                inFolderName, inFileName,
-                inItemName,
-                inScreenName,
-                inToShowHtmlControlId
-            });
-        };
-
-        jVarGlobalClientObject.Login.ClientSideCookieFuncs.CheckToken();
-
-        let jVarHtmlLoginModalId = document.getElementById("LoginModalId");
-        jVarHtmlLoginModalId.addEventListener('shown.bs.modal', function (event) {
-            let jVarLocalSubmitButton = event.currentTarget.querySelector(".modal-body input[type='submit']");
-            jVarLocalSubmitButton.focus();
+        Handlebars.registerHelper('ForSNo', function (item) {
+            return item + 1;
         });
 
-        CommonFuncsForFolders.CreateFolders();
-    </script> -->
+        if (jVarLocalHbsTemplateForSubTableColumns !== null) {
+            Handlebars.registerPartial("HbsTemplateForSubTableColumns", jVarLocalHbsTemplateForSubTableColumns.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForColumns !== null) {
+            Handlebars.registerPartial("HbsTemplateForColumns", jVarLocalHbsTemplateForColumns.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForFiles !== null) {
+            Handlebars.registerPartial("HbsTemplateForFilesOnly", jVarLocalHbsTemplateForFiles.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForScreensWithSubTableColumnsOnly", jVarLocalHbsTemplateForScreensWithSubTableColumnsOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForColumnsForTogglesOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForColumnsForTogglesOnly", jVarLocalHbsTemplateForColumnsForTogglesOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForTableColumnsForTogglesOnly !== null) {
+            Handlebars.registerPartial("HbsTemplateForTableColumnsForTogglesOnly", jVarLocalHbsTemplateForTableColumnsForTogglesOnly.innerHTML);
+        };
+
+        if (jVarLocalHbsTemplateForTable !== null) {
+            Handlebars.registerPartial("HbsTemplateForTable", jVarLocalHbsTemplateForTable.innerHTML);
+        };
+    </script>
+
+
+    <script>
+        let jFChangeHeaderActiveClass = () => {
+            let jVarLocalPathArray = window.location.pathname.split("/");
+            let jVarLocalHTMLName = jVarLocalPathArray[jVarLocalPathArray.length - 1];
+            jFChangeNavAnchorClass({ inClassName: jVarLocalHTMLName.split(".")[0] });
+        };
+
+        let jFChangeNavAnchorClass = ({ inClassName }) => {
+            let jVarLocalNavBarId = document.getElementById("NavBarId");
+            let jVarLocalAnchorNeeded = jVarLocalNavBarId.querySelector(`.${inClassName}AClass`);
+
+            if (jVarLocalAnchorNeeded !== null) {
+
+                if (jVarLocalAnchorNeeded.classList.contains("text-white")) {
+                    jVarLocalAnchorNeeded.classList.remove("text-white");
+                };
+
+                jVarLocalAnchorNeeded.classList.add("text-info");
+            };
+        };
+
+        jFChangeHeaderActiveClass();
+    </script>
 <script src="../../../../../Js/SubColumns/Tabular/Alter/AllInOneWithValues.js" type="module"></script>
+
 
 </body>
 
