@@ -39,16 +39,4 @@ let QrCodeKeyPressAssign = ({ inFolderName, inFileName, inItemName, inProjectNam
     });
 };
 
-let LocalQrCodeKeyPressFunc = async (event) => {
-    if (event.keyCode === 13) { // key code of the keybord key
-        event.preventDefault();
-        let jVarLocalCurrentTarget = event.currentTarget;
-        await KeyPressStartFunc({
-            inFolderName
-        });
-        console.log("sssssss : ", jVarLocalCurrentTarget.value);
-        // your code to Run
-    }
-};
-
 export { StartFunc };

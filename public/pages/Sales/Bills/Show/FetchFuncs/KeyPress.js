@@ -45,7 +45,15 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, in
         };
 
         // inFetchPostData.DataToInsert = PreparePostData();
-        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/WithScreens/SubTable/WithChecking/Insert`;
+        let jVarLocalFetchUrl = `/${inProjectName}/Api/Data/FromFolder/FromFile/Items/FromDataFolder/RowData`;
+        
+        // {
+        //     "FileNameOnly": "Generate",
+        //     "FolderName": "QrCodes",
+        //     "ItemName": "Barcodes",
+        //     "JsonPk": "4",
+        //     "Screenname": "Create"
+        // }
 
         let jVarLocalFetchHeaders = {
             method: "post",
@@ -55,7 +63,8 @@ let StartFunc = async ({ inFolderName, inFileName, inItemName, inProjectName, in
             },
             body: JSON.stringify(inFetchPostData)
         };
-
+        console.log("sssssss : ", jVarLocalFetchUrl);
+        
         // const response = await fetch(jVarLocalFetchUrl, jVarLocalFetchHeaders);
         // const data = await response.json();
         // LocalReturnObject.KTF = data.KTF;
